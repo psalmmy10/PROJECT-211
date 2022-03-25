@@ -7,11 +7,12 @@
     <title>New Practice</title>
 </head>
 <body>
+
     <script>
-        var snrDev1 = 'Dev sam';
-        var snrDev2 = 'Dev Ope';
-        let snrDev3 = 'Dev Deola';
-        let snrDev4 = 'Dev Sunepa';
+        // var snrDev1 = 'Dev sam';
+        // var snrDev2 = 'Dev Ope';
+        // let snrDev3 = 'Dev Deola';
+        // let snrDev4 = 'Dev Sunepa';
 
         // function concatenatestrings(string1,string2){
         // let concatenatevalue = string1 + ' ' + string2
@@ -109,38 +110,50 @@
             // let personHeight = '30 meters'
             // let personName = 'AJAO'
 
-            let person = { 
-                personAge: 30,
-                personHeight: '30 meters',
-                personName: 'AJAO',
-                firstName : 'SAM',
-                lastName: 'dave',
+            // let person = { 
+            //     personAge: 30,
+            //     personHeight: '30 meters',
+            //     personName: 'AJAO',
+            //     firstName : 'SAM',
+            //     lastName: 'dave',
 
-                concatenate: function(){
-                return this.firstName + this.   lastName
-                }
-            }
-             console.log(person.concatenate())
-            
+            //     concatenate: function(){
+            //     return this.firstName + this.   lastName
+            //     }
+            // }
+            //  console.log(person.concatenate())
 
-            // console.log(person.personAge)
-
-            let name = {
-                firstName: 'Adeola',
-                lastName : 'Adebayo',
-                middleName : 'Mr Waris',
+            // let name = {
+            //     firstName: 'Adeola',
+            //     lastName : 'Adebayo',
+            //     middleName : 'Mr Waris',
     
-                foo: function(){
-                    return  this.middleName + ' ' + this.lastName
-                }
-            };
-
-            console.log(name.foo());
+            //     foo: function(){
+            //         return  this.middleName + ' ' + this.lastName
+            //     }
+            // }
+            // console.log(name.foo());
             // expected output: "bar"
             
             
-
-
+                let car = {
+                    color: 'white',
+                    speed: '120mhp',
+                    light: 'bright',
+                    status: true, 
+                    
+                    vehicle: function(status){
+                        if (this.status == true) {
+                            console.log('Moving....');
+                        } 
+                        else{
+                            console.log('Stopped..');
+                        }
+                        console.log(car.speed)
+                    }
+                }
+                car.vehicle()
+                    
             
     </script>
 </body>
