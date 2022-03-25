@@ -1,0 +1,10 @@
+nav{
+    background-color: #454545;
+    height: 50px;
+}
+
+li{
+    list-style-type: none;
+    padding: 50px;
+    margin: 30px;
+}

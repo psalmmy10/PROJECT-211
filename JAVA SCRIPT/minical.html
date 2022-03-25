@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+    <h1>Mathematics</h1>
+    <h4>Addition And Subtraction</h4>
+    <p>1) 2 x 2 = ?</p>
+    <p id = "number" >Answer?</p>
+    <button type="button" onclick = "myfunction(2,2)" >See Answer</button>
+    <p id="first">My first Declearation</p>
+    <p id="second">g</p>
+
+    <p>Mr Sam was given birth to in the year 1880</p>
+    <P id="age">How old would Mr Sam be this year?</P>
+    <p id="real">See Age</p>
+    <button type="button" onclick="myfunct(1880,2000); algert('He no go sabi file again')">Check</button>
+
+    <p>Mr Femi was given birth to in the year 2000</p>
+    <p id="age1">How old is Mr Femi this year?</p>
+    <p id="real1">See Age</p>
+    <button type="button" onclick="myfuct(2000,2022); alegrt('He go still sabi file')">Check</button>
+
+    <script>
+
+        let x, y, z,a;
+        x = 2;
+        y = 3;
+        z = 5;
+        a = x + y + z;  
+        document.getElementById('first').innerHTML = a;
+        console.log(a);
+
+
+        function myfunct (p1,p2) {
+            var age_value = p1 - p2;
+            document.getElementById('real').innerHTML = age_value;
+        }
+        
+        function myfuct (p1,p2){
+            let age1_value = p1 - p2;
+            document.getElementById('real1').innerHTML = age1_value;
+        }
+
+        function myfunction(p1,p2) {
+            var multiply_Value = p1 * p2;
+            document.getElementById("number").innerHTML  =  multiply_Value;
+        }
+
+    
+
+        function second (p1,p2){
+            return (p1 * p2);    
+        }  
+        document.getElementById("second").innerHTML = second(3,3);  
+
+
+        var dev2 = "SAM"
+        var dev3 = "faith"
+        var dev4 = "blessing"
+
+        console.log(dev2)
+        console.log(dev2 +  dev4)
+        console.log(dev3)
+
+
+    </script>
+</body>
+</html>

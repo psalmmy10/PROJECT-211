@@ -1,0 +1,164 @@
+.rotate{
+    transform: rotate(-50deg);
+    font-size: 12px;
+}
+.size{
+    font-size: small;
+}
+/* .Adjust{
+    padding-bottom: 80px;
+} */
+/* .Align{
+    padding-left: 30px;
+    padding-top: 40px;
+    padding-bottom: 10px; */
+
+
+.Align{
+    /* padding-top: 40px; */
+    padding-left: 20px;
+}
+.Type{
+    font-size: smaller;
+}
+.Font{
+    font-size:small;
+}
+
+/* STARTS HERE */
+
+.logo_holder, .content_holder{
+    display: inline-block;
+    height: 200px;
+    margin: 0 !important;
+   }
+   
+   .content_holder{
+       width: 67%;
+   }
+   
+   .logo_holder{
+       width: 20%;
+       float: left;
+   }
+   
+   .report_field{
+       display:inline-block;
+       width: 70px;
+       border-bottom: 1px solid;
+   }
+   
+   .report_field2{
+       display:inline-block;
+       width: 85%;
+       border-bottom: 1px solid;
+   }
+   .report_field3{
+       display:inline-block;
+       width: 80%;
+       border-bottom: 1px solid;
+   }
+   .report_field4{
+       display:inline-block;
+       width: 60%;
+       border-bottom: 1px solid;
+   }
+   .report_field5{
+       display:inline-block;
+       width: 45%;
+       border-bottom: 1px solid;
+   }
+   .report_field6{
+       display:inline-block;
+       width: 50%;
+       border-bottom: 1px solid;
+       
+   }
+   .report_field7{
+       display:inline-block;
+       width: 60%;
+       border-bottom: 1px solid;
+       
+   }
+   .report_field8{
+       display:inline-block;
+       width: 25%;
+       border-bottom: 1px solid;
+       
+   }
+   .report_field9{
+       display:inline-block;
+       width: 25%;
+       border-bottom: 1px solid;
+       
+   }
+   .report_field10{
+       display:inline-block;
+       width: 30%;
+       border-bottom: 1px solid;
+       
+   }
+   .report_field11{
+       display:inline-block;
+       width: 80%;
+       border-bottom: 1px solid;
+       
+   }
+   .report_field12{
+       display:inline-block;
+       width: 100%;
+       border-bottom: 1px solid;
+       
+   }
+   .report_field13{
+       display:inline-block;
+       width: 65%;
+       border-bottom: 1px solid;
+       
+   }
+   .report_field14{
+       display:inline-block;
+       width: 80%;
+       border-bottom: 1px solid;
+       
+   }
+   .report_field15{
+       display:inline-block;
+       width: 100%;
+       border-bottom: 1px solid;
+       
+   }
+   .report_field16{
+       display:inline-block;
+       width: 65%;
+       border-bottom: 1px solid;
+       
+   }
+   
+   .control_input{
+       overflow-x: hidden;
+   }
+
+   h1,h3,p{
+    color: darkgreen;
+    text-align: center;
+}
+body {
+    overflow-x: hidden !important;
+}
+.Table-2 {
+    margin-bottom: 15px;
+}
+.align_table {
+    margin-bottom: 53px;
+}
+.pos {
+    margin-bottom: 88px !important;
+}
+
+
+/* ENDS HERE! */
+   
+/* .Container{
+    width:  50%;
+} */

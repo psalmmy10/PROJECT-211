@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="&#x56FE;&#x5C42;_1" x="0px" y="0px" width="1000px" height="2000px" viewBox="0 0 1000 2000" xml:space="preserve">
+<rect x="-3" y="-3" fill="#FEF8F2" width="1006" height="2006"></rect>
+<circle fill="#1E4778" cx="500" cy="519.966" r="315.574"></circle>
+<g>
+	
+		<text transform="matrix(1 0 0 1 172.8438 1271.1953)" fill="#1E4778" font-family="'SourceHanSansCN-Bold-GBpc-EUC-H'" font-size="144.6017">Overseas</text>
+	
+		<text transform="matrix(1 0 0 1 102.2056 1444.7168)" fill="#1E4778" font-family="'SourceHanSansCN-Bold-GBpc-EUC-H'" font-size="144.6017">Warehouse</text>
+</g>
+<g>
+	<path fill="#FFF8F2" d="M341.167,426.577l157.1-97.893l160.567,97.893v220.667h-37.172l-0.324-185.45l-244.987-0.375l0.499,185.826   h-35.683V426.577z"></path>
+	<path fill="#FFF8F2" d="M401.298,505.669h50.219v56.776h-50.219V505.669z M546.672,505.669h50.215v56.776h-50.215V505.669z    M474.889,505.669h50.225v56.776h-50.225V505.669L474.889,505.669z M401.298,590.468h50.219v56.777h-50.219V590.468z    M474.889,590.468h50.225v56.777h-50.225V590.468L474.889,590.468z M546.672,590.468h50.215v56.777h-50.215V590.468z"></path>
+</g>
+</svg>

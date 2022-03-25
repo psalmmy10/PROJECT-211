@@ -1,0 +1,26 @@
+nav{
+    background-color: #892be262;
+    color: #000;
+    border-radius: 5px ;
+    opacity: 0.6;
+    padding: 5px;
+}
+
+li{
+    display: inline;
+    list-style-type: none;
+    margin: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover{
+    color: #8b0000;
+}
+
+.end{
+    margin-left: 50px;
+}
