@@ -117,13 +117,26 @@
                 lastName: 'dave',
 
                 concatenate: function(){
-                return this.firstName + this.lastName
+                return this.firstName + this.   lastName
                 }
             }
              console.log(person.concatenate())
             
 
             // console.log(person.personAge)
+
+            let name = {
+                firstName: 'Adeola',
+                lastName : 'Adebayo',
+                middleName : 'Mr Waris',
+    
+                foo: function(){
+                    return  this.middleName + ' ' + this.lastName
+                }
+            };
+
+            console.log(name.foo());
+            // expected output: "bar"
             
             
 
