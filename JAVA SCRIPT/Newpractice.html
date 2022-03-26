@@ -136,23 +136,61 @@
             // expected output: "bar"
             
             
-                let car = {
-                    color: 'white',
-                    speed: '120mhp',
-                    light: 'bright',
-                    status: true, 
+                // let car = {
+                //     color: 'white',
+                //     speed: '120mhp',
+                //     light: 'bright',
+                //     status: true, 
                     
-                    vehicle: function(status){
-                        if (this.status == true) {
-                            console.log('Moving....');
-                        } 
-                        else{
-                            console.log('Stopped..');
-                        }
-                        console.log(car.speed)
-                    }
+                //     vehicle: function(status){
+                //         if (this.status == true) {
+                //             console.log('Moving....');
+                //         } 
+                //         else{
+                //             console.log('Stopped..');
+                //         }
+                //         console.log(car.speed)
+                //     }
+                // }
+                // car.vehicle()
+
+
+                let bike = 'Bajaj from';
+                let owner = 'Mr sherif bought a';
+                let seller = 'Mr faith sold the bike to mr sherif,';
+
+                function bikeOwner (p1,p2){
+                let asset = p1 + ' '+ p2;
+                let engine = asset + seller
+                return engine
                 }
-                car.vehicle()
+                let engine = bikeOwner(owner,bike,seller)
+                console.log(engine)
+                
+                let pariyo = 'Sunmi likes';
+                let sunmi  = 'Pariyo';
+                let hate = 'but'
+                let love = 'she dont like seedof';
+                let realOwner = 'Seedof';
+                let alarino = 'deola';
+
+                function lovematter(p1,p2,p3){
+                    let relationship = p1 + ' '+ p2 + ' ' + p3;
+                    let miss_Sunmi = relationship + realOwner 
+                    return miss_Sunmi
+                }
+                let miss_Sunmi = lovematter(pariyo,sunmi,love)
+                console.log(miss_Sunmi)
+
+
+
+
+
+
+
+
+
+
                     
             
     </script>
