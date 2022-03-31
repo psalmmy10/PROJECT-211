@@ -8,192 +8,143 @@
 </head>
 <body>
 
-    <script>
-        // var snrDev1 = 'Dev sam';
-        // var snrDev2 = 'Dev Ope';
-        // let snrDev3 = 'Dev Deola';
-        // let snrDev4 = 'Dev Sunepa';
+    <P>My first tutorial</P>
+    <p id="demo"></p>
+    <p id="demo11"></p>
 
-        // function concatenatestrings(string1,string2){
-        // let concatenatevalue = string1 + ' ' + string2
-        // return concatenatevalue
-           
-        // }
-        // let concatenatevalue  = concatenatestrings (snrDev1 , snrDev3)
-        // console.log(concatenatevalue)
-        
-            // function strings (a,b,c,d){
-            //     let x = a + ' ' + b  + ' ' + c + ' ' + d;
-            //     return x
-            // }
-            // let x = strings(snrDev3, snrDev4 ,snrDev1,snrDev2)
-            // console.log(x)
-
-
-            // function strings(string1, string2){
-            // let concatenate = string1 +  ' ' + string2
-            // return concatenate 
-            // }
-            // let concatenate = strings(snrDev2,snrDev3)
-            // console.log(concatenate)
-
-
-            // let num = 2
-            // let num2 = 3
-            // let num3 = 4
-
-            // function number(figure1,figure2){
-            //     let sumupvalue =  figure1 + figure2
-            //     let cal = sumupvalue + num2
-            //     return cal
-            // }
-            // let cal = number(num, num2)
-            // console.log(cal)
-
-
-                // let num  = 2
-                // let num1 = 3
-                // let num2 = 3
-                // let num3 = 4
-
-
-                // function mycalculation(multiply1,multipy2){
-                // let multiplication = multiply1 * multipy2
-                // let multiply = multiplication + num2
-                // return multiply
-                // }
-                // let multiply = mycalculation(num,num1,num2)
-                // console.log(multiply)
-
-            // let num  = 2
-            // let num1 = 3
-            // let num2 = 3
-            // let num3 = 4
-
-            // function sum (sum1, sum2){
-            //     let sumup = sum1 * sum2
-            //     let sumup_value = sumup + num3
-            //     return sumup_value 
-            // }
-            // let sumup_value= sum(num,num2, num3)
-            // console.log(sumup_value)
-
-            // let num  = 200
-            // let num2 = 250
-            // let num3 = 250
-
-            // function mycalculation(cal1,cal2) {
-            // let calculator = cal1 - cal2
-            // let Subtraction_value = calculator + num3
-            // let sumup_value = Subtraction_value * num
-            // return sumup_value
-        
-            // }
-            // let sumup_value = mycalculation(num2,num )
-            // console.log(sumup_value)
-
-
-
-            // let num = 2
-            // let num1 = 3
-            // let num2 = 5
-
-            // function Sum(Sum1,Sum2){
-            //     let my_Sum = Sum1 * Sum2
-            //     let sumup = my_Sum + num2
-            //     return sumup 
-            // }
-            //  let sumup = Sum(num, num1, num2)
-            //  console.log(sumup)
-
-            // let personAge = 30
-            // let personHeight = '30 meters'
-            // let personName = 'AJAO'
-
-            // let person = { 
-            //     personAge: 30,
-            //     personHeight: '30 meters',
-            //     personName: 'AJAO',
-            //     firstName : 'SAM',
-            //     lastName: 'dave',
-
-            //     concatenate: function(){
-            //     return this.firstName + this.   lastName
-            //     }
-            // }
-            //  console.log(person.concatenate())
-
-            // let name = {
-            //     firstName: 'Adeola',
-            //     lastName : 'Adebayo',
-            //     middleName : 'Mr Waris',
+    <!-- <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+     
+    <!-- <p id="demo5"></p> -->
+    <p id="demo6"></p>
+    <p id="demo7"></p>  
     
-            //     foo: function(){
-            //         return  this.middleName + ' ' + this.lastName
-            //     }
-            // }
-            // console.log(name.foo());
-            // expected output: "bar"
-            
-            
-                // let car = {
-                //     color: 'white',
-                //     speed: '120mhp',
-                //     light: 'bright',
-                //     status: true, 
-                    
-                //     vehicle: function(status){
-                //         if (this.status == true) {
-                //             console.log('Moving....');
-                //         } 
-                //         else{
-                //             console.log('Stopped..');
-                //         }
-                //         console.log(car.speed)
-                //     }
-                // }
-                // car.vehicle()
+     
+     <!-- <p id="demo4"></p> -->
+     <button>click me</button>
+    <button>Sign up</button> 
+
+    <p id="demo4"></p>
+
+    <!-- <h1>Call the confirmation box</h1>
+    <button onclick="confirmAction()">Delete</button>
+
+    <button  onclick="mydate()">Try it</button>
+    <p id="demo">Dispaly date</p> -->
+
+    <b id="dev"></b>
+    <script> 
+    
+    function confirmAction() {
+        let confirmAction = confirm("Are you sure to execute this action?");
+        if (confirmAction) {
+          alert("Action successfully executed");
+        } else {
+          alert("Action canceled");
+        }
+      }
+
+    function mydate(){
+     let demo = document.getElementById('demo').innerHTML;
+     let demo1 = confirm('The time is not correct')
+     document.getElementById('demo').innerHTML = Date();
+     if (demo){
+         alert('the time is correct');
+         } else {
+         alert('Not a correct time')
+         }
+    }
+  
+
+    var names = {
+        firstName :    'Dev sam',
+        secondName :   'Dev deola',
+        thirdName :    'Dev malik',
+
+        bad: function (){
+            return this.firstName + ' ' + this.secondName;
+        }
+    };
+    document.getElementById('demo4').innerHTML = names.bad();
+   
+    
+
+    var debitCard = {
+        attitude:'i \don\'t care',
+        care:'who you are',
+        behaviour:'where \you\'re',
+
+        calm : function(){
+            let calm1 = this.attitude + ' ' + this.care;
+            return calm1
+        }
+    }
+    document.getElementById('demo6').innerHTML=debitCard.calm();
+    console.log(debitCard.calm())
+
+    // function button() { document.getElementByTagName('button').innerHTML;
+    // button.addEventListener('mouserover', function() {
+    // document.getElementById('butt').innerHTML =  Date(); 
+    // })
+    // }
+    // console.log(button);   
 
 
-                let bike = 'Bajaj from';
-                let owner = 'Mr sherif bought a';
-                let seller = 'Mr faith sold the bike to mr sherif,';
-
-                function bikeOwner (p1,p2){
-                let asset = p1 + ' '+ p2;
-                let engine = asset + seller
-                return engine
-                }
-                let engine = bikeOwner(owner,bike,seller)
-                console.log(engine)
-                
-                let pariyo = 'Sunmi likes';
-                let sunmi  = 'Pariyo';
-                let hate = 'but'
-                let love = 'she dont like seedof';
-                let realOwner = 'Seedof';
-                let alarino = 'deola';
-
-                function lovematter(p1,p2,p3){
-                    let relationship = p1 + ' '+ p2 + ' ' + p3;
-                    let miss_Sunmi = relationship + realOwner 
-                    return miss_Sunmi
-                }
-                let miss_Sunmi = lovematter(pariyo,sunmi,love)
-                console.log(miss_Sunmi)
-                
+    let buttons = document.querySelectorAll('button');
+    for (let i = 0; i < buttons.lenght; i++) {
+      buttons[i].addEventListener('mouseover', function(){
+      document.getElementById('demo').innerHTML = Date();
+     })
+    }
+    console.log(buttons);
 
 
+    let Persons = {
+        Firstname: 'Adesanya',
+        Secondname: 'Oluwadamilare',
+        Lastname:'Samuel',
+        age: 30,
+        height: 'and 10 foots tall',
+
+        people:function(age){
+            if (this.age==40){
+                console.log('right')
+            } else{
+                console.log('great...')
+            }  
+        }    
+    };
+    Persons.people()
 
 
+    let transportation = {
+        carName: 'toyota',
+        carLocation:'ijebu-ode',
+        carDestination: 'ijebu-ife',
+        fuelLitersAtCurrentLocation: 50,
+        fuelLitersAtDestination: 20,
+        fuelRemaining: '5 liters',
 
+        transport:function(fuelRemaining){
+            if(this.fuelRemaining=='5 liters'){
+                // alert('Warning: Fuel Tank Draining')
+                console.log('location: Conoil Fuelling Station')
+            }else{
+                console.log('location:ibadan-garage')
+            }
+        }  
+    }
+    transportation.transport();
 
-
-
-
-
-                    
-            
+    const color = ['white', 'green','black']
+    let color2 = color[1]
+    color[1] ='blue'
+    let color3 = color[1]
+    // color4 = color3
+    document.getElementById('demo11').innerHTML = color[1];
+    console.log(color3)
     </script>
+    
 </body>
 </html>

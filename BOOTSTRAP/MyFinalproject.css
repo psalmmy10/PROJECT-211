@@ -56,3 +56,8 @@ img{
    line-height: 2px;
    margin-top: 0px;
 }
+.carouselExampleCaptions{
+    height: 175px;
+    color: aliceblue;
+    margin-top: 40px;
+}
