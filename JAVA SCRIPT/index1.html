@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+
+
+    <script>
+
+    let transportation = {
+        carName: 'toyota',
+        carLocation:'ijebu-ode',
+        carDestination: 'ijebu-ife',
+        fuelLitersAtCurrentLocation: 50,
+        predictedFuelLitersAtDestination: 20,
+        fuelRemaining: '5 liters',
+
+        transport:function(predictedFuelLitersAtDestination){
+            if(this.predictedFuelLitersAtDestination == 5){
+                // alert('Warning: Fuel Tank Draining')
+                console.log('location: Ijebu-ife')
+            }else{
+                console.log('5 liters')
+            }
+        }  
+    }
+    transportation.transport();
+
+
+        
+
+       function confirmAction() {
+        let confirmAction = confirm("Are you sure to execute this action?");
+        if (confirmAction) {
+          alert("Action successfully executed");
+        } else {
+          alert("Action canceled");
+        }
+        }
+
+       
+
+    </script>
+</body>
+</html>
