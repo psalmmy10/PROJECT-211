@@ -7,6 +7,75 @@
     <title>Document</title>
 </head>
 <body>
+
     
+
+    <br>
+    <br>
+
+    <table border="2" width='100%' cellspacing='0'> 
+        <thead> 
+            <tr height='50px' color='black'>
+                <th>Students Score</th>
+                <th>Excellent(A)</th>
+                <th>Good(B)</th>
+                <th>Fair(C)</th>
+                <th>Poor(D)</th> 
+                <th>Bad(F)</th>  
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Malik</td>
+                <td>
+                    <p id="demo1"></p>
+                </td>
+                <td>
+                    <p id="demo2"></p> 
+                </td>
+                <td>
+                    <p id="demo3"></p>
+                </td>
+                <td>
+                    <p id="demo4"></p>
+                </td> 
+                <td>
+                    <p id="demo5"></p>
+                </td> 
+                <td>
+                    <p id="demo6"></p>
+                </td>  
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+    <!-- INPUT SECTION -->
+
+    <input type="text" id="input">
+    <input type="button" value="get score grade" onclick="getGrade()">
+
+    <!-- INPUT SECTION -->
+
+    <script>
+        function getGrade(){
+            var score = document.getElementById('input').value
+            if(score >= 70 && score <=100){
+                document.getElementById('demo1').innerHTML = 'Grade A';
+            }else if(score >= 60 && score <=69){
+                document.getElementById('demo2').innerHTML = 'Grade B';
+            }else if (score >= 50 && score <=59){
+                document.getElementById('demo3').innerHTML = 'Grade C';
+            }else if (score >= 40 && score <= 49){
+                document.getElementById('demo4').innerHTML = 'Grade D';
+            }else if (score >= 30 && score <= 39){
+                document.getElementById('demo5').innerHTML = 'Grade E';
+            }else if (score >= 0 && score <=29){
+                document.getElementById('demo6').innerHTML = 'Grade F';
+            }else{
+                alert('Invalid Score')
+            }
+        }
+    </script>
 </body>
 </html>
