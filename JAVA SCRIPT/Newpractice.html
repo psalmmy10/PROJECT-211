@@ -22,128 +22,50 @@
     
      
      <!-- <p id="demo4"></p> -->
-     <button>click me</button>
-    <button>Sign up</button> 
+    
 
-    <p id="demo4"></p>
-
-    <!-- <h1>Call the confirmation box</h1>
-    <button onclick="confirmAction()">Delete</button>
-
-    <button  onclick="mydate()">Try it</button>
-    <p id="demo">Dispaly date</p> -->
-
+    
     <b id="dev"></b>
+    <b id="dev1"></b>
+    <b id="dev2"></b>
     <script> 
     
-    function confirmAction() {
-        let confirmAction = confirm("Are you sure to execute this action?");
-        if (confirmAction) {
-          alert("Action successfully executed");
-        } else {
-          alert("Action canceled");
-        }
-      }
-
-    function mydate(){
-     let demo = document.getElementById('demo').innerHTML;
-     let demo1 = confirm('The time is not correct')
-     document.getElementById('demo').innerHTML = Date();
-     if (demo){
-         alert('the time is correct');
-         } else {
-         alert('Not a correct time')
-         }
-    }
+    
   
 
-    var names = {
-        firstName :    'Dev sam',
-        secondName :   'Dev deola',
-        thirdName :    'Dev malik',
-
-        bad: function (){
-            return this.firstName + ' ' + this.secondName;
-        }
-    };
-    document.getElementById('demo4').innerHTML = names.bad();
+   
    
     
 
-    var debitCard = {
-        attitude:'i \don\'t care',
-        care:'who you are',
-        behaviour:'where \you\'re',
-
-        calm : function(){
-            let calm1 = this.attitude + ' ' + this.care;
-            return calm1
-        }
-    }
-    document.getElementById('demo6').innerHTML=debitCard.calm();
-    console.log(debitCard.calm())
-
-    // function button() { document.getElementByTagName('button').innerHTML;
-    // button.addEventListener('mouserover', function() {
-    // document.getElementById('butt').innerHTML =  Date(); 
-    // })
-    // }
-    // console.log(button);   
+   
 
 
-    let buttons = document.querySelectorAll('button');
-    for (let i = 0; i < buttons.lenght; i++) {
-      buttons[i].addEventListener('mouseover', function(){
-      document.getElementById('demo').innerHTML = Date();
-     })
-    }
-    console.log(buttons);
+
+    
 
 
-    let Persons = {
-        Firstname: 'Adesanya',
-        Secondname: 'Oluwadamilare',
-        Lastname:'Samuel',
-        age: 30,
-        height: 'and 10 foots tall',
-
-        people:function(age){
-            if (this.age==40){
-                console.log('right')
-            } else{
-                console.log('great...')
-            }  
-        }    
-    };
-    Persons.people()
+    
 
 
-    let transportation = {
-        carName: 'toyota',
-        carLocation:'ijebu-ode',
-        carDestination: 'ijebu-ife',
-        fuelLitersAtCurrentLocation: 50,
-        fuelLitersAtDestination: 20,
-        fuelRemaining: '5 liters',
-
-        transport:function(fuelRemaining){
-            if(this.fuelRemaining=='5 liters'){
-                // alert('Warning: Fuel Tank Draining')
-                console.log('location: Conoil Fuelling Station')
-            }else{
-                console.log('location:ibadan-garage')
-            }
-        }  
-    }
-    transportation.transport();
+    
 
     const color = ['white', 'green','black']
-    let color2 = color[1]
+    // let color2 = color[1]
     color[1] ='blue'
-    let color3 = color[1]
+    // let color3 = color[1]
     // color4 = color3
     document.getElementById('demo11').innerHTML = color[1];
-    console.log(color3)
+    console.log(color[1])
+
+
+    const StudentsInPryOne= ['Mike','Bolu','Seun','Funmi']
+    // let pupil = StudentsInPryOne[2]
+    StudentsInPryOne[2] = 'sam'
+    // let pupils = StudentsInPryOne[2]
+    document.getElementById('dev1').innerHTML = StudentsInPryOne[2];
+    document.getElementById('dev2').innerHTML = StudentsInPryOne;
+    console.log(StudentsInPryOne[2])
+    
     </script>
     
 </body>
