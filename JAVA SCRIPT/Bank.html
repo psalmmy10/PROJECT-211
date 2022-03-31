@@ -12,18 +12,74 @@
 
 
     <script>
-      var balance = "USD 4000.00";
+      var isBalance = "USD 4000.00";
       var isActive = true;
       var checkBalance = true;
 
 
       if (checkBalance == true){
-          console.log('your balance is USD 4000.00')
+          console.log('Your balance is USD 4000.00')
       } else{
           console.log('Sorry! \you\'ve go no available balance...')
+      } 
+
+      if (isActive == true) {
+          console.log('Your account is active...proceed')
+      } else {
+          console.log ('No account available!')
       }
 
-      
+      if(isBalance == 0){
+          console.log('USD 4000.00')
+      } else{
+          console.log('Your balance is empty!')
+          alert('Hello UBA i \don\'nt have access to  my account why?')
+      } 
+
+      if (isBalance == 'USD 4000.00'){
+          console.log('\Thank\'s  for banking with us...\We\'ll connect you to our customer service')
+      }
+
+
+    var price = 30.00;
+    var money = 20.00;
+
+
+    if (money >= price){
+        console.log('buy product')
+    } else {
+        console.log('i no guide')
+    }
+
+
+    let studentsGrade={
+         a : 70-100,
+         b : 60-69,
+         c : 50-59,
+         d : 40-49,
+
+         grade:function(){
+          if(a>=b){
+          
+        }
+        }
+    }
+
+    if(num >= 80){
+	printf(" You got A grade"); // printing outputs
+		}
+	else if ( num >=60){ // Note the space between else & if
+		printf(" You got B grade");
+		}
+	else if ( num >=40){
+		printf(" You got C grade");
+		}
+	else if ( num < 40){
+		printf(" You Failed in this exam");
+		}
+    return 0;
+}
+
     </script>
 </body>
 </html>
