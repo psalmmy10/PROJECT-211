@@ -17,15 +17,18 @@
     <script>
 
         let buttons = document.querySelectorAll('button');
-        for (let i = 0; i < buttons.lenght; i++) {
-        buttons[i].addEventListener('mouseover', function(){
-        console.log(buttons[i]);
-        alert()
-        document.getElementById('demo').innerHTML = Date();
-        })
+        for (let i = 0; i < buttons.length; i++) {
+            console.log(buttons[i]);
+            buttons[i].addEventListener('mouseover', function(){  
+            document.getElementById('demo4').innerHTML = Date();
+            })
+
+            buttons[i].addEventListener('mouseout', function(){  
+            document.getElementById('demo4').innerHTML = Date();
+            })
         }
-        console.log(buttons); 
-        
+        // console.log(buttons); 
+
     </script>
 </body>
 </html>

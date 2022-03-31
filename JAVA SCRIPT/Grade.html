@@ -21,7 +21,8 @@
                 <th>Good(B)</th>
                 <th>Fair(C)</th>
                 <th>Poor(D)</th> 
-                <th>Bad(F)</th>  
+                <th>Bad(F)</th> 
+                <th>Failed</th> 
             </tr>
         </thead>
         <tbody>
@@ -59,7 +60,13 @@
 
     <script>
         function getGrade(){
-            var score = document.getElementById('input').value
+            document.getElementById('demo1').innerHTML = '';
+            document.getElementById('demo2').innerHTML = '';
+            document.getElementById('demo3').innerHTML = '';
+            document.getElementById('demo4').innerHTML = '';
+            document.getElementById('demo5').innerHTML = '';
+            document.getElementById('demo6').innerHTML = '';
+            var score = document.getElementById('input').value;
             if(score >= 70 && score <=100){
                 document.getElementById('demo1').innerHTML = 'Grade A';
             }else if(score >= 60 && score <=69){
