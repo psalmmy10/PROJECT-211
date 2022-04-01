@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+         var balance = 1000 ;
+         var price = 500 ;
+         var output = " \i\'m buying..."
+
+        switch (balance){
+        case 3000 :
+            console.log("Mr malik wants to buy some goods"); 
+        break
+        case 1000:
+            console.log("i have only"+ ' ' + "$" +balance.toFixed(2) + '.'); 
+        break
+        case 100:
+            console.log("He is not buying"); 
+        break
+        default:
+            output += "Goods not available in stock";
+            console.log(output);
+        }
+
+       
+
+    </script>
+</body>
+</html>
