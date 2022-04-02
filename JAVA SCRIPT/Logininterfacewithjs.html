@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <input type="username" id="myUserName" value="" placeholder="Username"><br><br>
+        <input type="email" id="myEmail" value="" placeholder="email"><br><br>
+        <input type="password" id="password." value="">
+        <button id="button">LOGIN</button>
+    <script>
+         
+        function getLoginInfo(){
+            var x = document.getElementById('myUserName').value;
+            var y = document.getElementById('myEmail').value;
+            var z = document.getElementById('password.').value;
+
+            if ((x == "Psalmmy" && y === "Adesanyasamuel01@gmail.com") && (z =="password123")){
+                console.log('Login Successful');
+            }
+            else{
+                console.log('Incorrect Login');
+            }
+        }
+
+        const button = document.getElementById('button');
+        button.addEventListener('click', () =>{
+            getLoginInfo();   
+        });
+  
+    </script>
+</body>
+</html>
