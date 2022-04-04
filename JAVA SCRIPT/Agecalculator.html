@@ -10,7 +10,18 @@
 
 
     <script>
-        
+        function subtractYear(currentYear){
+            return function nestedAdd(dateOfBirth){
+                return currentYear - dateOfBirth;
+            }
+        }
+
+        const currentYear = new Date().getFullYear();
+
+        const getAge = subtractYear(currentYear);
+
+        console.log(`Your age is ${getAge(1991)}`);
+
     </script>
 </body>
 </html>
