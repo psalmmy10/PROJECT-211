@@ -184,15 +184,15 @@
                         <div class="form-group">
                              <div class="col">
                                  <p class="font-weight-muted"> Email Address/Username</p>
-                                 <input type="text"  class="form-control" required> 
+                                 <input type="email"  class="form-control" id="email" required> 
                             </div>
                             <br><br>
                             <div class="col">
                                 <p class="font-weight-muted text-sm-small">Password <a href="#"><span style="position: absolute; right: 1rem;">Forget Password</span></a></p>
-                                <input type="text" class="form-control" required>
+                                <input type="password" class="form-control" id="password" required>
                             </div> 
                         </div>
-                        <button class="btn log btn-primary mt-4"  type="submit" style="width: 90%;">Login</button>
+                        <button class="btn log btn-primary mt-4"  type="submit" style="width: 90%;" id="button">Login</button>
                     </form> 
                     <a href="#" class="bottom text-md-12 pt-5 pb-5 font-weight-light">help@alat.ng</a><a href="#"><span style="position:absolute; right: 4rem;">070022552528</span></a> 
                </div>   
@@ -200,8 +200,25 @@
         </div>
     </div>
 
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script>
+      function getinfo() {
+          var x = document.getElementById('email').value;
+          var y = document.getElementById('password').value;
 
+          if ( x === 'Adesanyasamuel01@gmail.com' &&  y === 'password123'){
+              alert('Successful login');
+          }
+          else {
+              alert ('No Password Match');
+          }
+        }
+        const button= document.getElementById('button');
+        button.addEventListener('click', () =>{
+            getinfo();
+        });
+    </script>
+
+    
     <!-- jQuery library -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
 

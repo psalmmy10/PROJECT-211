@@ -8,10 +8,11 @@
 </head>
 <body>
     
-        <input type="username" id="myUserName" value="" placeholder="Username"><br><br>
-        <input type="email" id="myEmail" value="" placeholder="email"><br><br>
-        <input type="password" id="password." value="" placeholder="password"> <br><br>
-        <button id="button">LOGIN</button>
+    <input type="username" id="myUserName" value="" placeholder="Username"><br><br>
+    <input type="email" id="myEmail" value="" placeholder="email"><br><br>
+    <input type="password" id="password." value="" placeholder="password"> <br><br>
+    <button id="button">LOGIN</button>
+    
     <script>
          
         function getLoginInfo(){
@@ -19,7 +20,7 @@
             var y = document.getElementById('myEmail').value;
             var z = document.getElementById('password.').value;
 
-            if ((x == "Psalmmy" && y === "Adesanyasamuel01@gmail.com") && (z =="password123")){
+            if ((x === "Psalmmy" && y === "Adesanyasamuel01@gmail.com") && (z ==="password123")){
                 alert('Login Successful');
             }
             else{

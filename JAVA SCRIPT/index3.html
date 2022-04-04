@@ -10,22 +10,33 @@
    
     
     <h1>Call the confirmation box</h1>
-    <button onclick="confirmAction()">Delete</button>
+    <button  id="button">Delete</button>
 
-    <button  onclick="mydate()">Try it</button>
+    <button id="button" >Try it</button>
     <p id="demo">Dispaly date</p> 
     
     <script>
-         function mydate(){
+        function mydate(){
         let demo = document.getElementById('demo').innerHTML;
         let demo1 = confirm('The time is not correct')
         document.getElementById('demo').innerHTML = Date();
         if (demo){
             alert('the time is correct');
-            } else {
+        } else {
             alert('Not a correct time')
-            }
         }
+        }
+
+        const button = document.getElementById('button'); 
+        button.addEventListener('click', () => {
+            mydate();
+        })
+
+        const button = document.getElementById('button');
+        button.addEventListener('click', () => {
+            confirmAction();
+        })
+        
     </script>
 </body>
 </html>
