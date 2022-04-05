@@ -8,55 +8,65 @@
     <title>Document</title>
 </head>
 <body>
-
-    <p id="acct">
-        <input placeholder="Check true / false">
-    </p>
-
-    <p id="acct1">
-        <input placeholder="Check if active">
-    </p>
-
      
-    <input type="text" id="input" value="">
-    <input type="button" id="button" value="Check Balance">
-    <br><br>
-    <input type ="text" id="input1" value = "">
-    <input type ="button" id="button1" value="If Active">
+    <h5 id="message">
+
+    </h5>
+    <p >
+        <input type="number" id="balanceInput">
+    </p>
+    
+    <label for="">Account Status</label>
+    <select name="" id="activeStatusInput" >
+        <option  value="1">true</option>
+        <option  value="0">false</option>
+    </select><br>
+
+    <label for="">Balance Status</label>
+    <select name="" id="balanceStatusInput" >
+        <option value="1">true</option>
+        <option  value="0">false</option>
+    </select><br>
+
+
+    <!-- <input type="text" id="input" value=""> -->
+    <input  onclick="bankActivities()" type="button" id="button" value="Check">
+    
     
     <script>  
-     function bankActivities(){
-      var activit = document.getElementById("input");
-      var isBalance =  1000;
-      var isActive = true;
-      var checkBalance = false;
-       
-    
-     if(checkBalance == true){
-         if(isActive && isBalance >0){
-             document.getElementById("acct1").innerHTML = "Your balance is $" + isBalance.toFixed(2) + "."
-             console.log("Your balance is $" + isBalance.toFixed(2) + ".")
-         }
-         else if (!isActive){
-             console.log('Your account is no longer active')
-         }
-         else if (isBalance == 0){
-             console.log('Your account is empty')
-         }
-         else if (isBalance < 0) {
-             console.log('Your balance is negative contact bank')
-         }    
-     }
-     else {
-        document.getElementById("acct").innerHTML = 'Thank you. Have a nice day!'
-        console.log('Thank you. Have a nice day!')
-     }
+      function bankActivities(){
+        var message = document.getElementById("message");
+        var isBalance = document.getElementById("balanceInput").value;
+        var isBalance = Number(isBalance); 
+        var isActive = document.getElementById('activeStatusInput').value;
+        var checkBalance = document.getElementById('balanceStatusInput').value;
+        
+    if (isBalance == "") {
+        message.innerHTML = "The input field can not be empty"
+    }  
+    else{
+        if(checkBalance == true){
+            if(isActive==true && isBalance > 0){
+                message.innerHTML = "Your balance is $" + isBalance.toFixed(2) + ".";
+            }
+            else if (isActive == false){
+                message.innerHTML = 'Your account is no longer active';
+            }
+            else if (isBalance == 0){
+                message.innerHTML ='Your account is empty';
+            }
+            else if (isBalance < 0) {
+                message.innerHTML = 'Your balance is negative contact bank'
+            }    
+        }
+        else {
+            message.innerHTML = 'Thank you. Have a nice day!'
+        }
      }
 
-     const button =  document.getElementById("button");
-     button.addEventListener("click", () => {
-        bankActivities() 
-     })
+    }  
+        
+     
 
     </script>
 </body>

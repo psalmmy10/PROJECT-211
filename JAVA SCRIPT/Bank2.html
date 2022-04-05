@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      var activit = document.getElementById("input");
+      var isBalance =  1000;
+      var isActive = false;
+      var checkBalance = true;
+       
+    
+     if(checkBalance == true){
+         if(isActive && isBalance >0){
+             console.log("Your balance is $" + isBalance.toFixed(2) + ".")
+         }
+         else if (!isActive){
+             console.log('Your account is no longer active')
+         }
+         else if (isBalance == 0){
+             console.log('Your account is empty')
+         }
+         else if (isBalance < 0) {
+             console.log('Your balance is negative contact bank')
+         }    
+     }
+     else {
+        console.log('Thank you. Have a nice day!')
+     }
+
+    </script>
+</body>
+</html>
