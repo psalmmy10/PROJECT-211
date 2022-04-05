@@ -41,29 +41,28 @@
         var isActive = document.getElementById('activeStatusInput').value;
         var checkBalance = document.getElementById('balanceStatusInput').value;
         
-    if (isBalance == "") {
+        if (isBalance == "") {
         message.innerHTML = "The input field can not be empty"
-    }  
-    else{
-        if(checkBalance == true){
-            if(isActive==true && isBalance > 0){
-                message.innerHTML = "Your balance is $" + isBalance.toFixed(2) + ".";
+        }  
+        else{
+            if(checkBalance == true){
+                if(isActive==true && isBalance > 0){
+                    message.innerHTML = "Your balance is $" + isBalance.toFixed(2) + ".";
+                }
+                else if (isActive == false){
+                    message.innerHTML = 'Your account is no longer active';
+                }
+                else if (isBalance == 0){
+                    message.innerHTML ='Your account is empty';
+                }
+                else if (isBalance < 0) {
+                    message.innerHTML = 'Your balance is negative contact bank'
+                }    
             }
-            else if (isActive == false){
-                message.innerHTML = 'Your account is no longer active';
+            else {
+                message.innerHTML = 'Thank you. Have a nice day!'
             }
-            else if (isBalance == 0){
-                message.innerHTML ='Your account is empty';
-            }
-            else if (isBalance < 0) {
-                message.innerHTML = 'Your balance is negative contact bank'
-            }    
         }
-        else {
-            message.innerHTML = 'Thank you. Have a nice day!'
-        }
-     }
-
     }  
         
      
