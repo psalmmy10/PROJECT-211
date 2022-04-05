@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../BOOTSTRAP/localserver.css">
+    <style>
+        .header{
+            width: 100%;
+            border: #fff 2px solid;
+            border-radius: 10px;
+        }
+        .border{
+            border: #fff 2px solid;   
+        }
+        .content{
+            background-color:lavender;
+            width: 100%;
+            border: #fff 2px solid;
+            border-radius: 10px;
+            height:500px;
+        }
+        .bar{
+            background-color:orange;
+            border: #fff 2px solid;
+            border-radius: 10px;
+            /* height:400px; */
+        }
+        .footer{
+            width: 100%; 
+            border: #fff 2px solid;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid  pr-3 text-center bg-info header" >
+        <div class="col" >
+            <div class=" col-sm-12 " >
+                <h1>HEADER</h1>
+            </div>         
+        </div>
+    </div>
+    <div class="container-fluid text-center border">
+       <div class="row">
+            <div class="col-md-10 p-3 col-sm-9 pr-4 order-sm-12  content">
+                <h1>CONTENT</h1>
+            </div>
+            <div class="col-md-2 p-3 col-sm-3 col-h-300  bar order-sm-2">
+                <h1>SIDEBAR</h1>
+            </div>
+      </div>
+       </div> 
+      <div class="container-fluid p-3 text-center bg-info footer  ">
+            <div class="col" >
+                <div class=" col-sm-12 align-self-end " >
+                    <h1>footer</h1>
+                </div>         
+            </div>
+       </div> 
+    </div>
+</body>
+</html>
