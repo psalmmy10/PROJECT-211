@@ -15,6 +15,9 @@
     <p >
         <input type="number" id="balanceInput">
     </p>
+    <p>
+        <input type="number" id="acct" onkeyup="validateAccountNo(event)">
+    </p>
     
     <label for="">Account Status</label>
     <select name="" id="activeStatusInput" >
@@ -34,6 +37,39 @@
     
     
     <script>  
+
+      let userId = [
+          {acctName: "Adesanay Samuel", acctNo: 2114080424},
+          {acctName: "Ajiwe Opeyemi", acctNo: 2110044444},
+          {acctName: "Abayomi James", acctNo: 3145790857},
+      ] 
+
+    //   let details = userId.map(function validateAccountNo(users){
+        for (i = 0 ; i < userId.length; i++)
+        console.log(userId[i])
+        acct.innerHTML.userId
+    //   })
+
+          function validateAccountNo(e){
+          console.log(e.target.value)
+        //   for (i = 0 ; i < userId.length; i++){
+        //       if(userId[i].acctNo.acctName == e.target.value){
+        //         console.log(acctName)
+        //       }
+        //     }   
+     
+            if (e.target.value.length == 10){
+                console.log("Valid");
+            }
+            else{
+                console.warn("Invalid");
+            }
+        }
+
+       
+       
+
+
       function bankActivities(){
         var message = document.getElementById("message");
         var isBalance = document.getElementById("balanceInput").value;
