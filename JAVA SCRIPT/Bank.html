@@ -18,7 +18,7 @@
     <p>
         <input type="number" id="acct" onkeyup="validateAccountNo(event)">
     </p>
-    
+    <p id="output"></p>
     <label for="">Account Status</label>
     <select name="" id="activeStatusInput" >
         <option  value="1">true</option>
@@ -43,23 +43,34 @@
           {acctName: "Ajiwe Opeyemi", acctNo: 2110044444},
           {acctName: "Abayomi James", acctNo: 3145790857},
       ] 
+      let ouput = document.querySelector('#output');
 
     //   let details = userId.map(function validateAccountNo(users){
-        for (i = 0 ; i < userId.length; i++)
-        console.log(userId[i])
-        acct.innerHTML.userId
+        // for (i = 0 ; i < userId.length; i++)
+        // console.log(userId[i])
+        // acct.innerHTML = userId[i]
     //   })
 
           function validateAccountNo(e){
           console.log(e.target.value)
-        //   for (i = 0 ; i < userId.length; i++){
-        //       if(userId[i].acctNo.acctName == e.target.value){
-        //         console.log(acctName)
-        //       }
-        //     }   
+          
      
             if (e.target.value.length == 10){
+                let status = false;
+                let acctName='';
                 console.log("Valid");
+                for (i = 0 ; i < userId.length; i++){
+                    if(userId[i].acctNo == e.target.value){
+                        acctName=userId[i];
+                        status=true
+                   } 
+                }   
+                if(status) {
+                 ouput.innerHTML =acctName.acctName
+                }
+                else {
+                    ouput.innerHTML =''
+                }
             }
             else{
                 console.warn("Invalid");
