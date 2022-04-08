@@ -190,6 +190,7 @@
                             <div class="col">
                                 <p class="font-weight-muted text-sm-small">Password <a href="#"><span style="position: absolute; right: 1rem;">Forget Password</span></a></p>
                                 <input type="password" class="form-control" id="password" required>
+                                <span id="short"></span>
                             </div> 
                         </div>
                         <button class="btn log btn-primary mt-4"  type="submit" style="width: 90%;" id="button">Login</button>
@@ -201,12 +202,19 @@
     </div>
     
     <script>
+       const form = document.querySelector(".btn");
+       form.addEventListener("submit", e => {
+        e.preventDefault
+       });
       function getinfo() {
           var x = document.getElementById('email').value;
           var y = document.getElementById('password').value;
 
           if ( x === 'Adesanyasamuel01@gmail.com' &&  y === 'password123'){
               alert('Successful login');
+          }
+          else if (!y.lenght == 11){
+              alert("false")
           }
           else {
               alert ('No Password Match');
