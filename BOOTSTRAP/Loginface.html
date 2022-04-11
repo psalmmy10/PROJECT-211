@@ -233,16 +233,20 @@
                     for (let i = 0; i < loginDetails.length ; i++){
                         if (input == loginDetails[i].email && input == loginDetails[i].password){ // THIS IS THE INPUT (but is doesn't seem to be working) // 
                             swal("Good!", " Successful Login!", "success");
+                            console.log("Good!", " Successful Login!", "success")
                         }
                         else{
                             if(email.input !== loginDetails){           // THIS IS THE INPUT (but is doesn't seem to be working) // 
-                            swal("Invalid Input!", "No password match!", "error");  
+                            swal("Invalid Input!", "No password match!", "error");
+                            console.log("Invalid Input!", "No password match!", "error")  
                             }
                             else if( password.input < 11){                          // THIS IS THE INPUT (but is doesn't seem to be working) // 
                                 swal("Invalid Input!", "Passsword must be atleast 11 characters!", "error");  
+                                console.log("Invalid Input!", "Passsword must be atleast 11 characters!", "error")
                             }
                             else {
                                 swal("Invalid Input!", "No password match!", "error")
+                                console.log("Invalid Input!", "No password match!", "error")
                             }
                         }
                     }  
