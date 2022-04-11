@@ -175,7 +175,7 @@
             </div>
             <div class="col-md-5  holder-three m-auto">
                <div class="container p-0 m-0 ">
-                    <form class="col-sm-12">
+                    <form class="col-sm-12" id="signup">
                         <a href="#"><p class="text-center text-sm-12 pt-5 font-weight-light">Go to ALAT Websites</p></a> 
                         <br><br>
                         <h5  class="text-muted text-sm-12 ">Welcome Back!</h5>
@@ -184,7 +184,7 @@
                         <div class="form-group">
                              <div class="col">
                                  <p class="font-weight-muted"> Email Address/Username</p>
-                                 <input type="email"  class="form-control" id="email" required> 
+                                 <input type="email"  class="form-control" id="email" required value=""> 
                             </div>
                             <br><br>
                             <div class="col">
@@ -202,29 +202,56 @@
     </div>
     
     <script>
-       const form = document.querySelector(".btn");
-       form.addEventListener("submit", e => {
-        e.preventDefault
-       });
-      function getinfo() {
-          var x = document.getElementById('email').value;
-          var y = document.getElementById('password').value;
-
-          if ( x === 'Adesanyasamuel01@gmail.com' &&  y === 'password123'){
-              alert('Successful login');
-          }
-          else if (!y.lenght == 11){
-              alert("false")
-          }
-          else {
-              alert ('No Password Match');
-          }
+        let loginDetails = [
+            {email:"Samueladesanya10@gmail.com" , password:"password_123."},
+            {email:"adesanyajeffery170@gmailcom" , password:"adesanya_123."},
+            {email:"Adesanyasamuel01@gmailcom" , password:"Adesanya123"}
+        ]
+  
+        function getinfo(details) {
+            for (let i = 0; i < loginDetails.length ; i++){
+                if (loginDetails[i] == "" ){
+                    console.log("success")
+                }
+            }  
         }
+        
+       const form = document.querySelector("#signup");
+       form.addEventListener("submit", e => {
+                e.preventDefault()
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+
+                function getinfo() {
+                    let input = event.target.value
+                    var email = document.getElementById('email').value;
+                    var password = document.getElementById('password').value;
+
+                    for (let i = 0; i < loginDetails.length ; i++){
+                        if (input == loginDetails[i].email && input == loginDetails[i].password){
+                            swal("Good!", " Successful Login!", "success");
+                        }
+                        else{
+                            if(email.input !== loginDetails){
+                            swal("Invalid Input!", "No password match!", "error");   
+                            }
+                            else if( password.input < 11){
+                                swal("Invalid Input!", "Passsword must be atleast 11 characters!", "error");
+                            }
+                            else {
+                                swal("Invalid Input!", "No password match!", "error")
+                            }
+                        }
+                    }  
+                }
+        });
+        
         const button= document.getElementById('button');
         button.addEventListener('click', () =>{
             getinfo();
         });
     </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     
     <!-- jQuery library -->

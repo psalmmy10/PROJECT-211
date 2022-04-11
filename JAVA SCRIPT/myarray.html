@@ -7,6 +7,36 @@
     <title>Document</title>
 </head>
 <body>
-    
+
+    <p id="name1">
+
+    </p>
+
+    <script>
+        let names = ["sam","malik","depo"]
+        function people(name) {
+            for (let i = 0; i < names.length; i++){
+                if (names[i] == name){
+                    console.log(names[i]);
+                    // document.getElementById("names").innerHTML = (names[i])
+                    name1.innerHTML = (names[i])
+                }
+            }
+        } 
+        people("malik")  
+
+        let acctDetails = [ "Adesanya Samuel Oluwadamilare" ,  "2114080424", "Ajiwe Opeyemi Oluwaseun", "2018011003"]
+        function acct(acctStatus) {
+            for (let i = 0 ; i  < acctDetails.length ; i++){
+                if (acctDetails[i] == acctStatus ){
+                    console.log(acctDetails[i]);
+                    name1.innerHTML = (acctDetails[i])
+                }
+            }
+        }
+        acct(acctDetails[0])
+        
+
+    </script>
 </body>
 </html>
