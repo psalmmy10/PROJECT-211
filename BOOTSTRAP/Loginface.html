@@ -183,13 +183,15 @@
                         <br>
                         <div class="form-group">
                              <div class="col">
+                      <!-- // HERE IS WHERE I TARGETED THE EVENTS TO //            -->
                                  <p class="font-weight-muted"> Email Address/Username</p>
-                                 <input type="email"  class="form-control" id="email" required value=""> 
+                                 <input type="email"  class="form-control" id="email" required value="" onkeyup="getinfo(event)"> 
                             </div>
                             <br><br>
                             <div class="col">
+                      <!-- // HERE IS WHERE I TARGETED THE EVENTS TO //            -->          
                                 <p class="font-weight-muted text-sm-small">Password <a href="#"><span style="position: absolute; right: 1rem;">Forget Password</span></a></p>
-                                <input type="password" class="form-control" id="password" required>
+                                <input type="password" class="form-control" id="password" required onkeyup="getinfo(event)">
                                 <span id="short"></span>
                             </div> 
                         </div>
@@ -207,7 +209,7 @@
             {email:"adesanyajeffery170@gmailcom" , password:"adesanya_123."},
             {email:"Adesanyasamuel01@gmailcom" , password:"Adesanya123"}
         ]
-  
+//   LOOP FOR THE ARRAY //
         function getinfo(details) {
             for (let i = 0; i < loginDetails.length ; i++){
                 if (loginDetails[i] == "" ){
@@ -222,21 +224,22 @@
                 var email = document.getElementById('email').value;
                 var password = document.getElementById('password').value;
 
-                function getinfo() {
-                    let input = event.target.value
+                let input = event.target.value // TRIED TO TARGET IT TO THIS INPUT //
+      
+                function getinfo() {   // THIS THE FUNCTION //
                     var email = document.getElementById('email').value;
                     var password = document.getElementById('password').value;
 
                     for (let i = 0; i < loginDetails.length ; i++){
-                        if (input == loginDetails[i].email && input == loginDetails[i].password){
+                        if (input == loginDetails[i].email && input == loginDetails[i].password){ // THIS IS THE INPUT (but is doesn't seem to be working) // 
                             swal("Good!", " Successful Login!", "success");
                         }
                         else{
-                            if(email.input !== loginDetails){
-                            swal("Invalid Input!", "No password match!", "error");   
+                            if(email.input !== loginDetails){           // THIS IS THE INPUT (but is doesn't seem to be working) // 
+                            swal("Invalid Input!", "No password match!", "error");  
                             }
-                            else if( password.input < 11){
-                                swal("Invalid Input!", "Passsword must be atleast 11 characters!", "error");
+                            else if( password.input < 11){                          // THIS IS THE INPUT (but is doesn't seem to be working) // 
+                                swal("Invalid Input!", "Passsword must be atleast 11 characters!", "error");  
                             }
                             else {
                                 swal("Invalid Input!", "No password match!", "error")
