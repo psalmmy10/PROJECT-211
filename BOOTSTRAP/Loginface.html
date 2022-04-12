@@ -212,7 +212,7 @@
             var emails = document.getElementById('email1').value;
             var passwords = document.getElementById('password1').value;
             for (let i = 0; i < loginDetails.length ; i++){
-               if (emails == "" || passwords == ""){
+               if(emails == "" || passwords == ""){
                     swal("Sorry!" , "Can't have empty fields" , "error")
                }
                else{
@@ -234,7 +234,7 @@
                     //     console.log("Invalid Input!", "No password match!", "error")
                     // }
                 } 
-               }      
+            }      
         }  
    
        const form = document.querySelector("#signup");
