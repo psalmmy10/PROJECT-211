@@ -185,13 +185,13 @@
                              <div class="col">
                       <!-- // HERE IS WHERE I TARGETED THE EVENTS TO //            -->
                                  <p class="font-weight-muted"> Email Address/Username</p>
-                                 <input type="email"  class="form-control" id="email" required value="" onkeyup="getinfo(event)"> 
+                                 <input type="email"  class="form-control" id="email1" required value="" > 
                             </div>
                             <br><br>
                             <div class="col">
                       <!-- // HERE IS WHERE I TARGETED THE EVENTS TO //            -->          
                                 <p class="font-weight-muted text-sm-small">Password <a href="#"><span style="position: absolute; right: 1rem;">Forget Password</span></a></p>
-                                <input type="password" class="form-control" id="password" required onkeyup="getinfo(event)">
+                                <input type="password" class="form-control" id="password1" required >
                                 <span id="short"></span>
                             </div> 
                         </div>
@@ -206,57 +206,55 @@
     <script>
         let loginDetails = [
             {email:"Samueladesanya10@gmail.com" , password:"password_123."},
-            {email:"adesanyajeffery170@gmailcom" , password:"adesanya_123."},
-            {email:"Adesanyasamuel01@gmailcom" , password:"Adesanya123"}
+            {email:"adesanyajeffery170@gmail.com" , password:"adesanya123."},
+            {email:"Adesanyasamuel01@gmail.com", password:"Adesanya123678"}
         ]
-//   LOOP FOR THE ARRAY //
+
         function getinfo(details) {
+            var emails = document.getElementById('email1').value;
+            var passwords = document.getElementById('password1').value;
             for (let i = 0; i < loginDetails.length ; i++){
-                if (loginDetails[i] == "" ){
-                    console.log("success")
-                }
-            }  
-        }
+               if (emails == "" || passwords == ""){
+                    swal("Sorry!" , "Can't have empty fields" , "error")
+               }
+               else{
+                    if( emails == loginDetails[i].email && passwords == loginDetails[i].password){
+                        console.log("success")
+                        swal("Welcome!", " Successful Login!", "success");
+                        break;
+                    }
+                    else if (emails !== loginDetails[i].email || passwords !== loginDetails[i].password) {
+                        swal("Incorrect Input!", "Email or Password does not correspond", "error");
+                        console.log("Invalid Input!", "Email does not correspond!", "error")  
+                    }
+                    // else if( passwords !== 11){                          
+                    //     swal("Invalid!", "Passsword must be atleast 11 characters!", "error");  
+                    //     console.log("Invalid Input!", "Passsword must be atleast 11 characters!", "error")
+                    // }
+                    // else {
+                    //     swal("Invalid Input!", "No password match!", "error")
+                    //     console.log("Invalid Input!", "No password match!", "error")
+                    // }
+                } 
+               }
+                
+        }  
+    
+    
         
        const form = document.querySelector("#signup");
        form.addEventListener("submit", e => {
                 e.preventDefault()
-                var email = document.getElementById('email').value;
-                var password = document.getElementById('password').value;
+                
 
-                let input = event.target.value // TRIED TO TARGET IT TO THIS INPUT . //
-      
-                function getinfo() {   // THIS THE FUNCTION . //
-                    var email = document.getElementById('email').value;
-                    var password = document.getElementById('password').value;
-
-                    for (let i = 0; i < loginDetails.length ; i++){
-                        if (input == loginDetails[i].email && input == loginDetails[i].password){ // THIS IS THE INPUT (but is doesn't seem to be working) // 
-                            swal("Good!", " Successful Login!", "success");
-                            console.log("Good!", " Successful Login!", "success")
-                        }
-                        else{
-                            if(email.input !== loginDetails){           // THIS IS THE INPUT (but is doesn't seem to be working) // 
-                            swal("Invalid Input!", "No password match!", "error");
-                            console.log("Invalid Input!", "No password match!", "error")  
-                            }
-                            else if( password.input < 11){                          // THIS IS THE INPUT (but is doesn't seem to be working) // 
-                                swal("Invalid Input!", "Passsword must be atleast 11 characters!", "error");  
-                                console.log("Invalid Input!", "Passsword must be atleast 11 characters!", "error")
-                            }
-                            else {
-                                swal("Invalid Input!", "No password match!", "error")
-                                console.log("Invalid Input!", "No password match!", "error")
-                            }
-                        }
-                    }  
-                }
+                
         });
         
         const button= document.getElementById('button');
         button.addEventListener('click', () =>{
             getinfo();
         });
+        
     </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
