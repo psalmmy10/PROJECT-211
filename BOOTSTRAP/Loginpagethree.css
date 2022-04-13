@@ -1,0 +1,19 @@
+body{
+    background-image: url(../Image/Wema-54.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.9;
+}
+.holder-one{
+    background-color: #1E1E1E;
+    border-radius: 10px;
+}
+.txt{
+    font-size: 15px;
+}
+.txt1{
+    letter-spacing: 3px;
+}
+.btn{  
+    border-radius: 20px;
+}

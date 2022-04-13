@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign In</title>
     <link rel="stylesheet" href="localserver.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
@@ -193,7 +193,7 @@
                                 <span id="short"></span>
                             </div> 
                         </div>
-                        <button class="btn log btn-primary mt-4"  type="submit" style="width: 90%;" id="button">Login</button>
+                        <button class="btn log btn-primary mt-4"  type="button" style="width: 90%;" id="button">Login</button>
                     </form> 
                     <a href="#" class="bottom text-md-12 pt-5 pb-5 font-weight-light">help@alat.ng</a><a href="#"><span style="position:absolute; right: 4rem;">070022552528</span></a> 
                </div>   
@@ -219,34 +219,30 @@
                     if(emails == loginDetails[i].email && passwords == loginDetails[i].password){
                         console.log("success")
                         swal("Welcome!", " Successful Login!", "success");
+                        setTimeout(() => {
+                          window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/BOOTSTRAP/Loginpagetwo.html")    
+                        }, 2000);
                         break;
                     }
-                    else if (emails !== loginDetails[i].email || passwords !== loginDetails[i].password) {
+                    else if (emails != loginDetails[i].email || passwords != loginDetails[i].password) {
                         swal("Incorrect Input!", "Email or Password does not correspond", "error");
-                        console.log("Invalid Input!", "Email does not correspond!", "error")  
+                        console.log("Invalid Input!", "Email does not corresponds!", "error")  
                     }
-                    // else if( passwords !== 11){                          
-                    //     swal("Invalid!", "Passsword must be atleast 11 characters!", "error");  
-                    //     console.log("Invalid Input!", "Passsword must be atleast 11 characters!", "error")
-                    // }
-                    // else {
-                    //     swal("Invalid Input!", "No password match!", "error")
-                    //     console.log("Invalid Input!", "No password match!", "error")
-                    // }
                 } 
-            }      
+            }     
         }  
    
-       const form = document.querySelector("#signup");
-       form.addEventListener("submit", e => {
-            e.preventDefault()          
-        });
-        
+        const form = document.querySelector("#signup");
+        form.addEventListener("submit", e => {
+                e.preventDefault()
+            ;          
+            });
+            
         const button= document.getElementById('button');
         button.addEventListener('click', () =>{
-            getinfo();
+            getinfo()   
         });
-        
+            
     </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     

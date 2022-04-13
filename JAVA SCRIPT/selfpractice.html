@@ -8,17 +8,42 @@
 </head>
 <body>
     
+    <input type="text" value="" id="input1"><br><br>
+    <input type="text" value="" id="input2"><br><br>
+    <input type="text" value="" id="input3"> 
+    <br>
+    <input type="button" value="Check" onclick="truism()">
     <script>
-        let cash = ["N2000", "N3000", "N5000"]
 
-        function amount(money){
-            for(let i = 0; i < cash.length ; i++){
-                if (cash[i] == money){
-                    console.log(cash[i])
-                }
-            }       
+       
+        
+        function truism(){  
+            var input1 = document.getElementById("input1").value;
+            var input2 = document.getElementById("input2").value;
+            var input3 = document.getElementById("input3").value;
+
+            let whole = "true";
+            let zero = "false";
+            if((input1 && input2 ==  whole) && (input3 == zero )){
+               alert("true appeared more")
+            }
+            else if((input2 && input3 == zero) && (input1 == whole)){
+               alert("false appeared more")
+            }
+            else{
+               alert("equal or  no count")
+            }     
         }
-        amount(cash[1])
+        
+
+
+        
+        // const numbers1 = [20, 21, 22, 23 , 24]
+        // numbers2 = []; 
+        // for (let i = 0; i < numbers1.length; i++){
+        //     numbers2.push(numbers1[i] * 2)
+        // }
+        // console.log(numbers2);
     </script>
 </body>
 </html>

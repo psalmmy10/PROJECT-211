@@ -8,19 +8,34 @@
 <body>
     
 
-
+    <input id="number"  type="number" value="">
+    <p id="result"></p>
+    <input type="button" value="Check" onclick="evenOrOdd()">
     <script>
-        function subtractYear(currentYear){
-            return function nestedAdd(dateOfBirth){
-                return currentYear - dateOfBirth;
+        // function subtractYear(currentYear){
+        //     return function nestedAdd(dateOfBirth){
+        //         return currentYear - dateOfBirth;
+        //     }
+        // }
+        // const currentYear = new Date().getFullYear();
+        // const getAge = subtractYear(currentYear);
+        // console.log(`Your age is ${getAge(1997)}`);
+
+        
+
+        function evenOrOdd(){
+            document.getElementById("result").innerHTML = ""
+            var input = Number(document.getElementById("number").value);
+            if ((input % 2) == 0){
+                document.getElementById("result").innerHTML = "Even number"
+            }
+            else if ((input % 2) == 1){
+                document.getElementById("result").innerHTML = "Odd number"
+            }
+            else{
+                document.getElementById("result").innerHTML = "NaN"
             }
         }
-
-        const currentYear = new Date().getFullYear();
-
-        const getAge = subtractYear(currentYear);
-
-        console.log(`Your age is ${getAge(1997)}`);
 
     </script>
 </body>
