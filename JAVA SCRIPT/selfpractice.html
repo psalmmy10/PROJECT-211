@@ -12,31 +12,32 @@
     <input type="text" value="" id="input2"><br><br>
     <input type="text" value="" id="input3"> 
     <br>
-    <input type="button" value="Check" onclick="truism()">
+    <input type="button" value="Check" onclick="myFunction()">
     <script>
 
-       
-        
-        function truism(){  
+            
+        function myFunction(){  
             var input1 = document.getElementById("input1").value;
             var input2 = document.getElementById("input2").value;
             var input3 = document.getElementById("input3").value;
 
-            let whole = "true";
-            let zero = "false";
-            if((input1 && input2 ==  whole) && (input3 == zero )){
-               alert("true appeared more")
+            let whole = "true"
+            let zero = "false"
+         
+            if((input1.value && input2.value == whole) && (input3.value == zero)){
+               alert("true appeared more");
             }
-            else if((input2 && input3 == zero) && (input1 == whole)){
-               alert("false appeared more")
+            else if((input2.value && input3.value == zero) && (input1.value == whole)){
+                alert('false appeared more');
+            }
+            else if((input1.value && input3.value == zero) && (input2.value == whole)){
+                alert('fa')
             }
             else{
-               alert("equal or  no count")
-            }     
+                alert("null")
+            }
         }
         
-
-
         
         // const numbers1 = [20, 21, 22, 23 , 24]
         // numbers2 = []; 
@@ -44,6 +45,7 @@
         //     numbers2.push(numbers1[i] * 2)
         // }
         // console.log(numbers2);
+
     </script>
 </body>
 </html>

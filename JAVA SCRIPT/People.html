@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="demo"></p>
+
+    <script>
+        
+        // let cars = ["BMW","VOLVO","SAAB", "FORD","FIST"]  
+            
+        // for (let i = 0 ; i< cars.length ; i++){
+        //   document.getElementById("demo").innerHTML +=  cars[i] + "<br>"  
+        // }
+
+
+        let person = {fname:"1", lname:"1", age:"1"};
+        let names = [{fname:"John"}, {lname:"Doe"},{age:25}]
+
+        let txt = "";
+
+        for(let x in person){
+            for(let i = 0 ; i < names.length ; i++){
+                if (x == Object.keys(names[i])[0]){
+                  console.log(names[i][x])
+                }
+            }
+        }
+        document.getElementById("demo").innerHTML = txt
+        
+    </script>
+</body>
+</html>
