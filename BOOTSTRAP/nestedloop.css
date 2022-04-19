@@ -1,0 +1,29 @@
+table{
+    width: 100%;
+    margin-bottom: 10px;
+}
+input {
+    margin-top: 10px !important; 
+    margin-bottom: 10px !important;
+    border-radius: 2px;
+    border: none;
+    width: 70%;
+    padding: 10px; 
+    font-size: 12px;
+}
+.holder-two{
+    border-radius: 10px;
+    background-color: indigo;;
+}
+.holder-three{
+    border-radius: 5px;
+    background-color: #1E1E1E; 
+    color: antiquewhite;
+}
+#btn{
+    border: none;
+    border-radius: 2px;
+}
+.txt{
+ color: aliceblue;
+}
