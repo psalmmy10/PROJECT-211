@@ -30,8 +30,7 @@ function fetchData(params){
                  <i class="fa-solid fa-pen" onclick="editTodo(${i})" ></i>
             </td>
         </tr>
-        `
-        
+        `   
     }
 }
 
