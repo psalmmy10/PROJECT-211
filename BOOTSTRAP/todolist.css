@@ -37,3 +37,6 @@ input {
 #cal{
     width: 40%;
 }
+.custom-select{
+    width: 60% !important;
+}
