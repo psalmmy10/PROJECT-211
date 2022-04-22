@@ -2,7 +2,13 @@ var arr = [];
 var table = document.getElementById('table');
 let editIndex ="";
 var selectDropDown = document.getElementById("opt")
-var select = [{name:"Bread", price:10},{name:"Bread and Beans", price : 20}, {name:"Rice", price:40} ,{name:"Yam", price: 50}, {name:"Egg", price:60}];
+var select =[
+               {name:"Bread", price:10},
+               {name:"Bread and Beans", price : 20}, 
+               {name:"Rice", price:40} ,
+               {name:"Yam", price: 50}, 
+               {name:"Egg", price:60}
+            ];
 
 
 for (let i = 0 ; i < select.length ; i++){
@@ -24,9 +30,8 @@ function getItemPrice(e){
       }
   }
   getInputValue.value = ' $' + priceOutput.toFixed(2) + ".";
-  
   fetchData()
-  console.log();
+  console.log(priceOutput);
 }
 
 
@@ -53,8 +58,8 @@ function fetchData(){
         table.innerHTML+= `
         <tr>
             <td>${i+1}</td>
-            <td>${arr.select[i].name.getPrice}</td>
-            <td>${arr.select [i].name.value}</td>
+            <td >${select [i].name}</td>
+            <td id="sumUp">${"$" + select[i].price.toFixed(2) + "."}</td>
             <td> 
                  <i class="fa-solid fa-trash" onclick="deletetodo(${i})"></i>
                  <i class="fa-solid fa-pen" onclick="editTodo(${i})" ></i>
@@ -63,7 +68,7 @@ function fetchData(){
         `   
     }
 }
-console.log(select[i].getPrice);
+console.log(select[i].price);
 
 function deletetodo(ind){
     arr.splice(ind,1)
@@ -97,6 +102,15 @@ function editTodo(edit){
             valued = item
         }
     })
-    input.getItemPrice(e) = valued.item;
+    fetchData()
 };
-fetchData()
+
+// function findTotal(){
+//     var sum = document.getElementsById('sumUp');
+//     var tot=0;
+//     for(var i=0;i<sum.length;i++){
+//         if(parseInt(sum[i].value))
+//             tot += parseInt(sum[i].value);
+//     }
+//     document.getElementById('total').value = tot;
+// }
