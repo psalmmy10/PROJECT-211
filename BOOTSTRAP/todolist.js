@@ -1,8 +1,15 @@
+var select = ["Bread","Bread and Beans", "Rice" ,"Yam", "Egg"]
+var price = ["$20", ]
+value = [];
+for (let i = 0 ; i < select.length ; i++){
+    value.push("<option>" + select[i] + "</option>")
+    document.getElementById("opt").innerHTML = value.join("");
+}
+
 var arr = [];
 var table = document.getElementById('table');
 let editIndex ="";
-
-
+ 
 
 function myList(){
 var todo = document.getElementById('todo').value;
