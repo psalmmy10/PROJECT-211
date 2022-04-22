@@ -43,9 +43,6 @@ function myList(){
     else{
         arr.push(tod);
         fetchData()
-        
-        getInputValue = document.getElementById("list").table = getInputValue.value ;
-        getInputValue = document.getElementById("update").table = getInputValue.value ;
     }
     
 }
@@ -56,8 +53,8 @@ function fetchData(){
         table.innerHTML+= `
         <tr>
             <td>${i+1}</td>
-            <td>${arr[i].item}</td>
-            <td></td>
+            <td>${arr.select[i].name.getPrice}</td>
+            <td>${arr.select [i].name.value}</td>
             <td> 
                  <i class="fa-solid fa-trash" onclick="deletetodo(${i})"></i>
                  <i class="fa-solid fa-pen" onclick="editTodo(${i})" ></i>
@@ -66,6 +63,7 @@ function fetchData(){
         `   
     }
 }
+console.log(select[i].getPrice);
 
 function deletetodo(ind){
     arr.splice(ind,1)
