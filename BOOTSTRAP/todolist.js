@@ -24,11 +24,16 @@ function getItemPrice(e){
       }
   }
   getInputValue.value = ' $' + priceOutput.toFixed(2) + ".";
+  
+  fetchData()
+  console.log();
 }
 
 
+
+
 function myList(){
-    var todo = document.getElementById('todo').value;
+    var todo = document.getElementById('todo');
     var tod = {
         item: todo
     }
@@ -38,17 +43,21 @@ function myList(){
     else{
         arr.push(tod);
         fetchData()
+        
+        getInputValue = document.getElementById("list").table = getInputValue.value ;
+        getInputValue = document.getElementById("update").table = getInputValue.value ;
     }
+    
 }
 
-function fetchData(params){
+function fetchData(){
     table.innerHTML= '';
     for(let i=0; i<arr.length; i++){
         table.innerHTML+= `
         <tr>
             <td>${i+1}</td>
             <td>${arr[i].item}</td>
-            <td</td>
+            <td></td>
             <td> 
                  <i class="fa-solid fa-trash" onclick="deletetodo(${i})"></i>
                  <i class="fa-solid fa-pen" onclick="editTodo(${i})" ></i>
@@ -66,7 +75,7 @@ function deletetodo(ind){
 // update
 
 function update(){
-    let inputValue = document.getElementById("todo").value;
+    let inputValue = document.getElementById("todo");
     for (let i =0; i<arr.length; i++){
         if(i == editIndex){
             arr[i].item = inputValue
@@ -90,6 +99,6 @@ function editTodo(edit){
             valued = item
         }
     })
-    input.value = valued.item;
+    input.getItemPrice(e) = valued.item;
 };
 fetchData()
