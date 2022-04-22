@@ -20,12 +20,14 @@
                 Cart
                 <i class="fa-solid fa-cart-shopping"></i>
             </h5>
-            <select class="custom-select mb-3" id ="opt" >
-                
-             </select>
-               <!-- <input type="text" placeholder="Add your list"  required> -->
-               <i class="fa-solid fa-plus mb-1 pt-2" id="list" onclick="myList()" ></i>
-               <i class="fa-solid fa-rotate display" id="update" onclick="update()" ></i>
+               <div class="form-row">
+                    <select class=" form-control custom-select mb-3  col-md-6 mr-3 " id ="opt" onchange="getItemPrice(event)" >
+                        <option value="">Select Item</option>
+                    </select>
+                    <input  class="form-control custom-input  col-md-4 " type="text"  id="price">
+                    <i class="fa-solid fa-plus ml-2 pt-2" id="list" onclick="myList()" ></i>
+                    <i class="fa-solid fa-rotate display" id="update" onclick="update()" ></i>
+                </div>   
             <table border="1" cellspacing ="0">
                 <thead>
                     <tr>
@@ -40,7 +42,7 @@
             </table>
 
            <label for="">Total</label>
-           <input type="number"id="cal">
+           <input type="number" id="cal">
        </div>
       </div>    
     </div> 

@@ -1,18 +1,34 @@
-var select = ["Bread","Bread and Beans", "Rice" ,"Yam", "Egg"]
-var price = ["$20", ]
-value = [];
-for (let i = 0 ; i < select.length ; i++){
-    value.push("<option>" + select[i] + "</option>")
-    document.getElementById("opt").innerHTML = value.join("");
-}
-
 var arr = [];
 var table = document.getElementById('table');
 let editIndex ="";
+var selectDropDown = document.getElementById("opt")
+var select = [{name:"Bread", price:10},{name:"Bread and Beans", price : 20}, {name:"Rice", price:40} ,{name:"Yam", price: 50}, {name:"Egg", price:60}];
+
+
+for (let i = 0 ; i < select.length ; i++){
+    selectDropDown.innerHTML+=`<option value="${select[i].name}">${select[i].name}</option>`
+}
+
+
+
+
+
  
+function getItemPrice(e){
+  var priceOutput = "";
+  var getPrice = e.target.value;
+  var getInputValue =document.getElementById("price")
+  for(let i = 0 ; i < select.length ; i++){
+      if (select[i].name == getPrice){
+        priceOutput = select[i].price
+      }
+  }
+  getInputValue.value = ' $' + priceOutput.toFixed(2) + ".";
+}
+
 
 function myList(){
-var todo = document.getElementById('todo').value;
+    var todo = document.getElementById('todo').value;
     var tod = {
         item: todo
     }
@@ -42,7 +58,6 @@ function fetchData(params){
     }
 }
 
-fetchData()
 function deletetodo(ind){
     arr.splice(ind,1)
     fetchData()
@@ -77,3 +92,4 @@ function editTodo(edit){
     })
     input.value = valued.item;
 };
+fetchData()
