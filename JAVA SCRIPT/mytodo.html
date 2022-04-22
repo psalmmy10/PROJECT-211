@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mytodo.css">
+</head>
+<body>
+
+
+    <!-- Qty1 : <input onblur="findTotal()" type="text" name="qty" id="qty1"/><br>
+    Qty2 : <input onblur="findTotal()" type="text" name="qty" id="qty2"/><br>
+    Qty3 : <input onblur="findTotal()" type="text" name="qty" id="qty3"/><br>
+    Qty4 : <input onblur="findTotal()" type="text" name="qty" id="qty4"/><br>
+    Qty5 : <input onblur="findTotal()" type="text" name="qty" id="qty5"/><br>
+    Qty6 : <input onblur="findTotal()" type="text" name="qty" id="qty6"/><br>
+    Qty7 : <input onblur="findTotal()" type="text" name="qty" id="qty7"/><br>
+    Qty8 : <input onblur="findTotal()" type="text" name="qty" id="qty8"/><br>
+    <br><br>
+    Total : <input type="text" name="total" id="total"/> -->
+
+
+    <p>To Buy</p>
+    <input type="text" id="todo" value="" placeholder="add list">
+    <button type="submit" onclick="push()">Add List</button> 
+    <button type="submit" onclick="edit()">Update</button>
+    <table border="1" cellspacing="0">
+       <thead>
+            <tr>
+                <th>s/n</th>
+                <th>Items</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+       </thead>    
+       <tbody id="table">
+       </tbody>
+    </table>
+
+
+    <script src="mytodo.js"></script>
+</body>
+</html>

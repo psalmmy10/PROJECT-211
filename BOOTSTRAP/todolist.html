@@ -9,20 +9,26 @@
     <link rel="stylesheet" href="localserver.css">   
 </head>
 <body> 
-
     <div class=" holder-one  container my-5">
       <div class="container holder-two col-md-6  py-3">
-        <h4 class="text-center txt">ToDo List</h4>
+        <h4 class="text-center txt">
+            Shop with us! 
+            <i class="fa-solid fa-credit-card"></i>
+        </h4>
         <div class="holder-three container-fluid mt-4 col-md-10">
-            <h5 class="text-center pt-4">Add Books</h5>
-            <input type="text" placeholder="Add your list" id="todo">
-            <button onclick="myList()" id="btn" class="mb-3">Add</button>
-            <button onclick="myList()" id="btn" class="mb-3">Delete</button>
+            <h5 class="text-center pt-4">
+                Cart
+                <i class="fa-solid fa-cart-shopping"></i>
+            </h5>
+               <input type="text" placeholder="Add your list" id="todo" required>
+               <i class="fa-solid fa-plus mb-1 pt-2" id="list" onclick="myList()" ></i>
+               <i class="fa-solid fa-rotate display" id="update" onclick="update()" ></i>
             <table border="1" cellspacing ="0">
                 <thead>
                     <tr>
                         <th>S/N</th>
                         <th>Items</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody id="table">
@@ -31,26 +37,8 @@
        </div>
       </div>    
     </div> 
-    <script>    
-        function myList() {
-            var  arr = []
-            var todo = document.getElementById('todo').value;
-            var table = document.getElementById('table')
-            var todo = {
-                name: todo
-            }
-            arr.push(todo);
-            for (let index = 0; index < arr.length; index++) {
-            //   const element = arr[index]['name'];
-              table.innerHTML += `
-                <tr>
-                    <td>${index +0 }</td>
-                    <td>${arr[index].name}</td>
-                </tr>
-                `
-            }
-        }
-    </script> 
+    <script src="todolist.js"> </script> 
+    <script src="https://kit.fontawesome.com/41ed371ce6.js" crossorigin="anonymous"></script>
     <!-- jQuery library -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
 

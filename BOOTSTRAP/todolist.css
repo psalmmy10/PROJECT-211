@@ -7,8 +7,8 @@ input {
     margin-bottom: 10px !important;
     border-radius: 2px;
     border: none;
-    width: 70%;
-    padding: 10px; 
+    width: 90%;
+    height: 40px !important;
     font-size: 12px;
 }
 .holder-two{
@@ -27,3 +27,13 @@ input {
 .txt{
  color: aliceblue;
 }
+.fa-solid{
+    /* font-size: 20px; */
+    padding: 5px;
+}
+.display{
+    display: none !important;
+}
+/* #price{ */
+    /* width: 40%; */
+/* } */

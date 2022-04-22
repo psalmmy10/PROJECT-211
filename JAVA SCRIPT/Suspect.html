@@ -10,33 +10,30 @@
     
 
     <script>
-        var room = 'billboard room'
-        var suspect = "Ms. Van Cleve"
-        var weapon  = 'knife'
+
+        var room = 'ballroom'
+        var suspect = "Mr. Kalehoff"
+        var weapon  = ''
         var solved = false
 
-        if (room == 'dinning room'){
-            weapon = 'knife';
-            if (suspect === 'Mr. Parkes')
+        if ((room == "ballroom" && suspect == "Mr. Kalehoff") && (weapon == "knife")){
+                solved = true
+                console.log(true);
+        }
+        else if((room == "gallery" && suspect == "Ms. Van Cleve") && (weapon == "trophy")){
+            solved =  true
+            console.log(true);
+        }
+
+        else if ((room == 'dinning room' && suspect == "Mr. Parkes") && (weapon == "knife")){
             solved = true;
+            console.log(true);
         }
-        else if (room === 'gallery'){
-            weapon = 'trophy';
-            if (suspect === "Ms. Van Cleve")
+        else if ((room == 'billards room' && suspect == "Mrs. Sparr") && (weapon == "pool stick")){
             solved = true
-        }
-        else if (room === 'ballroom'){
-            weapon = 'poison';
-            if (suspect === 'Mr. Kalehoff')
-            solved = true   
-        }    
-        else if (room === 'billboard room'){
-            weapon = 'pool stick';
-            if (suspect === "Mrs. Sparr")
-            solved = true
+            console.log(true);
         } 
-        
-        if (solved) {
+        else{
             console.log(suspect + " did it in the "+ room +" with the "+weapon+"!");
         }
 
