@@ -25,13 +25,13 @@ function fetchData(params){
         <tr>
             <td>${i+1}</td>
             <td>${arr[i].item}</td>
+            <td</td>
             <td> 
                  <i class="fa-solid fa-trash" onclick="deletetodo(${i})"></i>
                  <i class="fa-solid fa-pen" onclick="editTodo(${i})" ></i>
             </td>
         </tr>
-        `
-        
+        `   
     }
 }
 

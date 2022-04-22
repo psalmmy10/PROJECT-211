@@ -34,6 +34,6 @@ input {
 .display{
     display: none !important;
 }
-/* #price{ */
-    /* width: 40%; */
-/* } */
+#cal{
+    width: 40%;
+}
