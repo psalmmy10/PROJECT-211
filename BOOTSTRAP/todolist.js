@@ -29,9 +29,8 @@ function getItemPrice(e){
         priceOutput = select[i].price
       }
   }
-  getInputValue.value = ' $' + priceOutput.toFixed(2) + ".";
+  getInputValue.value = priceOutput;
   fetchData()
-  console.log(priceOutput);
 }
 
 
@@ -39,9 +38,9 @@ function getItemPrice(e){
 
 function myList(){
     var item = document.getElementById('opt').value;
-    var amount = Number(document.getElementById('price').value);
+    var amount = document.getElementById('price').value;
     var tod = {
-        item , amount
+        item , amount:amount
     }
     if(item  ==  "" || amount == " "){
         alert('Add an Item')
@@ -50,23 +49,29 @@ function myList(){
         arr.push(tod);
         fetchData()
     }
+    // console.log(amount);
 }
 
+//Add Function
 function fetchData(){
     table.innerHTML= '';
+    var totalPrice =  Number(); 
     for(let i=0; i<arr.length; i++){
+        totalPrice += Number(arr[i].amount) 
         table.innerHTML+= `
         <tr>
             <td>${i+1}</td>
             <td >${arr[i].item}</td>
-            <td id="sumUp">${"$" + arr[i].amount.toFixed(2) + "."}</td>
+            <td id="sumUp">${"$" + arr[i].amount}</td>
             <td> 
                  <i class="fa-solid fa-trash" onclick="deletetodo(${i})"></i>
                  <i class="fa-solid fa-pen" onclick="editTodo(${i})" ></i>
             </td>
         </tr>
-        `   
+        ` 
+
     }
+    document.getElementById("cal").value = totalPrice;
 }
 
 
@@ -75,7 +80,7 @@ function deletetodo(ind){
     fetchData()
 }
 
-// update
+// Edit update
 
 function update(){
     let inputValue = document.getElementById("todo");
@@ -89,7 +94,8 @@ function update(){
     fetchData()
 }
 
-// edit
+// Edit Function
+
 function editTodo(edit){
     editIndex = edit
     let valued ="";
@@ -105,12 +111,4 @@ function editTodo(edit){
     fetchData()
 };
 
-// function findTotal(){
-//     var sum = document.getElementsById('sumUp');
-//     var tot=0;
-//     for(var i=0;i<sum.length;i++){
-//         if(parseInt(sum[i].value))
-//             tot += parseInt(sum[i].value);
-//     }
-//     document.getElementById('total').value = tot;
-// }
+
