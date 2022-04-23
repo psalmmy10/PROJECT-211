@@ -38,18 +38,18 @@ function getItemPrice(e){
 
 
 function myList(){
-    var todo = document.getElementById('todo');
+    var item = document.getElementById('opt').value;
+    var amount = Number(document.getElementById('price').value);
     var tod = {
-        item: todo
+        item , amount
     }
-    if(todo == ""){
+    if(item  ==  "" || amount == " "){
         alert('Add an Item')
     }
     else{
         arr.push(tod);
         fetchData()
     }
-    
 }
 
 function fetchData(){
@@ -58,8 +58,8 @@ function fetchData(){
         table.innerHTML+= `
         <tr>
             <td>${i+1}</td>
-            <td >${select [i].name}</td>
-            <td id="sumUp">${"$" + select[i].price.toFixed(2) + "."}</td>
+            <td >${arr[i].item}</td>
+            <td id="sumUp">${"$" + arr[i].amount.toFixed(2) + "."}</td>
             <td> 
                  <i class="fa-solid fa-trash" onclick="deletetodo(${i})"></i>
                  <i class="fa-solid fa-pen" onclick="editTodo(${i})" ></i>
@@ -68,7 +68,7 @@ function fetchData(){
         `   
     }
 }
-console.log(select[i].price);
+
 
 function deletetodo(ind){
     arr.splice(ind,1)
