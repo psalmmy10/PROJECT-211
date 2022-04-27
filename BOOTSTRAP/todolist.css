@@ -37,7 +37,7 @@ input {
 #cal{
     width: 40%;
 }
-.custom-select{
+.custom-select, .form-control{
     width: 40% !important;
 }
 #opt{
@@ -48,4 +48,7 @@ input {
 }
 #cal{
     height: 20px !important;
+}
+.custom-input{
+    color: #1E1E1E !important;
 }

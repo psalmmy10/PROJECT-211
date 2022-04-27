@@ -2,6 +2,9 @@
     "git.autofetch": true,
     "cSpell.words": [
         "Kalehoff",
-        "Opay"
-    ]
+        "nametext",
+        "Opay",
+        "processaffirm"
+    ],
+    "npm.enableRunFromFolder": true
 }
