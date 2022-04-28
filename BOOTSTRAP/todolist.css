@@ -52,3 +52,6 @@ input {
 .custom-input{
     color: #1E1E1E !important;
 }
+.btn{
+    display: inline-block;
+}

@@ -1,11 +1,16 @@
 var arr = [];
 var table = document.getElementById('table');
 let editIndex ="";
+// let multiple ="";
+
 
 var selectDropDown = document.getElementById("opt")
 var getInputValue = document.getElementById("price")
 var selectDropDown2 = document.getElementById("opt1")
 var priceInput1 = document.getElementById("price1")
+var quantityLimit = 1;
+var quantity1 ="";
+
 
 var select =[
                {name:"Bread", price:10},
@@ -45,7 +50,7 @@ function myList(){
     }
 
 
-    if(item  ==  "" || amount == ""){
+    if(item  == "" || amount == ""){
         alert('Add an Item')
     }
     else if(status){
@@ -68,13 +73,17 @@ function fetchData(){
             <td>${i+1}</td>
             <td >${arr[i].item}</td>
             <td id="">${"$" + arr[i].amount}</td>
+            <td>
+               <a btn ><i class="fa-solid fa-square-minus" onclick="decrement()"></i></a>
+               <a o" id="root">1</a> 
+               <a btn><i class="fa-solid fa-plus" onclick="increment()"></i></a>
+            </td>
             <td> 
-                 <i class="fa-solid fa-trash" onclick="deletetodo(${i})"></i>
-                 <i class="fa-solid fa-pen" onclick="editTodo(${i})" data-toggle="modal" data-target="#exampleModal" ></i>
+                 <i class="fa-solid fa-trash shadow" onclick="deletetodo(${i})"></i>
+                 <i class="fa-solid fa-pen shadow " onclick="editTodo(${i})" data-toggle="modal" data-target="#exampleModal" ></i>
             </td>
         </tr>
         ` 
-
     }
     document.getElementById("cal").value = totalPrice;
 }
@@ -98,6 +107,7 @@ function getItemPrice(e){
 function getItemPrice1(e){
     var priceOutput1 ="";
     var getPrice1 = e.target.value;
+    // multiple = e
    
       for(let i = 0 ; i < select.length ; i++){
           if (select[i].name == getPrice1){
@@ -111,18 +121,45 @@ function getItemPrice1(e){
   
 //DELETE FUNCTION
 function deletetodo(ind){
-    arr.splice(ind,1)
-    fetchData()
+    swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Poof! Your imaginary file has been deleted!", {
+            icon: "success",
+          });
+         
+        } 
+        else {
+          swal("Your imaginary file is safe!");
+        }
+        arr.splice(ind,1)
+      });
+      fetchData()
 }
-
+ 
 // UPDATE FUNCTION
 function update(){
     for (let i =0; i<arr.length; i++){
-        if(i == editIndex){
-            arr[i].item = selectDropDown2.value
-            arr[i].amount = priceInput1.value
+        if(selectDropDown2.value == "" || priceInput1.value == ""){
+            alert("please select an item")
+            document.getElementById("price1").innerHTML = "please select an item"
         }
+        else{
+            if(i == editIndex){
+                arr[i].item = selectDropDown2.value
+                arr[i].amount = priceInput1.value
+            }  
+        } 
     }
+
+   
+   
     selectDropDown2.value = ""
     // document.getElementById("list").classList.remove("display")
     // document.getElementById("update").classList.add("display")
@@ -146,6 +183,26 @@ function editTodo(edit){
     console.log(localVar);
 };
 
+// Increment && Decrement Function
+// document.getElementById("root").innerText = quantityLimit;
+function decrement(){
+    quantityLimit = 1;
+    document.getElementById("root").innerText = quantityLimit;
+    
+}
+
+function increment(){
+    quantityLimit = quantityLimit+1;
+    document.getElementById("root").innerText = quantityLimit;
+}
+
+// function increment(){
+//     for (i = 0; i < multiple.length; i++){
+//         if(multiple == i){
+            
+//         }
+//     }
+// }
 
 
 
