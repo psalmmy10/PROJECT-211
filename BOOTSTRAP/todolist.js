@@ -1,7 +1,7 @@
 var arr = [];
 var table = document.getElementById('table');
 let editIndex ="";
-// let multiple ="";
+
 
 
 var selectDropDown = document.getElementById("opt")
@@ -9,7 +9,7 @@ var getInputValue = document.getElementById("price")
 var selectDropDown2 = document.getElementById("opt1")
 var priceInput1 = document.getElementById("price1")
 var quantityLimit = 1;
-var quantity1 ="";
+
 
 
 var select =[
@@ -107,16 +107,15 @@ function getItemPrice(e){
 function getItemPrice1(e){
     var priceOutput1 ="";
     var getPrice1 = e.target.value;
-    // multiple = e
-   
-      for(let i = 0 ; i < select.length ; i++){
-          if (select[i].name == getPrice1){
-            priceOutput1 = select[i].price
-          }
-      }
-      priceInput1.value = priceOutput1;
-      fetchData()
-      console.log(getPrice1);
+    
+    for(let i = 0 ; i < select.length ; i++){
+        if (select[i].name == getPrice1){
+        priceOutput1 = select[i].price
+        }
+    }
+    priceInput1.value = priceOutput1;
+    fetchData()
+    console.log(getPrice1);
 }
   
 //DELETE FUNCTION
@@ -186,23 +185,21 @@ function editTodo(edit){
 // Increment && Decrement Function
 // document.getElementById("root").innerText = quantityLimit;
 function decrement(){
-    quantityLimit = 1;
+    quantityLimit = quantityLimit -1
+    if (quantityLimit < 1){
+       return alert("You cannot buy lesser than one")
+    }
     document.getElementById("root").innerText = quantityLimit;
     
 }
 
 function increment(){
-    quantityLimit = quantityLimit+1;
+    quantityLimit ++;
     document.getElementById("root").innerText = quantityLimit;
 }
 
-// function increment(){
-//     for (i = 0; i < multiple.length; i++){
-//         if(multiple == i){
-            
-//         }
-//     }
-// }
+
+
 
 
 
