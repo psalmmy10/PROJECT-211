@@ -74,8 +74,8 @@ function fetchData(){
             <td >${arr[i].item}</td>
             <td id="">${"$" + arr[i].amount}</td>
             <td>
-               <a btn ><i class="fa-solid fa-square-minus" onclick="decrement()"></i></a>
-               <a o" id="root">1</a> 
+               <a btn ><i class="fa-solid fa-square-minus" onclick="decrement(})"></i></a>
+               <a  id="root">1</a> 
                <a btn><i class="fa-solid fa-plus" onclick="increment()"></i></a>
             </td>
             <td> 
@@ -122,24 +122,25 @@ function getItemPrice1(e){
 function deletetodo(ind){
     swal({
         title: "Are you sure?",
-        text: "Once deleted, you will not be able to recover this imaginary file!",
+        text: "Item will be deleted from cart!",
         icon: "warning",
         buttons: true,
         dangerMode: true,
       })
       .then((willDelete) => {
         if (willDelete) {
-          swal("Poof! Your imaginary file has been deleted!", {
+          swal("Item Deleted!", {
             icon: "success",
-          });
-         
+        });
+        arr.splice(ind,1)
+        console.log("text");
+        fetchData()  
         } 
         else {
-          swal("Your imaginary file is safe!");
-        }
-        arr.splice(ind,1)
-      });
       fetchData()
+      swal("Item still in cart!");
+        }
+      });
 }
  
 // UPDATE FUNCTION
@@ -194,9 +195,17 @@ function decrement(){
 }
 
 function increment(){
-    quantityLimit ++;
+    // var fetch = table.innerHTML
+    for(i = 0; i < select.length; i++){ 
+        if (select[i] == quantityLimit){
+            quantityLimit = quantityLimit ++;
+        }
+    } 
     document.getElementById("root").innerText = quantityLimit;
+    console.log(quantityLimit);
+    fetchData()
 }
+
 
 
 
