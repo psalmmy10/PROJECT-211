@@ -204,7 +204,7 @@ function increment(ind){
     } 
     document.getElementById("root").innerText = quantityLimit;
     console.log(quantityLimit);
-    fetchData()
+    fetchData
 }
 
 
