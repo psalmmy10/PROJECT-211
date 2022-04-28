@@ -198,7 +198,7 @@ function increment(ind){
     // var fetch = table.innerHTML
     for(i = 0; i < arr.length; i++){ 
         if (i == ind){
-          arr[i].quantity++
+          arr[i].quantity
          break
         }
     } 
