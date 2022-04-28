@@ -195,10 +195,11 @@ function decrement(){
 
 function increment(ind){
    
-    var fetch = table.innerHTML
+    // var fetch = table.innerHTML
     for(i = 0; i < arr.length; i++){ 
         if (i == ind){
-           arr[i].quantity++ = select[i]++;
+          arr[i].quantity++
+         break
         }
     } 
     document.getElementById("root").innerText = quantityLimit;
