@@ -1,6 +1,7 @@
 var arr = [];
 var table = document.getElementById('table');
 let editIndex ="";
+let increase = "";
 
 
 
@@ -40,7 +41,7 @@ function myList(){
   
     
     var tod = {
-        item , amount:amount
+        item , amount:amount , quantity: 1
     }
 
     for(let i = 0; i<arr.length ; i++){
@@ -158,8 +159,6 @@ function update(){
         } 
     }
 
-   
-   
     selectDropDown2.value = ""
     // document.getElementById("list").classList.remove("display")
     // document.getElementById("update").classList.add("display")
@@ -194,11 +193,12 @@ function decrement(){
     
 }
 
-function increment(){
-    // var fetch = table.innerHTML
-    for(i = 0; i < select.length; i++){ 
-        if (select[i] == quantityLimit){
-            quantityLimit = quantityLimit ++;
+function increment(ind){
+   
+    var fetch = table.innerHTML
+    for(i = 0; i < arr.length; i++){ 
+        if (i == ind){
+           arr[i].quantity++ = select[i]++;
         }
     } 
     document.getElementById("root").innerText = quantityLimit;
