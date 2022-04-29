@@ -184,15 +184,14 @@ function editTodo(edit){
 // Increment && Decrement Function
 function decrement(id){
     for(let i = arr.length - 1; i >= 0; i--){
-        if (quantity == 1){
-            return alert("You cannot buy lesser than one")
-        }
         if (i == id){
             arr[i].quantity -=1
             document.getElementById("root").innerText = arr[i].quantity;
             console.log(arr[i].quantity);
+        } 
+        if(arr[i].quantity < 1){
+            return alert("nope")
         }
-         
     } 
 }
 
