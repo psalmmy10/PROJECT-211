@@ -202,7 +202,6 @@ function increment(id){
             arr[i].quantity +=1
             document.getElementById("root").innerText = arr[i].quantity;
             console.log(arr[i].quantity);
-            // break
         }
     } 
     fetchData();
