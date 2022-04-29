@@ -1,7 +1,6 @@
 var arr = [];
 var table = document.getElementById('table');
 let editIndex ="";
-let increase = "";
 
 
 
@@ -9,7 +8,7 @@ var selectDropDown = document.getElementById("opt")
 var getInputValue = document.getElementById("price")
 var selectDropDown2 = document.getElementById("opt1")
 var priceInput1 = document.getElementById("price1")
-var quantityLimit = 1;
+var quantity = 1;
 
 
 
@@ -75,9 +74,9 @@ function fetchData(){
             <td >${arr[i].item}</td>
             <td id="">${"$" + arr[i].amount}</td>
             <td>
-               <a btn ><i class="fa-solid fa-square-minus" onclick="decrement(})"></i></a>
-               <a  id="root">1</a> 
-               <a btn><i class="fa-solid fa-plus" onclick="increment()"></i></a>
+               <a btn ><i class="fa-solid fa-square-minus" onclick="decrement(${i})"></i></a>
+               <span  id="root">${arr[i].quantity}</span> 
+               <a btn><i class="fa-solid fa-plus" onclick="increment(${i})"></i></a>
             </td>
             <td> 
                  <i class="fa-solid fa-trash shadow" onclick="deletetodo(${i})"></i>
@@ -183,28 +182,30 @@ function editTodo(edit){
 };
 
 // Increment && Decrement Function
-// document.getElementById("root").innerText = quantityLimit;
-function decrement(){
-    quantityLimit = quantityLimit -1
-    if (quantityLimit < 1){
-       return alert("You cannot buy lesser than one")
-    }
-    document.getElementById("root").innerText = quantityLimit;
-    
+function decrement(id){
+    for(let i = arr.length - 1; i >= 0; i--){
+        if (quantity == 1){
+            return alert("You cannot buy lesser than one")
+        }
+        if (i == id){
+            arr[i].quantity -=1
+            document.getElementById("root").innerText = arr[i].quantity;
+            console.log(arr[i].quantity);
+        }
+         
+    } 
 }
 
-function increment(ind){
-   
-    // var fetch = table.innerHTML
-    for(i = 0; i < arr.length; i++){ 
-        if (i == ind){
-          arr[i].quantity
-         break
+function increment(id){
+    for(i = 0; i < arr.length; i++){
+        if (i == id){
+            arr[i].quantity +=1
+            document.getElementById("root").innerText = arr[i].quantity;
+            console.log(arr[i].quantity);
+            // break
         }
     } 
-    document.getElementById("root").innerText = quantityLimit;
-    console.log(quantityLimit);
-    fetchData
+    fetchData();
 }
 
 
