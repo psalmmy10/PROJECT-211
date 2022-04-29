@@ -12,8 +12,8 @@ body{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    background-color: #ffff;
-    border-radius: 10px;
+    /* background-color: #1E1E1E; */
+    border-radius: 20px;
     }
     
     #phone{
@@ -45,22 +45,30 @@ body{
     button{
     margin-right: 10px;
     border-radius: 90%;
-    padding: 15px;
+    padding: 7px;
     border: none;
     }
 
     #black{
     background-color: black;
+    border-radius: 40px;
     }
 
     #blue{
     background-color: blue;
+    border-radius: 40px;
     }
 
     #pink{
     background-color: pink;
+    border-radius: 40px;
     }
 
     #starlight{
     background-color: silver;
+    border-radius: 40px;
+    }
+
+    h3{
+        text-shadow: blue;
     }
