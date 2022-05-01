@@ -12,6 +12,7 @@ var quantity = 1;
 
 
 
+
 var select =[
                {name:"Bread", price:10},
                {name:"Bread and Beans", price : 20}, 
@@ -25,7 +26,6 @@ for (let i = 0 ; i < select.length ; i++){
     selectDropDown.innerHTML+=`<option value="${select[i].name}">${select[i].name}</option>`
     selectDropDown2.innerHTML+=`<option value="${select[i].name}">${select[i].name}</option>`
 }
-
 
 
 
@@ -68,15 +68,16 @@ function fetchData(){
     var totalPrice = Number(); 
     for(let i=0; i<arr.length; i++){
         totalPrice +=  Number(arr[i].amount) 
+
         table.innerHTML+= `
         <tr>
             <td>${i+1}</td>
             <td >${arr[i].item}</td>
             <td id="">${"$" + arr[i].amount}</td>
             <td>
-               <a btn ><i class="fa-solid fa-square-minus" onclick="decrement(${i})"></i></a>
+               <a btn ><i class="fa-solid fa-square-minus" onclick="decrement(${i})">-</i></a>
                <span  id="root">${arr[i].quantity}</span> 
-               <a btn><i class="fa-solid fa-plus" onclick="increment(${i})"></i></a>
+               <a btn><i class="fa-solid fa-plus" onclick="increment(${i})">+</i></a>
             </td>
             <td> 
                  <i class="fa-solid fa-trash shadow" onclick="deletetodo(${i})"></i>
@@ -92,30 +93,15 @@ function fetchData(){
 function getItemPrice(e){
   var priceOutput ="";
   var getPrice = e.target.value;
- 
     for(let i = 0 ; i < select.length ; i++){
         if (select[i].name == getPrice){
-          priceOutput = select[i].price
+           priceOutput = select[i].price
         }
     }
+
     getInputValue.value = priceOutput;
     fetchData()
     console.log(getPrice);
-}
-
-
-function getItemPrice1(e){
-    var priceOutput1 ="";
-    var getPrice1 = e.target.value;
-    
-    for(let i = 0 ; i < select.length ; i++){
-        if (select[i].name == getPrice1){
-        priceOutput1 = select[i].price
-        }
-    }
-    priceInput1.value = priceOutput1;
-    fetchData()
-    console.log(getPrice1);
 }
   
 //DELETE FUNCTION
@@ -198,10 +184,13 @@ function decrement(id){
 function increment(id){
     for(i = 0; i < arr.length; i++){
         if (i == id){
-            arr[i].quantity +=1
+            arr[i].quantity += (arr[i].amount)
             document.getElementById("root").innerText = arr[i].quantity;
-            console.log(arr[i].quantity);
+            // console.log(arr[i].quantity);
         }
+        arr[i].amount += arr[i].quantity
+
+        console.log(arr[i].quantity);
     } 
     fetchData();
 }
