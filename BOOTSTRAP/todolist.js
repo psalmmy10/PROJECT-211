@@ -202,7 +202,40 @@ function increment(id){
 
 
 
+// data(){
+//     return{
+//       total: 0,
+  
+//       cartData: [{
+//         price: 5,
+//         qty: 5},
+//         {price: 5,
+//         qty: 5
+//         }],
+//     }
+//   },
+  
+//   computed: {
+//    calcSum(){
+//     let total = 0;
+//     this.cartData.forEach((item, i) => {
+//          total += item.price * item.qty;
+//     });
+//     return total;
+//    }
+  
+//   }
 
+// var cart_Data =[{"p_id":"44","cart_id":"10","cart_price":"100","product_title":"Slim striped pocket shirt","product_image":"product-4.jpg","product_color":"Blue","product_size":"L","qty":"3"},{"p_id":"45","cart_id":"11","cart_price":"42","product_title":"Contrasting Shrit","product_image":"product-7.jpg","product_color":"White","product_size":"M","qty":"1"}]
+// function total(cart_Data){
+//   let sum=0
+//   cart_Data.map(x=>{
+//    sum = sum + (x.cart_price * x.qty)
+//  })
+//   return sum
+// }
+
+// console.log(total(cart_Data))
 
 
 
