@@ -64,11 +64,15 @@ function myList(){
 
 //SUM UP FUNCTION
 function fetchData(){
+
+    amount = document.getElementById("price")
     table.innerHTML='';
     var totalPrice = Number(); 
     for(let i=0; i<arr.length; i++){
         totalPrice +=  Number(arr[i].amount) 
-
+        if(i  == arr[i].amount){
+            quantity = (arr[i].amount)
+        }
         table.innerHTML+= `
         <tr>
             <td>${i+1}</td>
@@ -171,7 +175,7 @@ function editTodo(edit){
 function decrement(id){
     for(let i = arr.length - 1; i >= 0; i--){
         if (i == id){
-            arr[i].quantity -=1
+            arr[i].quantity -= 1
             document.getElementById("root").innerText = arr[i].quantity;
             console.log(arr[i].quantity);
         } 
@@ -184,13 +188,14 @@ function decrement(id){
 function increment(id){
     for(i = 0; i < arr.length; i++){
         if (i == id){
-            arr[i].quantity += (arr[i].amount)
+            arr[i].quantity += quantity
+            if (quantity == i)
             document.getElementById("root").innerText = arr[i].quantity;
             // console.log(arr[i].quantity);
         }
-        arr[i].amount += arr[i].quantity
+        // arr[i].amount += arr[i].quantity
 
-        console.log(arr[i].quantity);
+        // console.log(arr[i].amount);
     } 
     fetchData();
 }
