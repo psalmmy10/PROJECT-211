@@ -64,15 +64,11 @@ function myList(){
 
 //SUM UP FUNCTION
 function fetchData(){
-
     amount = document.getElementById("price")
     table.innerHTML='';
     var totalPrice = Number(); 
     for(let i=0; i<arr.length; i++){
         totalPrice +=  Number(arr[i].amount) 
-        if(i  == arr[i].amount){
-            quantity = (arr[i].amount)
-        }
         table.innerHTML+= `
         <tr>
             <td>${i+1}</td>
@@ -102,7 +98,6 @@ function getItemPrice(e){
            priceOutput = select[i].price
         }
     }
-
     getInputValue.value = priceOutput;
     fetchData()
     console.log(getPrice);
@@ -188,54 +183,21 @@ function decrement(id){
 function increment(id){
     for(i = 0; i < arr.length; i++){
         if (i == id){
-            arr[i].quantity += quantity
+            arr[i].quantity += arr[i].quantity
             if (quantity == i)
             document.getElementById("root").innerText = arr[i].quantity;
             // console.log(arr[i].quantity);
         }
-        // arr[i].amount += arr[i].quantity
+        arr[i].amount += quantity
 
-        // console.log(arr[i].amount);
+        console.log(arr[i].amount);
     } 
     fetchData();
 }
 
 
 
-// data(){
-//     return{
-//       total: 0,
-  
-//       cartData: [{
-//         price: 5,
-//         qty: 5},
-//         {price: 5,
-//         qty: 5
-//         }],
-//     }
-//   },
-  
-//   computed: {
-//    calcSum(){
-//     let total = 0;
-//     this.cartData.forEach((item, i) => {
-//          total += item.price * item.qty;
-//     });
-//     return total;
-//    }
-  
-//   }
 
-// var cart_Data =[{"p_id":"44","cart_id":"10","cart_price":"100","product_title":"Slim striped pocket shirt","product_image":"product-4.jpg","product_color":"Blue","product_size":"L","qty":"3"},{"p_id":"45","cart_id":"11","cart_price":"42","product_title":"Contrasting Shrit","product_image":"product-7.jpg","product_color":"White","product_size":"M","qty":"1"}]
-// function total(cart_Data){
-//   let sum=0
-//   cart_Data.map(x=>{
-//    sum = sum + (x.cart_price * x.qty)
-//  })
-//   return sum
-// }
-
-// console.log(total(cart_Data))
 
 
 
