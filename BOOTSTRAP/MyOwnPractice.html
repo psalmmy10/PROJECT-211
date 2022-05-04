@@ -7,20 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    <select name="" id="">
-        <option value="">select item</option>
-    </select>
-    <button>Add</button>
-
+    
     <script>
-
-        var arr = []
-        var select = [{item:"rice",price:"20"}]
-
-        for (let i = 0; i < array.length; i++) {
-            const element = array[i];
+       var getInitials = function (string) {
+            var names = string.split(' '),
+                initials = names[0].substring(0, 1).toUpperCase();
             
-        }
+            if (names.length > 1) {
+                initials += names[names.length - 1].substring(0, 1).toUpperCase();
+            }
+            return initials;
+        };
+
+        console.log(getInitials('John Doe'));
     </script>
 </body>
 </html>
