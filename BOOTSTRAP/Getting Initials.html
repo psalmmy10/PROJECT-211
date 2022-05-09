@@ -15,11 +15,12 @@
     
 
     <script>
-            var input1 = document.getElementById("input");
             
+            
+            function getInitials(sing){
 
-            function getInitials(e) {
-                var names = e.split(" "),
+                var input1 = document.getElementById("input").value;
+                var names = input1.split(" "),
                     initials = names[0].substring(0, 1).toUpperCase();
                 
                 if (names.length > 1) {
