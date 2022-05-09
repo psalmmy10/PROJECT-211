@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <input type="text" id="input">
+    <button onclick="getInitials()">Click</button>
+    <P id="display"></P>
+    
+
+    <script>
+            var input1 = document.getElementById("input");
+            
+
+            function getInitials(e) {
+                var names = e.split(" "),
+                    initials = names[0].substring(0, 1).toUpperCase();
+                
+                if (names.length > 1) {
+                    initials += names[names.length -1].substring(0, 1).toUpperCase();
+                }
+                return initials;
+                input1.innerHTML = initials
+                console.log(getInitials(initials));
+            };
+            getInitials(input1)
+
+            // getInitials(string)
+
+            // console.log(getInitials('Adesanya Samuel Oluwadamilare'));
+            // console.log(getInitials('John Doe'));
+            // console.log(getInitials('Mr Waris'));
+    </script>
+</body>
+</html>
