@@ -18,7 +18,6 @@
             
             
             function getInitials(string){
-
                 var input1 = document.getElementById("input").value;
                 var names = input1.split(" "),
                     initials = names[0].substring(0, 1).toUpperCase();
@@ -26,9 +25,8 @@
                 if (names.length > 1) {
                     initials += names[names.length -1].substring(0, 1).toUpperCase();
                 }
-                return initials;
-                input1.innerHTML = initials
-                console.log(getInitials(initials));
+                // return initials;
+                return display.innerHTML = initials
             };
             // getInitials(string)
 
