@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="MyAppSignUp.css">
 </head>
 <body>
-
     <div class="container">
         <div class="container-fluid holder col-md-4 ">
             <div class="container text-center pt-3" > 
@@ -22,17 +21,17 @@
             <div class="container-fluid col-md-11 holder-one">
                 <form id="signup">
                     <div class="class">
-                      <label for="exampleInputEmail1" class="mb-0"><b class="text-white">Username</b></label>
-                      <input type="username" class="form-control mb-2" id="uname"  placeholder="Choose Username">
+                      <label  class="mb-0"><b class="text-white">Username</b></label>
+                      <input type="username" class="form-control mb-2" id="uname"  placeholder="Choose Username" required>
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1" class="mb-0"><b class="text-white">Email address</b></label>
-                      <input type="email" class="form-control my-0 pb-0" id="mail"  placeholder="Enter email">
+                      <label  class="mb-0"><b class="text-white">Email address</b></label>
+                      <input type="email" class="form-control mb-0 pb-0" id="mail"  placeholder="Enter email" required>
                       <a id="output" class="text-danger pb-0"></a>
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword1" class="pt-0"><b class="text-white">Password</b></label>
-                      <input type="password" class="form-control" id="pword" placeholder="Password">
+                      <label  class="mb-0"><b class="text-white">Password</b></label>
+                      <input type="password" class="form-control" id="pword" placeholder="Password" required>
                     </div>
                     <button type="submit" class="btn btn-primary mb-3 col-md-12" onclick="store()">Create Account</button>
                   </form>
