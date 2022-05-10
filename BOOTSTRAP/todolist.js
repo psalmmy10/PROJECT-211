@@ -1,4 +1,3 @@
-var arr = [];
 var table = document.getElementById('table');
 let editIndex ="";
 
@@ -29,8 +28,8 @@ for (let i = 0 ; i < select.length ; i++){
 
 
 
-const stored = JSON.parse(localStorage.getItem('select'))
-localStorage.setItem('select', JSON.stringify(select));
+// const stored = JSON.parse(localStorage.getItem('select'))
+// localStorage.setItem('select', JSON.stringify(select));
 
 
 
@@ -40,60 +39,82 @@ function myList(){
     var item = document.getElementById('opt').value;
     var amount = document.getElementById('price').value;
     
-    // if(localStorage.getItem('select')){
-    //     products = JSON.parse(localStorage.getItem('select'));
-    // }
-    // products.push({'productId' : productId + 1, image : '<imageLink>'});
-    // localStorage.setItem('select', JSON.stringify(select));
-    // }
 
     var tod = {
         item , amount:amount , quantity: 1
     }
 
-    for(let i = 0; i<arr.length ; i++){
-        if(item == arr[i].item){
-           status = true
-        }
-    }
+    
 
 
     if(item  == "" || amount == ""){
         alert('Add an Item')
     }
-    else if(status){
-        alert ("Item already selected")
-    }
+    
     else {
-        arr.push(tod);
-        fetchData()
+        
+        //LOCAL STORAGE PUSH
+        let arr=[]
+
+        if(localStorage.getItem('arr') == null){
+            arr.push(tod)
+        }
+        else{
+            arr = JSON.parse(localStorage.getItem('arr'))
+            for(let i = 0; i<arr.length ; i++){
+                if(item == arr[i].item){
+                   status = true
+                }
+            }
+            
+            if(status){
+                alert ("Item already selected")
+            } else {
+                arr.push(tod)
+            }
+        }
+        
+        localStorage.setItem("arr",JSON.stringify(arr))
+        
+       
     }
+
+    fetchData()
+
+
 }
 
 //SUM UP FUNCTION
+fetchData()
 function fetchData(){
     amount = document.getElementById("price")
     table.innerHTML='';
     var totalPrice = Number(); 
-    for(let i=0; i<arr.length; i++){
-        totalPrice +=  Number(arr[i].amount) 
-        table.innerHTML+= `
-        <tr>
-            <td>${i+1}</td>
-            <td >${arr[i].item}</td>
-            <td id="">${"$" + arr[i].amount}</td>
-            <td>
-               <a btn ><i class="fa-solid fa-square-minus" onclick="decrement(${i})"></i></a>
-               <span  id="root">${arr[i].quantity}</span> 
-               <a btn><i class="fa-solid fa-plus" onclick="increment(${i})"></i></a>
-            </td>
-            <td> 
-                 <i class="fa-solid fa-trash shadow" onclick="deletetodo(${i})"></i>
-                 <i class="fa-solid fa-pen shadow " onclick="editTodo(${i})" data-toggle="modal" data-target="#exampleModal" ></i>
-            </td>
-        </tr>
-        ` 
+    let arr = JSON.parse(localStorage.getItem('arr')) || null;
+    if(arr == null) {
+        table.innerHTML='<td>No Record found </td>'
+    } else {
+        for(let i=0; i<arr.length; i++){
+            totalPrice +=  Number(arr[i].amount) 
+            table.innerHTML+= `
+            <tr>
+                <td>${i+1}</td>
+                <td >${arr[i].item}</td>
+                <td id="">${"$" + arr[i].amount}</td>
+                <td>
+                   <a btn ><i class="fa-solid fa-square-minus" onclick="decrement(${i})"></i></a>
+                   <span  id="root">${arr[i].quantity}</span> 
+                   <a btn><i class="fa-solid fa-plus" onclick="increment(${i})"></i></a>
+                </td>
+                <td> 
+                     <i class="fa-solid fa-trash shadow" onclick="deletetodo(${i})"></i>
+                     <i class="fa-solid fa-pen shadow " onclick="editTodo(${i})" data-toggle="modal" data-target="#exampleModal" ></i>
+                </td>
+            </tr>
+            ` 
+        }
     }
+    
     document.getElementById("cal").value = totalPrice;
 }
 
