@@ -1,32 +1,21 @@
-
-var uname = document.getElementById("uname");
-var mail = document.getElementById("mail");
-var pword = document.getElementById("pword");
-
 function store(){
-    localStorage.setItem('uname', uname.value);
-    localStorage.setItem('mail', mail.value);
-    localStorage.setItem('pword', pword.value);
-}
+    var uname = document.getElementById("uname").value;
+    var mail = document.getElementById("mail").value;
+    var pword = document.getElementById("pword").value;
 
-
-function check(){
-    var storedName = localStorage.getItem('uname');
-    var storedName = localStorage.getItem('mail');
-    var storedPw = localStorage.getItem('pword');
-
-    // entered data from the login-form
-    var username = document.getElementById('username');
-    var password = document.getElementById('password');
-
-    // check if stored data from register-form is equal to data from login form
-    if(username.value !== storedName || password.value !== storedPw) {
-        alert('wrong details');
-        console.log("wrong");
-    }else {
-        alert('You are logged in.');
-        console.log("logged in");
+    let userRecords = Array();
+    userRecords = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+    if (userRecords.some((v)=>{return v.mail == mail})) {
+       return output.innerHTML ="Email already existed!!"
     }
+    else{
+        userRecords.push({
+            "uname": uname,
+            "mail": mail,
+            "pword": pword
+        })
+        localStorage.setItem("users", JSON.stringify(userRecords));
+    } 
 }
 
 const form = document.querySelector("#signup");
