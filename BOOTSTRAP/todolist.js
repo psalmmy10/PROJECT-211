@@ -29,6 +29,8 @@ for (let i = 0 ; i < select.length ; i++){
 
 
 
+const stored = JSON.parse(localStorage.getItem('select'))
+localStorage.setItem('select', JSON.stringify(select));
 
 
 
@@ -37,8 +39,14 @@ function myList(){
     var status = false
     var item = document.getElementById('opt').value;
     var amount = document.getElementById('price').value;
-  
     
+    // if(localStorage.getItem('select')){
+    //     products = JSON.parse(localStorage.getItem('select'));
+    // }
+    // products.push({'productId' : productId + 1, image : '<imageLink>'});
+    // localStorage.setItem('select', JSON.stringify(select));
+    // }
+
     var tod = {
         item , amount:amount , quantity: 1
     }
@@ -75,9 +83,9 @@ function fetchData(){
             <td >${arr[i].item}</td>
             <td id="">${"$" + arr[i].amount}</td>
             <td>
-               <a btn ><i class="fa-solid fa-square-minus" onclick="decrement(${i})">-</i></a>
+               <a btn ><i class="fa-solid fa-square-minus" onclick="decrement(${i})"></i></a>
                <span  id="root">${arr[i].quantity}</span> 
-               <a btn><i class="fa-solid fa-plus" onclick="increment(${i})">+</i></a>
+               <a btn><i class="fa-solid fa-plus" onclick="increment(${i})"></i></a>
             </td>
             <td> 
                  <i class="fa-solid fa-trash shadow" onclick="deletetodo(${i})"></i>
@@ -102,7 +110,23 @@ function getItemPrice(e){
     fetchData()
     console.log(getPrice);
 }
-  
+
+//MODAL PRICE FUNCTION
+function getItemPrice1(e){
+    var priceOutput1 ="";
+    var getPrice1 = e.target.value;
+   
+    for(let i = 0 ; i < select.length ; i++){
+        if (select[i].name == getPrice1){
+        priceOutput1 = select[i].price
+        }
+    }
+    priceInput1.value = priceOutput1;
+    fetchData()
+    console.log(getPrice1);
+}
+
+
 //DELETE FUNCTION
 function deletetodo(ind){
     swal({
@@ -143,7 +167,7 @@ function update(){
         } 
     }
 
-    selectDropDown2.value = ""
+    selectDropDown2.value ="";
     // document.getElementById("list").classList.remove("display")
     // document.getElementById("update").classList.add("display")
     fetchData()
@@ -188,52 +212,13 @@ function increment(id){
             document.getElementById("root").innerText = arr[i].quantity;
             // console.log(arr[i].quantity);
         }
-        // arr[i].amount += arr[i].quantity
-
-        // console.log(arr[i].amount);
+        // total += select.price * select.quantity;
     } 
     fetchData();
 }
 
 
 
-// data(){
-//     return{
-//       total: 0,
-  
-//       cartData: [{
-//         price: 5,
-//         qty: 5},
-//         {price: 5,
-//         qty: 5
-//         }],
-//     }
-//   },
-  
-//   computed: {
-//    calcSum(){
-//     let total = 0;
-//     this.cartData.forEach((item, i) => {
-//          total += item.price * item.qty;
-//     });
-//     return total;
-//    }
-  
-//   }
-
-
-
-
-//   var cart_Data =[{"p_id":"44","cart_id":"10","cart_price":"100","product_title":"Slim striped pocket shirt","product_image":"product-4.jpg","product_color":"Blue","product_size":"L","qty":"3"},{"p_id":"45","cart_id":"11","cart_price":"42","product_title":"Contrasting Shrit","product_image":"product-7.jpg","product_color":"White","product_size":"M","qty":"1"}]
-// function total(cart_Data){
-//   let sum=0
-//   cart_Data.map(x=>{
-//    sum = sum + (x.cart_price * x.qty)
-//  })
-//   return sum
-// }
-
-// console.log(total(cart_Data))
 
 
 
