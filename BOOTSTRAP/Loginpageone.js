@@ -32,7 +32,7 @@ const form = document.querySelector("#signup");
 form.addEventListener("submit", e => {
         e.preventDefault()
     ;          
-    });
+});
 
 const button= document.getElementById('button');
 button.addEventListener('click', () =>{
