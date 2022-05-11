@@ -8,12 +8,13 @@
     font-size: 70px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    color: #79a02a;
+    color: #7DB117;
 }
 .txt{
     font-size: 40px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    color: #686e74;
 }
 .txt1{
     font-family: Arial, Helvetica, sans-serif;
@@ -25,10 +26,16 @@
 .txt2{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 18px;
     color: #686e74;
 }
 .fa-face-frown{
-    font-size: 30px;
+    font-size: 35px;
+    color: #686e74;
+}
+.col1{
+    background-color: #79a02a;
+    padding-top: 20px;
+    padding-bottom: 73px;
 }
 
