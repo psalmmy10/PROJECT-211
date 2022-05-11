@@ -31,11 +31,14 @@
 }
 .fa-face-frown{
     font-size: 35px;
-    color: #686e74;
+    color: #79a02a;
 }
 .col1{
     background-color: #79a02a;
     padding-top: 20px;
     padding-bottom: 73px;
+}
+.btn{
+    margin: auto!important;
 }
 
