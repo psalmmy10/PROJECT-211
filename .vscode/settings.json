@@ -8,5 +8,13 @@
         "processaffirm",
         "pword"
     ],
-    "npm.enableRunFromFolder": true
+    "npm.enableRunFromFolder": true,
+    "cSpell.customDictionaries": {
+        "custom-dictionary-workspace": {
+            "name": "custom-dictionary-workspace",
+            "path": "${workspaceFolder:My Project}/.cspell/custom-dictionary-workspace.txt",
+            "addWords": true,
+            "scope": "workspace"
+        }
+    }
 }

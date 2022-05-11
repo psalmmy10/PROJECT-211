@@ -1,25 +1,30 @@
-// function check(){
-//     var storedName = localStorage.getItem('uname');
-//     var storedName = localStorage.getItem('mail');
-//     var storedPw = localStorage.getItem('pword');
 
-//     // entered data from the login-form
-//     var username = document.getElementById('username');
-//     var password = document.getElementById('password');
 
-//     // check if stored data from register-form is equal to data from login form
-//     if(username.value !== storedName || password.value !== storedPw) {
-//         alert('wrong details');
-//         console.log("wrong");
-//     }else {
-//         alert('You are logged in.');
-//         console.log("logged in");
-//     }
-// }
+var uname = document.getElementById('');
+var pword = document.getElementById('Password');
 
-const form = document.querySelector("#login");
-form.addEventListener("submit", e => {
-      e.preventDefault()
-    ;          
-});
+function check(){
+    var data = {
+        uname: username.value,
+        pword: Password.value
+    };
+    console.log(data);
 
+    let users = JSON.parse(localStorage.getItem("users"));
+
+    if(users.some(el => el.uname == data.uname)){
+        console.log("yes")
+        result.innerHTML = `Logged in <i class="fa-solid fa-circle-check"></i>`
+
+    }
+    else{
+        console.log("No");
+        result.innerHTML = `No Username Match <i class="fa-solid fa-circle-exclamation"></i>`
+    }
+}
+
+// const form = document.querySelector("#login");
+// form.addEventListener("submit", e => {
+//       e.preventDefault()
+//     ;          
+// });

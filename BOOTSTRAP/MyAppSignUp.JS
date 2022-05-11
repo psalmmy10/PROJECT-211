@@ -15,14 +15,8 @@ function store(){
             "pword": pword
         })
         localStorage.setItem("users", JSON.stringify(userRecords));
-
-        // if(userRecords.value == uname && userRecords.value == pword){
-        //     alert('You are logged in.');
-        // }else{
-        //     alert('Error on login');
-        // }
-        // window.location.assign()
     } 
+
 }
 
 const form = document.querySelector("#signup");
