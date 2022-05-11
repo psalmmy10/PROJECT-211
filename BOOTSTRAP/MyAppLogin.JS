@@ -1,26 +1,33 @@
 
 
-var uname = document.getElementById('');
+var uname = document.getElementById('username');
 var pword = document.getElementById('Password');
 
 function check(){
-    var data = {
-        uname: username.value,
-        pword: Password.value
-    };
-    console.log(data);
-
-    let users = JSON.parse(localStorage.getItem("users"));
-
-    if(users.some(el => el.uname == data.uname)){
-        console.log("yes")
-        result.innerHTML = `Logged in <i class="fa-solid fa-circle-check"></i>`
-
+    if (uname.value == "" || pword.value =="") {
+        alert("can't take empty")
     }
     else{
-        console.log("No");
-        result.innerHTML = `No Username Match <i class="fa-solid fa-circle-exclamation"></i>`
+        var data = {
+            uname: username.value,
+            pword: Password.value
+        };
+        console.log(data);
+    
+        let users = JSON.parse(localStorage.getItem("users"));
+    
+    
+        if(users.some(el => el.uname == data.uname)){
+            console.log("yes")
+            result.innerHTML = `Logged in <i class="fa-solid fa-circle-check"></i>`
+    
+        }
+        else{
+            console.log("No");
+            result.innerHTML = `No Username Match <i class="fa-solid fa-circle-exclamation"></i>`
+        }
     }
+   
 }
 
 // const form = document.querySelector("#login");

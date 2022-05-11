@@ -5,22 +5,31 @@ function store(){
 
     let userRecords = Array();
     userRecords = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
-    if (userRecords.some((v)=>{return v.mail == mail})){
-       return output.innerHTML ="Email already existed!!"
+   
+
+    if ((uname.value == "" || mail.value == "") || (pword.value == "")){
+        alert("can't")
     }
     else{
-        userRecords.push({
-            "uname": uname,
-            "mail": mail,
-            "pword": pword
-        })
-        localStorage.setItem("users", JSON.stringify(userRecords));
+        if (userRecords.some((v)=>{return v.mail == mail})){
+            return output.innerHTML ="Email already existed!!"
+        }
+        else{
+            userRecords.push({
+                "uname": uname,
+                "mail": mail,
+                "pword": pword
+            })
+            localStorage.setItem("users", JSON.stringify(userRecords));
+            console.log("yes");
+        } 
     } 
-
+    
+    
 }
 
-const form = document.querySelector("#signup");
-form.addEventListener("submit", e => {
-      e.preventDefault()
-    ;          
-});
+// const form = document.querySelector("#signup");
+// form.addEventListener("submit", e => {
+//       e.preventDefault()
+//     ;          
+// });

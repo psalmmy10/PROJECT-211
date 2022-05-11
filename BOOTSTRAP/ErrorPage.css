@@ -1,0 +1,34 @@
+.holder{
+    background-color: #269335;
+}
+.error{
+    font-size: 50px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 5px ;
+    color: white;
+    /* text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000; */
+}
+.message{
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 20px;
+    color: #FFEC0D;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+img{
+    height: 60vh;
+    border-radius: 20px;
+    box-shadow: 20px solid red;
+}
+.txt{
+    margin-top: 10px;
+}
+.fa-triangle-exclamation{
+    color: #D5CF0F;
+}
+.msg{
+    font-size: 40px;
+}
+/* .strokeme{
+    
+  } */
