@@ -7,20 +7,24 @@ function store(){
     userRecords = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
    
 
-    if ((uname.value == "" || mail.value == "") || (pword.value == "")){
-        alert("can't")
+    if ((uname == "" || mail == "") || (pword == "")){
+        swal("fields can't be empty")
     }
     else{
         if (userRecords.some((v)=>{return v.mail == mail})){
             return output.innerHTML ="Email already existed!!"
         }
-        else{
+        else{ 
             userRecords.push({
                 "uname": uname,
                 "mail": mail,
                 "pword": pword
             })
             localStorage.setItem("users", JSON.stringify(userRecords));
+            swal("Good job!", "You clicked the button!", "success");
+            setTimeout(() => {
+               window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/BOOTSTRAP/MyAppLogin.html") 
+            }, 4000);
             console.log("yes");
         } 
     } 
