@@ -5,7 +5,7 @@ function store(){
 
     let userRecords = Array();
     userRecords = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
-    if (userRecords.some((v)=>{return v.mail == mail})) {
+    if (userRecords.some((v)=>{return v.mail == mail})){
        return output.innerHTML ="Email already existed!!"
     }
     else{
@@ -15,6 +15,13 @@ function store(){
             "pword": pword
         })
         localStorage.setItem("users", JSON.stringify(userRecords));
+
+        // if(userRecords.value == uname && userRecords.value == pword){
+        //     alert('You are logged in.');
+        // }else{
+        //     alert('Error on login');
+        // }
+        // window.location.assign()
     } 
 }
 
