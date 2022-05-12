@@ -40,7 +40,9 @@ function myList(){
   
     
     var tod = {
-        item , amount:amount , quantity: 1
+        item , 
+        amount:amount , 
+        quantity: 1
     }
 
     for(let i = 0; i<arr.length ; i++){
@@ -56,8 +58,21 @@ function myList(){
     }
     else {
         arr.push(tod);
-        fetchData()
     }
+    fetchData()
+
+
+
+    if (localStorage.getItem('dataItem')==null){
+        holder =[]
+    }
+    else{
+        holder = JSON.parse(localStorage.getItem('dataItem'))
+    }
+    
+    holder.push(tod)
+    localStorage.setItem('dataItem', JSON.stringify(holder));
+
 }
 
 //SUM UP FUNCTION
