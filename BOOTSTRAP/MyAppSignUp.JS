@@ -23,15 +23,21 @@ function store(){
                 "mail": mail,
                 "pword": pword
             })
-            localStorage.setItem("users", JSON.stringify(userRecords));
-            swal("Welcome!", "Account created successfully!", "success");
-            setTimeout(() => {
-               window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/BOOTSTRAP/MyAppLogin.html") 
-            }, 4000);
+
+            if(pword.length < 10){
+                swal({
+                    title: "Password too weak!",
+                  });
+            }
+            else{
+                localStorage.setItem("users", JSON.stringify(userRecords));
+                swal("Welcome!", "Account created successfully!", "success");
+                setTimeout(() => {
+                   window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/BOOTSTRAP/MyAppLogin.html") 
+                }, 4000);
+            }
         } 
     } 
-    
-    
 }
 
 // const form = document.querySelector("#signup");
