@@ -24,7 +24,7 @@ function check(){
         }
         else{
             console.log("No");
-            result.innerHTML = `No Username Match <i class="fa-solid fa-circle-exclamation"></i>`
+            result.innerHTML = `No Username or Password Match<i class="fa-solid fa-circle-exclamation"></i>`
         }
     }
    
