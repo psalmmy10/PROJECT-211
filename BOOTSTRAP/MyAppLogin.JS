@@ -17,7 +17,7 @@ function check(){
         let users = JSON.parse(localStorage.getItem("users"));
     
     
-        if(users.some(el => el.uname == data.uname)){
+        if(users.some(el => el.uname == data.uname &&  el.pword == data.pword)){
             console.log("yes")
             result.innerHTML = `Logged in <i class="fa-solid fa-circle-check"></i>`
     
