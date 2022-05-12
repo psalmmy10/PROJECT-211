@@ -115,6 +115,21 @@ function getItemPrice(e){
     fetchData()
     console.log(getPrice);
 }
+
+//MODAL PRICE FUNCTION
+function getItemPrice1(e){
+    var priceOutput1 ="";
+    var getPrice1 = e.target.value;
+   
+    for(let i = 0 ; i < select.length ; i++){
+        if (select[i].name == getPrice1){
+        priceOutput1 = select[i].price
+        }
+    }
+    priceInput1.value = priceOutput1;
+    fetchData()
+    console.log(getPrice1);
+}
   
 //DELETE FUNCTION
 function deletetodo(ind){
