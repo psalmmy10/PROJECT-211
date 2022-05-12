@@ -257,7 +257,7 @@ function increment(id){
 
 let auth = JSON.parse(localStorage.getItem("authUser"))
 if(auth){
-    intro.innerHTML = auth.uname
+    intro.innerHTML = `Welcome` +" "+ auth.uname
 }else{
     window.location.href = "MyAppLogin.html";
 }

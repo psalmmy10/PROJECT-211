@@ -13,7 +13,7 @@ function check(){
         let  loginStatus = false;
         let users = JSON.parse(localStorage.getItem("users"));
     
-        users.some(el => {
+        users.some(el =>{
            if( el.uname == data.uname &&  el.pword == data.pword){
                localStorage.setItem('authUser', JSON.stringify(el))
                 loginStatus = true;
@@ -33,6 +33,12 @@ function check(){
     }
    
 }
+
+// const form = document.querySelector("#login");
+// form.addEventListener("submit", e => {
+//       e.preventDefault()
+//     ;          
+// });
 
 // const form = document.querySelector("#login");
 // form.addEventListener("submit", e => {

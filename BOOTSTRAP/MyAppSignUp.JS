@@ -1,4 +1,6 @@
 function store(){
+
+
     var uname = document.getElementById("uname").value;
     var mail = document.getElementById("mail").value;
     var pword = document.getElementById("pword").value;
@@ -16,6 +18,7 @@ function store(){
         }
         else{ 
             userRecords.push({
+                "id": Math.floor(Math.random() * 1000000),
                 "uname": uname,
                 "mail": mail,
                 "pword": pword
