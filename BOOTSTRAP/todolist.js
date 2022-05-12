@@ -77,7 +77,7 @@ function fetchData(){
             <td>
                <a btn ><i class="fa-solid fa-square-minus" onclick="decrement(${i})"></i></a>
                <span  id="root">${arr[i].quantity}</span> 
-               <a btn><i class="fa-solid fa-plus" onclick="increment(${i})">+</i></a>
+               <a btn><i class="fa-solid fa-plus" onclick="increment(${i})"></i></a>
             </td>
             <td> 
                  <i class="fa-solid fa-trash shadow" onclick="deletetodo(${i})"></i>

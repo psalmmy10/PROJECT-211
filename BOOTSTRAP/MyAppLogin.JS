@@ -19,7 +19,7 @@ function check(){
             result.innerHTML = `Logged in <i class="fa-solid fa-circle-check"></i>`
             swal("Welcome!", "Logged successfully!", "success");
             setTimeout(() => {
-               window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/BOOTSTRAP/MyAppLogin.html") 
+               window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/BOOTSTRAP/todolist.html") 
             }, 4000);
         }
         else{
