@@ -24,10 +24,21 @@ function store(){
                 "pword": pword
             })
 
-            if(pword.length < 10){
+
+            var regex =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            var email = regex.test(mail);
+            var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+            var pw = passw.test(pword)
+
+            if(!pw){
                 swal({
-                    title: "Password too weak!",
-                  });
+                    title: "contain at least 6 to 20 characters (num,uppercase,lowercase letter)",
+                });
+            }
+            else if(!email){
+                swal({
+                    title: "email isn't valid",
+                });
             }
             else{
                 localStorage.setItem("users", JSON.stringify(userRecords));
@@ -39,6 +50,8 @@ function store(){
         } 
     } 
 }
+
+
 
 // const form = document.querySelector("#signup");
 // form.addEventListener("submit", e => {
