@@ -25,7 +25,6 @@ function store(){
             setTimeout(() => {
                window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/BOOTSTRAP/MyAppLogin.html") 
             }, 4000);
-            console.log("yes");
         } 
     } 
     
