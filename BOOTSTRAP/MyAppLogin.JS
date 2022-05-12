@@ -1,5 +1,3 @@
-
-
 var uname = document.getElementById('username');
 var pword = document.getElementById('Password');
 
@@ -12,17 +10,24 @@ function check(){
             uname: username.value,
             pword: Password.value
         };
-    
+        let  loginStatus = false;
         let users = JSON.parse(localStorage.getItem("users"));
     
-        if(users.some(el => el.uname == data.uname &&  el.pword == data.pword)){
+        users.some(el => {
+           if( el.uname == data.uname &&  el.pword == data.pword){
+               localStorage.setItem('authUser', JSON.stringify(el))
+                loginStatus = true;
+           }
+        })
+        if(loginStatus){
             result.innerHTML = `Logged in <i class="fa-solid fa-circle-check"></i>`
-            swal("Welcome!", "Logged successfully!", "success");
-            setTimeout(() => {
-               window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/BOOTSTRAP/todolist.html") 
-            }, 4000);
+                swal("Welcome!", "Logged successfully!", "success");
+                setTimeout(() => {
+                window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/BOOTSTRAP/todolist.html") 
+                }, 4000);
         }
         else{
+            alert("no account")
             result.innerHTML = `No Username or Password Match<i class="fa-solid fa-circle-exclamation"></i>`
         }
     }

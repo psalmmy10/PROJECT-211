@@ -48,8 +48,6 @@ function myList(){
            status = true
         }
     }
-
-
     if(item  == "" || amount == ""){
         alert('Add an Item')
     }
@@ -235,6 +233,34 @@ function increment(id){
 
 // console.log(total(cart_Data))
 
+
+// var data = {
+//     uname: username.value,
+// };
+
+
+// var data = {
+//     uname: username.value,
+//     pword: Password.value
+// }; 
+
+
+
+// var names = document.getElementById('intro');
+
+// let users = JSON.parse(localStorage.getItem("users"));
+
+// if(localStorage.getItem('users', )) {
+//     const users = localStorage.getItem('users');
+//     intro.innerHTML = `Welcome, ${users, names}`;
+// } 
+
+let auth = JSON.parse(localStorage.getItem("authUser"))
+if(auth){
+    intro.innerHTML = auth.uname
+}else{
+    window.location.href = "MyAppLogin.html";
+}
 
 
 
