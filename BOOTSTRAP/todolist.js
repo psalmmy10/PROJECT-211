@@ -40,9 +40,7 @@ function myList(){
   
     
     var tod = {
-        item , 
-        amount:amount , 
-        quantity: 1
+        item , amount:amount , quantity: 1
     }
 
     for(let i = 0; i<arr.length ; i++){
@@ -50,6 +48,8 @@ function myList(){
            status = true
         }
     }
+
+
     if(item  == "" || amount == ""){
         alert('Add an Item')
     }
@@ -58,21 +58,8 @@ function myList(){
     }
     else {
         arr.push(tod);
+        fetchData()
     }
-    fetchData()
-
-
-
-    if (localStorage.getItem('dataItem')==null){
-        holder =[]
-    }
-    else{
-        holder = JSON.parse(localStorage.getItem('dataItem'))
-    }
-    
-    holder.push(tod)
-    localStorage.setItem('dataItem', JSON.stringify(holder));
-
 }
 
 //SUM UP FUNCTION
@@ -88,9 +75,9 @@ function fetchData(){
             <td >${arr[i].item}</td>
             <td id="">${"$" + arr[i].amount}</td>
             <td>
-               <a btn ><i class="fa-solid fa-square-minus" onclick="decrement(${i})"></i></a>
+               <a btn ><i class="fa-solid fa-square-minus" onclick="decrement(${i})">-</i></a>
                <span  id="root">${arr[i].quantity}</span> 
-               <a btn><i class="fa-solid fa-plus" onclick="increment(${i})"></i></a>
+               <a btn><i class="fa-solid fa-plus" onclick="increment(${i})">+</i></a>
             </td>
             <td> 
                  <i class="fa-solid fa-trash shadow" onclick="deletetodo(${i})"></i>
@@ -248,34 +235,6 @@ function increment(id){
 
 // console.log(total(cart_Data))
 
-
-// var data = {
-//     uname: username.value,
-// };
-
-
-// var data = {
-//     uname: username.value,
-//     pword: Password.value
-// }; 
-
-
-
-// var names = document.getElementById('intro');
-
-// let users = JSON.parse(localStorage.getItem("users"));
-
-// if(localStorage.getItem('users', )) {
-//     const users = localStorage.getItem('users');
-//     intro.innerHTML = `Welcome, ${users, names}`;
-// } 
-
-let auth = JSON.parse(localStorage.getItem("authUser"))
-if(auth){
-    intro.innerHTML = `Welcome` +" "+ auth.uname
-}else{
-    window.location.href = "MyAppLogin.html";
-}
 
 
 

@@ -55,3 +55,9 @@ input {
 .btn{
     display: inline-block;
 }
+#intro{
+    color: aliceblue;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 4px;
+}
