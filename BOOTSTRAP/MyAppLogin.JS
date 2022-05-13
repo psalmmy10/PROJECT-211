@@ -3,7 +3,9 @@ var pword = document.getElementById('Password');
 
 function check(){
     if (uname.value == "" || pword.value =="") {
-        alert("can't take empty")
+         swal({
+                title: "Can't take empty field",
+            });
     }
     else{
         var data = {
@@ -27,7 +29,9 @@ function check(){
             }, 500);
         }
         else{
-            alert("no account")
+            swal({
+                title: "Account Doesn't exit",
+            });
             result.innerHTML = `No Username or Password Match<i class="fa-solid fa-circle-exclamation"></i>`
         }
     }
