@@ -215,7 +215,6 @@ function editTodo(edit){
     }
     selectDropDown2.value = localVar.item
     priceInput1.value = localVar.amount  
-    console.log(localVar);
 };
 
 // Increment && Decrement Function

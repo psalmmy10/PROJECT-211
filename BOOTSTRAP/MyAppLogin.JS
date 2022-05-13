@@ -9,6 +9,7 @@ function check(){
     }
     else{
         var data = {
+            id: Math.floor(Math.random() * 1000000),
             uname: username.value,
             pword: Password.value
         };
