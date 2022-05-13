@@ -38,47 +38,54 @@ function myList(){
         quantity: 1,
     }
 
-    for(let i = 0; i<arr.length ; i++){
-        if(item == arr[i].item){
-           status = true
-        }
-    }
+    
     if(item  == "" || amount == ""){
         swal({
             title: "please select an item",
         });
     }
-    else if(status){
-        swal({
-            title: "Item already selected",
-        });
-    }
-    else {
-        arr.push(tod);
-    }
-    fetchData()
-
-
+    
+    let holder =[]
+    // Checking if record does not exist in storage (== null)
+    // if null, we push tod object to empty array
     if (localStorage.getItem('dataItem')==null){
-        holder =[]
+        holder.push(tod);
+
     }
     else{
+        // If record exist in storage
+        // get storage data, check for duplicate
+        // If none found, push newly  added obj to the localStorage record
         holder = JSON.parse(localStorage.getItem('dataItem'))
-    }
+        for(let i = 0; i<holder.length ; i++){
+            if(tod.item == holder[i].item){
+               status = true
+            }
+        }
+        // Checking if duplicate status is true
+        if(status){
+            swal({
+                title: "Item already selected",
+            });
+        }
+        else {
+          holder.push(tod)
     
-    holder.push(tod)
+        }
+    }
+    // Setting the record to local storage
     localStorage.setItem('dataItem', JSON.stringify(holder));
      
     fetchData()
 }
-fetchData()
 //SUM UP FUNCTION
 function fetchData(){
     amount = document.getElementById("price");
     table.innerHTML='';
     var totalPrice = Number(); 
-    let dataItems = JSON.parse(localStorage.getItem("dataItem"));
-    for(let i=0; i<dataItems.length; i++){
+    let dataItems = JSON.parse(localStorage.getItem("dataItem")) || null;
+    
+    for(let i=0; i<dataItems.length;i++){
         totalPrice +=  Number(dataItems[i].amount) 
         table.innerHTML+= `
         <tr>
