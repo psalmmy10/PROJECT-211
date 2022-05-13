@@ -24,8 +24,6 @@ for (let i = 0 ; i < select.length ; i++){
     selectDropDown2.innerHTML+=`<option value="${select[i].name}">${select[i].name}</option>`
 }
 
-
-
 //PUSH FUNCTION
 function myList(){
     var status = false
@@ -78,7 +76,7 @@ function fetchData(){
     amount = document.getElementById("price");
     table.innerHTML='';
     var totalPrice = Number(); 
-    // let dataItem = JSON.parse(localStorage.getItem("dataItems"));
+    let dataItems = JSON.parse(localStorage.getItem("dataItems"));
     for(let i=0; i<arr.length; i++){
         totalPrice +=  Number(arr[i].amount) 
         table.innerHTML+= `
