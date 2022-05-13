@@ -30,7 +30,7 @@ function check(){
         }
         else{
             swal({
-                title: "Account Doesn't exit",
+                title: "Account Doesn't exit, incorrect details",
             });
             result.innerHTML = `No Username or Password Match<i class="fa-solid fa-circle-exclamation"></i>`
         }

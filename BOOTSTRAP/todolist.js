@@ -51,10 +51,14 @@ function myList(){
         }
     }
     if(item  == "" || amount == ""){
-        alert('Add an Item')
+        swal({
+            title: "please select an item",
+        });
     }
     else if(status){
-        alert ("Item already selected")
+        swal({
+            title: "Item already selected",
+        });
     }
     else {
         arr.push(tod);
@@ -177,7 +181,9 @@ function deletetodo(ind){
 function update(){
     for (let i =0; i<arr.length; i++){
         if(selectDropDown2.value == "" || priceInput1.value == ""){
-            alert("please select an item")
+            swal({
+                title: "please select an item",
+            });
             document.getElementById("price1").innerHTML = "please select an item"
         }
         else{
@@ -289,27 +295,6 @@ function increment(id){
 
 // console.log(total(cart_Data))
 
-
-// var data = {
-//     uname: username.value,
-// };
-
-
-// var data = {
-//     uname: username.value,
-//     pword: Password.value
-// }; 
-
-
-
-// var names = document.getElementById('intro');
-
-// let users = JSON.parse(localStorage.getItem("users"));
-
-// if(localStorage.getItem('users', )) {
-//     const users = localStorage.getItem('users');
-//     intro.innerHTML = `Welcome, ${users, names}`;
-// } 
 
 let auth = JSON.parse(localStorage.getItem("authUser"))
 if(auth){
