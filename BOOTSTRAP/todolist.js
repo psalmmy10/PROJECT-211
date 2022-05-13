@@ -61,8 +61,6 @@ function myList(){
     }
     fetchData()
 
-
-
     if (localStorage.getItem('dataItem')==null){
         holder =[]
     }
@@ -116,6 +114,8 @@ function getItemPrice(e){
     console.log(getPrice);
 }
 
+
+
 //MODAL PRICE FUNCTION
 function getItemPrice1(e){
     var priceOutput1 ="";
@@ -129,6 +129,23 @@ function getItemPrice1(e){
     priceInput1.value = priceOutput1;
     fetchData()
     console.log(getPrice1);
+
+
+    var modalStore = {
+        getPrice1,
+        priceOutput1 
+    }
+
+    if (localStorage.getItem('dataItem')==null){
+        holder =[]
+    }
+    else{
+        holder = JSON.parse(localStorage.getItem('dataItem'))
+    }
+    
+    holder.push(modalStore )
+    localStorage.setItem('dataItem', JSON.stringify(holder));
+
 }
   
 //DELETE FUNCTION
@@ -169,6 +186,7 @@ function update(){
                 arr[i].amount = priceInput1.value
             }  
         } 
+
     }
 
     selectDropDown2.value = ""
@@ -198,9 +216,8 @@ function editTodo(edit){
 function decrement(id){
     for(let i = arr.length - 1; i >= 0; i--){
         if (i == id){
-            arr[i].quantity -= 1
-            document.getElementById("root").innerText = arr[i].quantity;
-            console.log(arr[i].quantity);
+            arr[i].quantity --
+            quantity = arr[i].quantity
         } 
         if(arr[i].quantity < 1){
             return alert("nope")
@@ -211,16 +228,25 @@ function decrement(id){
 function increment(id){
     for(i = 0; i < arr.length; i++){
         if (i == id){
-            arr[i].quantity += quantity
-            if (quantity == i)
-            document.getElementById("root").innerText = arr[i].quantity;
-            // console.log(arr[i].quantity);
+            arr[i].quantity++
+            quantity = arr[i].quantity
         }
-        // arr[i].amount += arr[i].quantity
-
-        // console.log(arr[i].amount);
     } 
     fetchData();
+
+
+    var quty = {
+        quantity 
+    }
+
+    if (localStorage.getItem('dataItem')==null){
+        holder =[]
+    }
+    else{
+        holder = JSON.parse(localStorage.getItem('dataItem'))
+    }
+    holder.push(quty)
+    localStorage.setItem('dataItem', JSON.stringify(holder));
 }
 
 

@@ -24,7 +24,7 @@ function check(){
             swal("Welcome!", "Logged successfully!", "success");
             setTimeout(() => {
             window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/BOOTSTRAP/todolist.html") 
-            }, 4000);
+            }, 500);
         }
         else{
             alert("no account")
