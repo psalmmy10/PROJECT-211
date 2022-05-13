@@ -68,25 +68,26 @@ function myList(){
     
     holder.push(tod)
     localStorage.setItem('dataItem', JSON.stringify(holder));
-
+     
+    fetchData()
 }
-
+fetchData()
 //SUM UP FUNCTION
 function fetchData(){
     amount = document.getElementById("price");
     table.innerHTML='';
     var totalPrice = Number(); 
-    let dataItems = JSON.parse(localStorage.getItem("dataItems"));
-    for(let i=0; i<arr.length; i++){
-        totalPrice +=  Number(arr[i].amount) 
+    let dataItems = JSON.parse(localStorage.getItem("dataItem"));
+    for(let i=0; i<dataItems.length; i++){
+        totalPrice +=  Number(dataItems[i].amount) 
         table.innerHTML+= `
         <tr>
             <td>${i+1}</td>
-            <td >${arr[i].item}</td>
-            <td id="">${"$" + arr[i].amount}</td>
+            <td >${dataItems[i].item}</td>
+            <td id="">${"$" + dataItems[i].amount}</td>
             <td>
                <a btn ><i class="fa-solid fa-square-minus" onclick="decrement(${i})"></i></a>
-               <span  id="root">${arr[i].quantity}</span> 
+               <span  id="root">${dataItems[i].quantity}</span> 
                <a btn><i class="fa-solid fa-plus" onclick="increment(${i})"></i></a>
             </td>
             <td> 

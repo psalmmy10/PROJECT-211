@@ -26,7 +26,7 @@ function check(){
             result.innerHTML = `Logged in <i class="fa-solid fa-circle-check"></i>`
             swal("Welcome!", "Logged successfully!", "success");
             setTimeout(() => {
-            window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/BOOTSTRAP/todolist.html") 
+            window.location.assign("http://127.0.0.1:5500/BOOTSTRAP/todolist.html") 
             }, 500);
         }
         else{

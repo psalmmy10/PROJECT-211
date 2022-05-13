@@ -13,7 +13,10 @@ function store(){
         swal("Fields can't be empty")
     }
     else{
-        if (userRecords.some((v)=>{return v.mail == mail})){
+        if(userRecords.some((v)=>{return v.uname == uname})){
+            return outputMessage.innerHTML ="Username already existed!!"
+        }
+        else if (userRecords.some((v)=>{return v.mail == mail})){
             return output.innerHTML ="Email already existed!!"
         }
         else{ 
@@ -44,7 +47,7 @@ function store(){
                 localStorage.setItem("users", JSON.stringify(userRecords));
                 swal("Welcome!", "Account created successfully!", "success");
                 setTimeout(() => {
-                   window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/BOOTSTRAP/MyAppLogin.html") 
+                   window.location.assign("http://127.0.0.1:5500/BOOTSTRAP/MyAppLogin.html") 
                 }, 1000);
             }
         } 
