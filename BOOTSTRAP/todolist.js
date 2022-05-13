@@ -40,9 +40,10 @@ function myList(){
   
     
     var tod = {
+        id: Math.floor(Math.random () * 1000000),
         item , 
         amount:amount , 
-        quantity: 1
+        quantity: 1,
     }
 
     for(let i = 0; i<arr.length ; i++){
@@ -64,6 +65,7 @@ function myList(){
         arr.push(tod);
     }
     fetchData()
+
 
     if (localStorage.getItem('dataItem')==null){
         holder =[]
@@ -192,7 +194,6 @@ function update(){
                 arr[i].amount = priceInput1.value
             }  
         } 
-
     }
 
     selectDropDown2.value = ""
@@ -241,6 +242,7 @@ function increment(id){
 
 
     var quty = {
+        id: Math.floor(Math.random() * 1000000),
         quantity 
     }
 
