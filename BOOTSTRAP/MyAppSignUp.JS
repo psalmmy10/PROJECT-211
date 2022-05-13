@@ -32,7 +32,7 @@ function store(){
 
             if(!pw){
                 swal({
-                    title: "contain at least 6 to 20 characters (num,uppercase,lowercase letter)",
+                    title: "Should contain at least 6 to 20 characters (num,uppercase,lowercase letter)",
                 });
             }
             else if(!email){
