@@ -84,21 +84,22 @@ function fetchData(){
     amount = document.getElementById("price")
     table.innerHTML='';
     var totalPrice = Number(); 
+    let dataItem = JSON.parse(localStorage.getItem("dataItems"))
     for(let i=0; i<arr.length; i++){
         totalPrice +=  Number(arr[i].amount) 
         table.innerHTML+= `
         <tr>
             <td>${i+1}</td>
-            <td >${arr[i].item}</td>
-            <td id="">${"$" + arr[i].amount}</td>
+            <td >${dataItem[i].item}</td>
+            <td id="">${"$" + dataItem[i].amount}</td>
             <td>
                <a btn ><i class="fa-solid fa-square-minus" onclick="decrement(${i})"></i></a>
-               <span  id="root">${arr[i].quantity}</span> 
+               <span  id="root">${dataItem[i].quantity}</span> 
                <a btn><i class="fa-solid fa-plus" onclick="increment(${i})"></i></a>
             </td>
             <td> 
                  <i class="fa-solid fa-trash shadow" onclick="deletetodo(${i})"></i>
-                 <i class="fa-solid fa-pen shadow " onclick="editTodo(${i})" data-toggle="modal" data-target="#exampleModal" ></i>
+                 <i class="fa-solid fa-pen shadow " onclick="editTodo(${dataItem[i].id})" data-toggle="modal" data-target="#exampleModal" ></i>
             </td>
         </tr>
         ` 
