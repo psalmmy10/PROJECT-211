@@ -44,9 +44,3 @@ function check(){
 //       e.preventDefault()
 //     ;          
 // });
-
-// const form = document.querySelector("#login");
-// form.addEventListener("submit", e => {
-//       e.preventDefault()
-//     ;          
-// });
