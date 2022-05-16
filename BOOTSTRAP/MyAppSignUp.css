@@ -14,3 +14,19 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.icon , .fa-eye{
+    color: rgb(93, 151, 240);
+    cursor: pointer;
+}
+
+.eyeLow{
+    cursor: pointer; 
+    color: rgb(93, 151, 240);
+}
+
+a{
+    text-decoration: none !important;
+    font-weight: bold;
+}
+
