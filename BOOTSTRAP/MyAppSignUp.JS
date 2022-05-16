@@ -33,10 +33,8 @@ function store(){
             var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/;
             var pw = passw.test(pword)
 
-            if(!pw){
-                swal({
-                    title: "Should contain at least 6 to 20 characters (num,uppercase,lowercase letter)",
-                });
+            if(!pw){ 
+                return output1.innerHTML = "Should contain at least 6 to 20 characters (num,uppercase,lowercase letter)"
             }
             else if(!email){
                 swal({
