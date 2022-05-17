@@ -7,9 +7,6 @@ function store(){
     userRecords = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
    
 
-    document.getElementById("list").classList.remove("display")
-    document.getElementById("update").classList.add("display")
-
 
     if ((uname == "" || mail == "") || (pword == "")){
         swal("Fields can't be empty")
@@ -36,14 +33,36 @@ function store(){
             var pw = passw.test(pword)
 
 
+            // if(!pw){ 
+            //      output1.innerHTML = "Too Weak"
+            // }
+            // else{
+            //     if(pw){
+            //         output2.innerHTML = "Strong"
+            //     }
+            //     else if(!email){
+            //         swal({
+            //             title: "email isn't valid",
+            //         });
+            //     }
+            //     else{
+            //         localStorage.setItem("users", JSON.stringify(userRecords));
+            //         swal("Welcome!", "Account created successfully!", "success");
+            //         setTimeout(() => {
+            //            window.location.assign("http://127.0.0.1:5500/BOOTSTRAP/MyAppLogin.html ") 
+            //         }, 1000);
+            //     }
+            // }
+
+
             if(!pw){ 
                  output1.innerHTML = "Too Weak"
             }
             else{
-                if(pw){
                     output2.innerHTML = "Strong"
                 }
-                else if(!email){
+
+                if(!email){
                     swal({
                         title: "email isn't valid",
                     });
@@ -55,7 +74,6 @@ function store(){
                        window.location.assign("http://127.0.0.1:5500/BOOTSTRAP/MyAppLogin.html ") 
                     }, 1000);
                 }
-            }
         } 
     }     
 }
