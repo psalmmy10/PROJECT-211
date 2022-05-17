@@ -6,8 +6,6 @@ function store(){
     let userRecords = Array();
     userRecords = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
    
-
-
     if ((uname == "" || mail == "") || (pword == "")){
         swal("Fields can't be empty")
     }
@@ -29,16 +27,16 @@ function store(){
 
             var regex =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             var email = regex.test(mail);
-            var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/;
+            var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{9,15}$/;
             var pw = passw.test(pword)
 
 
-            if(!pw){ 
-                 output1.innerHTML = "Too Weak"
-            }
-            else{
-                if(pw){
-                    output2.innerHTML = "Strong"
+            // if(!pw){ 
+            //      output1.innerHTML = "Too Weak"
+            // }
+            // else{
+                if(!pw){ 
+                    output1.innerHTML = "Too Weak"
                 }
                 else if(!email){
                     swal({
@@ -49,12 +47,12 @@ function store(){
                     localStorage.setItem("users", JSON.stringify(userRecords));
                     swal("Welcome!", "Account created successfully!", "success");
                     setTimeout(() => {
-                       window.location.assign("http://127.0.0.1:5500/BOOTSTRAP/MyAppLogin.html ") 
+                       window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/BOOTSTRAP/MyAppLogin.html") 
                     }, 1000);
                 }
-                 document.querySelector("output1").classList.remove("display")
-                 document.querySelector("output2").classList.add("display")  
-            }
+                //  document.querySelector("output1").classList.remove("display")
+                //  document.querySelector("output2").classList.add("display")  
+            // }
         } 
     }     
 }
