@@ -8,7 +8,7 @@
     "sidebar main main main"
     "sidebar content-a content-b content-c"
     "footer footer footer footer";
-    grid-gap: 5px;
+    grid-gap: 2px;
 }
 
 nav{

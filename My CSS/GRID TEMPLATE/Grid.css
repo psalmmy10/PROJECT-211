@@ -17,8 +17,8 @@
     /* width: 100%; */
     display: grid;
     height: 100vh;
-    grid-template-columns: 0.2fr 0.8fr;
-    grid-template-rows: 0.1fr 0.7fr 0.3fr ;
+    /* grid-template-columns: 0.2fr 0.8fr;
+    grid-template-rows: 0.1fr 0.7fr 0.3fr ; */
     grid-template-areas: 
     "navbar navbar "
     "sidebar content"

@@ -26,66 +26,76 @@ for (let i = 0 ; i < select.length ; i++){
 
 //PUSH FUNCTION
 function myList(){
-    var status = false
+    let status = false
     var item = document.getElementById('opt').value;
     var amount = document.getElementById('price').value;
-  
-    
-    var tod = {
-        id: Math.floor(Math.random () * 1000000),
-        item , 
-        amount:amount , 
-        quantity: 1,
-    }
 
-    
     if(item  == "" || amount == ""){
         swal({
             title: "please select an item",
         });
     }
+  
+    for(let i = 0; i < arr.length ; i++){
+        if(tod.item == arr[i].item){
+           status = true
+        }
+    }
+    if(status){
+        swal({
+            title: "Item already selected",
+        });
+    }
+    else{
+        arr.push({
+            item , 
+            amount:amount , 
+            quantity: 1,
+        })
+    }
+
+    var tod = {
+        id: Math.floor(Math.random () * 1000000),
+            item , 
+            amount:amount , 
+            quantity: 1,
+    }
+
     
-    let holder =[]
+    
+    // let holder =[]
     // Checking if record does not exist in storage (== null)
     // if null, we push tod object to empty array
     if (localStorage.getItem('dataItem')==null){
-        holder.push(tod);
-
+        holder = []
     }
     else{
         // If record exist in storage
         // get storage data, check for duplicate
         // If none found, push newly  added obj to the localStorage record
         holder = JSON.parse(localStorage.getItem('dataItem'))
-        for(let i = 0; i<holder.length ; i++){
-            if(tod.item == holder[i].item){
-               status = true
-            }
-        }
+        
         // Checking if duplicate status is true
-        if(status){
-            swal({
-                title: "Item already selected",
-            });
-        }
-        else {
+        
+        
           holder.push(tod)
     
-        }
+        
     }
     // Setting the record to local storage
     localStorage.setItem('dataItem', JSON.stringify(holder));
      
-    fetchData()
 }
+fetchData()
+
 //SUM UP FUNCTION
 function fetchData(){
     amount = document.getElementById("price");
     table.innerHTML='';
     var totalPrice = Number(); 
-    let dataItems = JSON.parse(localStorage.getItem("dataItem")) || null;
+    let dataItems = JSON.parse(localStorage.getItem("dataItem"));
     
-    for(let i=0; i<dataItems.length;i++){
+    for(let i = 0; i < dataItems.length;i++){
         totalPrice +=  Number(dataItems[i].amount) 
         table.innerHTML+= `
         <tr>
@@ -99,7 +109,7 @@ function fetchData(){
             </td>
             <td> 
                  <i class="fa-solid fa-trash shadow" onclick="deletetodo(${i})"></i>
-                 <i class="fa-solid fa-pen shadow " onclick="editTodo(${i})" data-toggle="modal" data-target="#exampleModal" ></i>
+                 <i class="fa-solid fa-pen shadow " onclick="editTodo(${dataItems[i].id})" data-toggle="modal" data-target="#exampleModal" ></i>
             </td>
         </tr>
         ` 
@@ -156,67 +166,81 @@ function getItemPrice1(e){
 }
   
 //DELETE FUNCTION
-function deletetodo(dataItems){
+function deletetodo(ind){
     swal({
         title: "Are you sure?",
         text: "Item will be deleted from cart!",
         icon: "warning",
         buttons: true,
         dangerMode: true,
-      })
-      .then((willDelete) => {
-        if (willDelete) {
-          swal("Item Deleted!", {
-            icon: "success",
-        });
-        holder.splice(dataItems[i].id)
-        console.log("text");
-        fetchData()  
-        } 
-        else {
-      fetchData()
-      swal("Item still in cart!");
+    })
+    .then((willDelete) => {
+    if (willDelete){
+    let dataItems = JSON.parse(localStorage.getItem("dataItem")) ;
+    if(dataItems){
+        dataItems.splice(ind,1)
+        localStorage.setItem("dataItem",JSON.stringify(dataItems));
+    }
+    swal("Item Deleted!", {
+        icon: "success",
+    });
+
+    fetchData()  
+    } 
+    else {
+    fetchData()
+    swal("Item still in cart!");
         }
-      });
+    });
 }
  
 // UPDATE FUNCTION
 function update(){
-    for (let i =0; i<arr.length; i++){
-        if(selectDropDown2.value == "" || priceInput1.value == ""){
-            swal({
-                title: "please select an item",
-            });
-            document.getElementById("price1").innerHTML = "please select an item"
-        }
-        else{
-            if(i == editIndex){
-                arr[i].item = selectDropDown2.value
-                arr[i].amount = priceInput1.value
+    let dataItems = JSON.parse(localStorage.getItem("dataItem"))
+    
+    if(selectDropDown2.value == "" || priceInput1.value == ""){
+        swal({
+            title: "please select an item",
+        });
+    }
+    else{
+
+        for (let i = 0; i < dataItems.length; i++){
+            if(dataItems[i].id == editIndex){
+
+                dataItems[i].item = selectDropDown2.value
+                dataItems[i].amount = priceInput1.value
+                
             }  
         } 
-    }
 
-    selectDropDown2.value = ""
+        // selectDropDown2.value = ""
+    } 
+
     // document.getElementById("list").classList.remove("display")
     // document.getElementById("update").classList.add("display")
+    localStorage.setItem("dataItem",JSON.stringify(dataItems)); 
     fetchData()
-    console.log(selectDropDown2);
+    // console.log(selectDropDown2);
 }
 
 
 // EDIT FUNCTION // MODAL POP-UP && ITEM SELECTION
 function editTodo(edit){
     var  localVar ="";
-    editIndex = edit
-    for (let i = 0 ; i < arr.length ; i++){
-        if(editIndex == i){
-            localVar = arr[i]
-            priceOutput = select[i].price
+    editIndex = edit;
+
+    let dataItems = JSON.parse(localStorage.getItem("dataItem"));
+
+    for (let i = 0 ; i < dataItems.length ; i++){
+        if(editIndex == dataItems[i].id){
+            localVar = dataItems[i]
+            // priceOutput = select[i].price
         }
     }
     selectDropDown2.value = localVar.item
     priceInput1.value = localVar.amount  
+    fetchData()
 };
 
 // Increment && Decrement Function
@@ -256,47 +280,6 @@ function increment(id){
     holder.push(quty)
     localStorage.setItem('dataItem', JSON.stringify(holder));
 }
-
-
-
-// data(){
-//     return{
-//       total: 0,
-  
-//       cartData: [{
-//         price: 5,
-//         qty: 5},
-//         {price: 5,
-//         qty: 5
-//         }],
-//     }
-//   },
-  
-//   computed: {
-//    calcSum(){
-//     let total = 0;
-//     this.cartData.forEach((item, i) => {
-//          total += item.price * item.qty;
-//     });
-//     return total;
-//    }
-  
-//   }
-
-
-
-
-//   var cart_Data =[{"p_id":"44","cart_id":"10","cart_price":"100","product_title":"Slim striped pocket shirt","product_image":"product-4.jpg","product_color":"Blue","product_size":"L","qty":"3"},{"p_id":"45","cart_id":"11","cart_price":"42","product_title":"Contrasting Shrit","product_image":"product-7.jpg","product_color":"White","product_size":"M","qty":"1"}]
-// function total(cart_Data){
-//   let sum=0
-//   cart_Data.map(x=>{
-//    sum = sum + (x.cart_price * x.qty)
-//  })
-//   return sum
-// }
-
-// console.log(total(cart_Data))
-
 
 let auth = JSON.parse(localStorage.getItem("authUser"))
 if(auth){
