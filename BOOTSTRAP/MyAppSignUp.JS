@@ -52,6 +52,8 @@ function store(){
                        window.location.assign("http://127.0.0.1:5500/BOOTSTRAP/MyAppLogin.html ") 
                     }, 1000);
                 }
+                 document.querySelector("output1").classList.remove("display")
+                 document.querySelector("output2").classList.add("display")  
             }
         } 
     }     
