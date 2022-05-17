@@ -1,4 +1,6 @@
 function store(){
+
+
     var uname = document.getElementById("uname").value;
     var mail = document.getElementById("mail").value;
     var pword = document.getElementById("pword").value;
@@ -31,9 +33,10 @@ function store(){
             var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/;
             var pw = passw.test(pword)
 
-
-            if(!pw){ 
-                 output1.innerHTML = "Should contain at least 6 to 20 characters (num,uppercase,lowercase letter)"
+            if(!pw){
+                swal({
+                    title: "Should contain at least 6 to 20 characters (num,uppercase,lowercase letter)",
+                });
             }
             else if(!email){
                 swal({
@@ -44,28 +47,11 @@ function store(){
                 localStorage.setItem("users", JSON.stringify(userRecords));
                 swal("Welcome!", "Account created successfully!", "success");
                 setTimeout(() => {
-                   window.location.assign("http://127.0.0.1:5500/BOOTSTRAP/MyAppLogin.html ") 
+                   window.location.assign("http://127.0.0.1:5500/BOOTSTRAP/MyAppLogin.html") 
                 }, 1000);
             }
         } 
-    }     
-}
-
-function eyeShow(p = 'password'){
-    var icon =document.querySelector('.icon')
-    var icon1 =document.querySelector('.icon1')
-    var value = document.querySelector('#pword')
-
-    if(p == 'text'){
-        value.setAttribute('type','text')
-        icon.classList.add('d-none')
-        icon1.classList.remove('d-none')
-    }
-    else{
-       value.setAttribute('type','password')
-       icon.classList.remove('d-none')
-       icon1.classList.add('d-none')
-    }
+    } 
 }
 
 
