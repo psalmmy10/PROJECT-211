@@ -33,36 +33,14 @@ function store(){
             var pw = passw.test(pword)
 
 
-            // if(!pw){ 
-            //      output1.innerHTML = "Too Weak"
-            // }
-            // else{
-            //     if(pw){
-            //         output2.innerHTML = "Strong"
-            //     }
-            //     else if(!email){
-            //         swal({
-            //             title: "email isn't valid",
-            //         });
-            //     }
-            //     else{
-            //         localStorage.setItem("users", JSON.stringify(userRecords));
-            //         swal("Welcome!", "Account created successfully!", "success");
-            //         setTimeout(() => {
-            //            window.location.assign("http://127.0.0.1:5500/BOOTSTRAP/MyAppLogin.html ") 
-            //         }, 1000);
-            //     }
-            // }
-
-
             if(!pw){ 
                  output1.innerHTML = "Too Weak"
             }
             else{
+                if(pw){
                     output2.innerHTML = "Strong"
                 }
-
-                if(!email){
+                else if(!email){
                     swal({
                         title: "email isn't valid",
                     });
@@ -74,6 +52,7 @@ function store(){
                        window.location.assign("http://127.0.0.1:5500/BOOTSTRAP/MyAppLogin.html ") 
                     }, 1000);
                 }
+            }
         } 
     }     
 }
