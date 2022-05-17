@@ -7,6 +7,10 @@ function store(){
     userRecords = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
    
 
+    document.getElementById("list").classList.remove("display")
+    document.getElementById("update").classList.add("display")
+
+
     if ((uname == "" || mail == "") || (pword == "")){
         swal("Fields can't be empty")
     }
@@ -33,19 +37,24 @@ function store(){
 
 
             if(!pw){ 
-                 output1.innerHTML = "Should contain at least 6 to 20 characters (num,uppercase,lowercase letter)"
-            }
-            else if(!email){
-                swal({
-                    title: "email isn't valid",
-                });
+                 output1.innerHTML = "Too Weak"
             }
             else{
-                localStorage.setItem("users", JSON.stringify(userRecords));
-                swal("Welcome!", "Account created successfully!", "success");
-                setTimeout(() => {
-                   window.location.assign("http://127.0.0.1:5500/BOOTSTRAP/MyAppLogin.html ") 
-                }, 1000);
+                if(pw){
+                    output2.innerHTML = "Strong"
+                }
+                else if(!email){
+                    swal({
+                        title: "email isn't valid",
+                    });
+                }
+                else{
+                    localStorage.setItem("users", JSON.stringify(userRecords));
+                    swal("Welcome!", "Account created successfully!", "success");
+                    setTimeout(() => {
+                       window.location.assign("http://127.0.0.1:5500/BOOTSTRAP/MyAppLogin.html ") 
+                    }, 1000);
+                }
             }
         } 
     }     
