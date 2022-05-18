@@ -48,9 +48,9 @@ function myList(){
     }
     else{
         arr.push({
-            item , 
-            amount:amount , 
-            quantity: 1,
+        item , 
+        amount:amount , 
+        quantity: 1,
         })
     }
 
@@ -76,15 +76,13 @@ function myList(){
         holder = JSON.parse(localStorage.getItem('dataItem'))
         
         // Checking if duplicate status is true
-        
-        
-          holder.push(tod)
+         holder.push(tod)
     
         
     }
     // Setting the record to local storage
     localStorage.setItem('dataItem', JSON.stringify(holder));
-     fetchData()
+    fetchData()
 }
 fetchData()
 
@@ -145,24 +143,6 @@ function getItemPrice1(e){
     }
     priceInput1.value = priceOutput1;
     fetchData()
-    console.log(getPrice1);
-
-
-    var modalStore = {
-        getPrice1,
-        priceOutput1 
-    }
-
-    if (localStorage.getItem('dataItem')==null){
-        holder =[]
-    }
-    else{
-        holder = JSON.parse(localStorage.getItem('dataItem'))
-    }
-    
-    holder.push(modalStore )
-    localStorage.setItem('dataItem', JSON.stringify(holder));
-
 }
   
 //DELETE FUNCTION
@@ -240,7 +220,6 @@ function editTodo(edit){
     }
     selectDropDown2.value = localVar.item
     priceInput1.value = localVar.amount  
-    fetchData()
 };
 
 // Increment && Decrement Function
@@ -280,47 +259,6 @@ function increment(id){
     holder.push(quty)
     localStorage.setItem('dataItem', JSON.stringify(holder));
 }
-
-
-
-// data(){
-//     return{
-//       total: 0,
-  
-//       cartData: [{
-//         price: 5,
-//         qty: 5},
-//         {price: 5,
-//         qty: 5
-//         }],
-//     }
-//   },
-  
-//   computed: {
-//    calcSum(){
-//     let total = 0;
-//     this.cartData.forEach((item, i) => {
-//          total += item.price * item.qty;
-//     });
-//     return total;
-//    }
-  
-//   }
-
-
-
-
-//   var cart_Data =[{"p_id":"44","cart_id":"10","cart_price":"100","product_title":"Slim striped pocket shirt","product_image":"product-4.jpg","product_color":"Blue","product_size":"L","qty":"3"},{"p_id":"45","cart_id":"11","cart_price":"42","product_title":"Contrasting Shrit","product_image":"product-7.jpg","product_color":"White","product_size":"M","qty":"1"}]
-// function total(cart_Data){
-//   let sum=0
-//   cart_Data.map(x=>{
-//    sum = sum + (x.cart_price * x.qty)
-//  })
-//   return sum
-// }
-
-// console.log(total(cart_Data))
-
 
 let auth = JSON.parse(localStorage.getItem("authUser"))
 if(auth){
