@@ -47,7 +47,7 @@ function store(){
                     localStorage.setItem("users", JSON.stringify(userRecords));
                     swal("Welcome!", "Account created successfully!", "success");
                     setTimeout(() => {
-                       window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/BOOTSTRAP/MyAppLogin.html") 
+                       window.location.assign("http://127.0.0.1:5500/BOOTSTRAP/MyAppLogin.html") 
                     }, 1000);
                 }
                 //  document.querySelector("output1").classList.remove("display")
