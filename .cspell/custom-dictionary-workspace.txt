@@ -1,4 +1,6 @@
 # Custom Dictionary Words
+Eforiro
 mailformat
 passw
 quty
+Semo

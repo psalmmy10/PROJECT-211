@@ -48,19 +48,20 @@ function myList(){
     }
     else{
         arr.push({
-        item , 
-        amount:amount , 
-        quantity: 1,
+            item , 
+            amount:amount , 
+            quantity: 1,
         })
     }
 
     var tod = {
         id: Math.floor(Math.random () * 1000000),
-            item , 
-            amount:amount , 
-            quantity: 1,
+        item:item , 
+        amount:amount , 
+        quantity: 1,
     }
 
+ 
     
     
     // let holder =[]
@@ -76,12 +77,15 @@ function myList(){
         holder = JSON.parse(localStorage.getItem('dataItem'))
         
         // Checking if duplicate status is true
-         holder.push(tod)
+        
+        
+          holder.push(tod)
     
         
     }
     // Setting the record to local storage
     localStorage.setItem('dataItem', JSON.stringify(holder));
+   
     fetchData()
 }
 fetchData()
@@ -92,6 +96,7 @@ function fetchData(){
     table.innerHTML='';
     var totalPrice = Number(); 
     let dataItems = JSON.parse(localStorage.getItem("dataItem"));
+    console.log(dataItems);
     
     for(let i = 0; i < dataItems.length;i++){
         totalPrice +=  Number(dataItems[i].amount) 
@@ -143,6 +148,24 @@ function getItemPrice1(e){
     }
     priceInput1.value = priceOutput1;
     fetchData()
+    console.log(getPrice1);
+
+
+    var modalStore = {
+        getPrice1,
+        priceOutput1 
+    }
+
+    if (localStorage.getItem('dataItem')==null){
+        holder =[]
+    }
+    else{
+        holder = JSON.parse(localStorage.getItem('dataItem'))
+    }
+    
+    holder.push(modalStore )
+    localStorage.setItem('dataItem', JSON.stringify(holder));
+
 }
   
 //DELETE FUNCTION
@@ -177,6 +200,8 @@ function deletetodo(ind){
 // UPDATE FUNCTION
 function update(){
     let dataItems = JSON.parse(localStorage.getItem("dataItem"))
+    console.log(editIndex);
+    console.log(selectDropDown2.value,priceInput1.value);
     
     if(selectDropDown2.value == "" || priceInput1.value == ""){
         swal({
@@ -194,7 +219,7 @@ function update(){
             }  
         } 
 
-        // selectDropDown2.value = ""
+        selectDropDown2.value = ""
     } 
 
     // document.getElementById("list").classList.remove("display")
@@ -215,11 +240,12 @@ function editTodo(edit){
     for (let i = 0 ; i < dataItems.length ; i++){
         if(editIndex == dataItems[i].id){
             localVar = dataItems[i]
-            // priceOutput = select[i].price
+            priceOutput = select[i].price
         }
     }
     selectDropDown2.value = localVar.item
     priceInput1.value = localVar.amount  
+    fetchData()
 };
 
 // Increment && Decrement Function
