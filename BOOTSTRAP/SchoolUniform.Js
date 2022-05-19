@@ -46,11 +46,11 @@ for(let i = 0 ; i < timeTable.length; i++){
     selectDays.innerHTML +=`<option value ="${timeTable[i].days}">${timeTable[i].days}<option>`
 }
 
-// for(let i = 0; i < timeTable[0].time.length; i++){
-//     selectSubjectTime+=`<option value="${timeTable[0].time[i].subjectTime}">${timeTable[0].time[i].subjectTime}</option>`
-//     console.log(timeTable[0].time.length);
-// }
-
-for(var property in timeTable){
-    console.log(property,":", timeTable[property]);
+for(let i = 0; i < timeTable[0].time.length; i++){
+    selectSubjectTime.innerHTML+=`<option value="${timeTable[0].time[i].subjectTime}">${timeTable[0].time[i].subjectTime}</option>`
+    console.log(selectSubjectTime);
 }
+
+// for(var property in timeTable){
+//     console.log(property,":", timeTable);
+// }
