@@ -1,51 +1,96 @@
-arr = [
+var  mealArr = [
     {
-        day: "Sunday", eatTime:[
-            {eatDuration:"Breakfast", foodType:"Bread"},
-            {eatDuration:"Launch", foodType:"Rice"},
-            {eatDuration:"Dinner", foodType:"Yam"}
+        day: "Sunday", eatMoment:[
+            {eatTime:"Breakfast", foodType:"Bread"},
+            {eatTime:"Launch", foodType:"Rice"},
+            {eatTime:"Dinner", foodType:"Yam"}
         ] 
     },
     {
-        day: "Monday", eatTime:[
-            {eatDuration:"Breakfast", foodType:"Beans with bread"},
-            {eatDuration:"Launch", foodType:"Bread with Egg"},
-            {eatDuration:"Dinner", foodType:"Bread"}
+        day: "Monday", eatMoment:[
+            {eatTime:"Breakfast", foodType:"Beans with bread"},
+            {eatTime:"Launch", foodType:"Bread with Egg"},
+            {eatTime:"Dinner", foodType:"Bread"}
         ] 
     },
     {
-        day: "Tuesday", eatTime:[
-            {eatDuration:"Breakfast", foodType:"Semo with Eforiro"},
-            {eatDuration:"Launch", foodType:"Sandwich"},
-            {eatDuration:"Dinner", foodType:"Fried Rice with Chicken"}
+        day: "Tuesday", eatMoment:[
+            {eatTime:"Breakfast", foodType:"Semo with Eforiro"},
+            {eatTime:"Launch", foodType:"Sandwich"},
+            {eatTime:"Dinner", foodType:"Fried Rice with Chicken"}
         ] 
     },
     {
-        day: "Wednesday", eatTime:[
-            {eatDuration:"Breakfast", foodType:"Coffee"},
-            {eatDuration:"Launch", foodType:"Beans"},
-            {eatDuration:"Dinner", foodType:"Potato with Egg"}
+        day: "Wednesday", eatMoment:[
+            {eatTime:"Breakfast", foodType:"Coffee"},
+            {eatTime:"Launch", foodType:"Beans"},
+            {eatTime:"Dinner", foodType:"Potato with Egg"}
         ] 
     },
     {
-        day: "Thursday", eatTime:[
-            {eatDuration:"Breakfast", foodType:"Bread"},
-            {eatDuration:"Launch", foodType:"Bread"},
-            {eatDuration:"Dinner", foodType:"Bread"}
+        day: "Thursday", eatMoment:[
+            {eatTime:"Breakfast", foodType:"Bread"},
+            {eatTime:"Launch", foodType:"Bread"},
+            {eatTime:"Dinner", foodType:"Bread"}
         ] 
     },
     {
-        day: "Friday", eatTime:[
-            {eatDuration:"Breakfast", foodType:"Bread"},
-            {eatDuration:"Launch", foodType:"Bread"},
-            {eatDuration:"Dinner", foodType:"Bread"}
+        day: "Friday", eatMoment:[
+            {eatTime:"Breakfast", foodType:"Bread"},
+            {eatTime:"Launch", foodType:"Bread"},
+            {eatTime:"Dinner", foodType:"Bread"}
         ] 
     },
     {
-        day: "Saturday", eatTime:[
-            {eatDuration:"Breakfast", foodType:"Bread"},
-            {eatDuration:"Launch", foodType:"Bread"},
-            {eatDuration:"Dinner", foodType:"Bread"}
+        day: "Saturday", eatMoment:[
+            {eatTime:"Breakfast", foodType:"Bread"},
+            {eatTime:"Launch", foodType:"Bread"},
+            {eatTime:"Dinner", foodType:"Bread"}
         ] 
     }
 ]
+
+
+var dayDrop = document.querySelector("#mealDay")
+var timeDrop = document.querySelector("#mealTime")
+
+for (let i = 0; i < mealArr.length; i++){
+    dayDrop.innerHTML+=`<option value="${mealArr[i].day}">${mealArr[i].day}</option>`
+}
+for (let i = 0; i < mealArr.length; i++){
+    timeDrop.innerHTML+=`<option value="${mealArr[i].eatMoment[i].eatTime}">${mealArr[i].eatMoment[i].eatTime}</option>`
+}
+
+
+function addMeal(){
+    var dayDrop = document.querySelector("#mealDay")
+    var timeDrop = document.getElementById('price').value;
+
+}
+    
+        
+function fetchFood(){
+    table.innerHTML='';
+    for(let i = 0; i < mealArr.length;i++){
+        `<tr>
+            <td>${i+1}</td>
+            <td >${mealArr[i].day}</td>
+            <td id="">${mealArr[i].eatMoment[i].eatTime}</td>
+            <td id="">${mealArr[i].eatMoment[i].foodType}</td>
+         </tr>
+        `      
+    }
+}
+
+function getMealType(e){
+    var mealOutput ="";
+    var getMeal = e.target.value;
+    for(let i = 0 ; i < mealArr.length ; i++){
+        if (mealArr[i].eatMoment[i].eatTime == getMeal){
+            mealOutput = mealArr[i].eatMoment[i].foodType
+        }
+    }
+    timeDrop.value = mealOutput;
+    fetchFood()
+    console.log(getMeal);
+  }
