@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <title>Uniform</title>
     <link rel="stylesheet" href="todolist.css"> 
     <link rel="stylesheet" href="localserver.css">   
 </head>
@@ -13,30 +13,31 @@
       <div class="container holder-two col-md-6  py-3">
         <p id="intro"></p>
         <h4 class="text-center txt">
-            Select Meal
+          TimeTable
             <i class="fa-solid fa-credit-card"></i>
         </h4>
         <div class="holder-three container-fluid mt-4 col-md-12">
             <h5 class="text-center pt-4">
-              Menu
+              Subject Teacher
                 <i class="fa-solid fa-cart-shopping"></i>
             </h5>
                <div class="form-row">
-                    <select class=" form-control custom-select mb-5  col-md-6 mr-3"  id="mealDay">
-                        <option value="">Select Day</option>
+                    <select class=" form-control custom-select mb-5  col-md-6 mr-3"  id="schoolDay">
+                        <option value="">Select School Day</option>
                     </select>
-                    <select class=" form-control custom-select mb-5  col-md-6 mr-3" id="mealTime">
-                        <option value="">Select Time</option>
+                    <select class=" form-control custom-select mb-5  col-md-6 mr-3" id="subjectTime">
+                        <option value="">Select subject Time</option>
                     </select>
-                    <i class="fa-solid fa-plus ml-2 pt-2" id="list" onclick="addMeal()"></i>
+                    <i class="fa-solid fa-plus ml-2 pt-2" id="list"></i>
                </div>   
             <table border="0" cellspacing ="0">
                 <thead>
                     <tr>
                         <th class="text-white">S/N</th>
-                        <th class="text-white">Day</th>
-                        <th class="text-white">Time</th>
-                        <th class="text-white">Food</th>
+                        <th class="text-white">Days</th>
+                        <th class="text-white">Subject</th>
+                        <th class="text-white">SubjectTime</th>
+                        <th class="text-white">SubjectTeacher</th>
                     </tr>
                 </thead>
                 <tbody id="table">
@@ -45,9 +46,7 @@
        </div>
       </div>    
     </div> 
-    <script src="Food.JS"> </script> 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://kit.fontawesome.com/41ed371ce6.js" crossorigin="anonymous"></script>
+    <script src="SchoolUniform.Js"></script>
     <!-- jQuery library -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
 
