@@ -13,31 +13,31 @@
       <div class="container holder-two col-md-6  py-3">
         <p id="intro"></p>
         <h4 class="text-center txt">
-          TimeTable
+          TimeTable and Subject Teachers
             <i class="fa-solid fa-credit-card"></i>
         </h4>
         <div class="holder-three container-fluid mt-4 col-md-12">
             <h5 class="text-center pt-4">
-              Subject Teacher
+              Fortress Ville Private School
                 <i class="fa-solid fa-cart-shopping"></i>
             </h5>
                <div class="form-row">
-                    <select class=" form-control custom-select mb-5  col-md-6 mr-3"  id="schoolDay">
+                    <select class=" form-control custom-select mb-3 col-md-6 mr-3"  id="schoolDay">
                         <option value="">Select School Day</option>
                     </select>
                     <select class=" form-control custom-select mb-3 col-md-6 mr-3" id="subjectTime">
                         <option value="">Select subject Time</option>
                     </select>
-                    <i class="fa-solid fa-plus ml-2 pt-2" id="list"></i>
+                    <i class="fa-solid fa-plus ml-2 pt-2" id="list" onclick="addPeriod()"></i>
                </div>   
             <table border="0" cellspacing ="0">
                 <thead>
                     <tr>
                         <th class="text-white">S/N</th>
                         <th class="text-white">Days</th>
-                        <th class="text-white">Subject</th>
                         <th class="text-white">SubjectTime</th>
-                        <!-- <th class="text-white">SubjectTeacher</th> -->
+                        <th class="text-white">Subject</th>
+                        <th class="text-white">SubjectTeacher</th>
                     </tr>
                 </thead>
                 <tbody id="table">
