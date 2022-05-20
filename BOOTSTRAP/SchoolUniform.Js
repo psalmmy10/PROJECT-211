@@ -31,7 +31,7 @@ let timeTable = [
         days: "Friday", time: [
             {subTime:"9:00AM" , subject:"Sport", teacher:"Mr David"},
             {subTime:"11:00AM" , subject:"Computer", teacher:"Mrs Doyin"},
-            {subTime:"2:00PM" , subject:"Free Period", teacher:"Mr Femi"}
+            {subTime:"2:00PM" , subject:"Free Period for Practicals", teacher:"Mr Femi"}
         ]
     }
 ]
@@ -84,9 +84,9 @@ function addPeriod(){
                         subjectData.subject = list2.subject,
                         subjectData.teacher = list2.teacher
                     }
-                })
+                });
             }
-        })
+        });
 
 
         let holder = []
