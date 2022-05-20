@@ -100,7 +100,7 @@ function addPeriod(){
                 if(subjectData.days == Lists.days && subjectData.subTime == Lists.subTime){
                     duplicateStatus=true
                 }
-            })
+            });
             if(duplicateStatus){
                 alert('Duplicate entry detected')
             }
