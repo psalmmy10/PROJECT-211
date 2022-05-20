@@ -1,0 +1,18 @@
+.container-fluid{
+    background-color: #8000AB;
+    height: 100vh;
+}
+.img1{
+    border-radius: 50px;
+    height: 64vh;
+}
+.bg{
+    background-color: #8000AB;
+}
+.text1{
+    color: #fff;
+    font-size: 30px;
+}
+.img2{
+    margin-top:34px;
+}
