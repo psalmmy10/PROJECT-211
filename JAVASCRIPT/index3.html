@@ -17,14 +17,14 @@
     
     <script>
         function mydate(){
-        let demo = document.getElementById('demo').innerHTML;
-        let demo1 = confirm('The time is not correct')
-        document.getElementById('demo').innerHTML = Date();
-        if (demo){
-            alert('the time is correct');
-        } else {
-            alert('Not a correct time')
-        }
+            let demo = document.getElementById('demo').innerHTML;
+            let demo1 = confirm('The time is not correct')
+            document.getElementById('demo').innerHTML = Date();
+            if (demo){
+                alert('the time is correct');
+            } else {
+                alert('Not a correct time')
+            }
         }
 
         const button = document.getElementById('button'); 
@@ -32,10 +32,10 @@
             mydate();
         })
 
-        const button = document.getElementById('button');
-        button.addEventListener('click', () => {
-            confirmAction();
-        })
+        // const button = document.getElementById('button');
+        // button.addEventListener('click', () => {
+        //     confirmAction();
+        // })
         
     </script>
 </body>

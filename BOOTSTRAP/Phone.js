@@ -9,7 +9,7 @@ let blueImgItems    =`<img src= "${phoneImages.at(1)}">`
 let pinkImgItems    =`<img src= "${phoneImages.at(2)}">`
 let starImgItems    =`<img src= "${phoneImages.at(3)}">`
 
-https://github.com/psalmmy10/PROJECT-211.git
+
 
 
 phoneCont.innerHTMLgit = defaultImgItems
