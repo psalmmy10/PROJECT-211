@@ -13,6 +13,7 @@ body {
 
 table{
     width: 100%;
+    border: 2px solid #6d7fcc;
 
 }
 
@@ -187,6 +188,8 @@ a.article:hover {
     min-height: 100vh;
     transition: all 0.3s;
 }
+
+
 
 .secButton{
     float: right !important;
