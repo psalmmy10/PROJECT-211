@@ -290,5 +290,5 @@ let auth = JSON.parse(localStorage.getItem("authUser"))
 if(auth){
     intro.innerHTML = `Welcome` +" "+ auth.uname
 }else{
-    window.location.href = "MyAppLogin.html";
+    window.location.assign("C:\Users\DELL\Desktop\My Project\BOOTSTRAP\MyAppLogin.html")
 }

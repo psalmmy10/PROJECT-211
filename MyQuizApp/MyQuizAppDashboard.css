@@ -8,7 +8,12 @@ body {
     background: #fafafa;
 }
 .card1{
-    box-shadow: black 2px 2px 2px 2px;
+    box-shadow: rgb(189, 180, 180) 2px 2px 2px 2px;
+}
+
+table{
+    width: 100%;
+
 }
 
 .fa-house,.fa-book,.fa-elementor{
@@ -57,10 +62,15 @@ a:focus {
     SIDEBAR STYLE
 ----------------------------------------------------- */
 
+.fixed{
+    background-color: #343957;
+}
+
 .wrapper {
     display: flex;
     width: 100%;
     align-items: stretch;
+    
 }
 
 .btn{
@@ -137,6 +147,11 @@ ul ul a {
     background: #fff;
 }
 
+/* .content,.mt,.container-fluid{
+    position: fixed;
+    ab
+} */
+
 ul.CTAs {
     padding: 20px;
 }
@@ -152,7 +167,7 @@ ul.CTAs a {
 a.download {
     background: #fff;
     color: #7386D5;
-    margin-top: 190px !important;
+    margin-top: 170px !important;
     text-decoration: none !important;
 }
 
@@ -171,6 +186,10 @@ a.article:hover {
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
+}
+
+.secButton{
+    float: right !important;
 }
 
 /* ---------------------------------------------------
