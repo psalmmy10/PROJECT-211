@@ -11,32 +11,14 @@
 <body>
     <div class="wrapper">
         <!-- Sidebar  -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Quizzation</h3>
-            </div>
-
-            <ul class="list-unstyled components">
+        <nav id="sidebar" class="">
+            <ul class="list-unstyled components fixed-left">
                 <p>K-12</p>
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle down">
+                    <a href="C:\Users\DELL\Desktop\My Project\MyQuizApp\MyQuizAppDash.html">
                         <i class="fa-solid fa-house"></i>   
                         Dashboard
                     </a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#" class="own">
-                                <i class="fa-solid fa-user"></i>
-                                Profile
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="own">
-                                <i class="fa-solid fa-chart-line"></i>
-                                Charts
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <li>
                     <a href="#" class="down">
@@ -44,92 +26,83 @@
                         Manage Category</a>
                 </li>
                 <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle down">
+                    <a href="" class="text-white">
                         <i class="fa-solid fa-book"></i>
                         Quiz
                     </a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#" class="own">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#" class="own">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#" class="own">Page 3</a>
-                        </li>
-                    </ul>
                 </li>
-            </ul>
-
-            <ul class="list-unstyled CTAs">
-                <li>
-                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">LOGOUT</a>
-                </li>
-                <li>
-                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
-                </li>
+                <ul class="list-unstyled CTAs">
+                    <li>
+                        <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">LOGOUT</a>
+                    </li>
+                    <li>
+                        <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                    </li>
+                </ul>
             </ul>
         </nav>
 
+    
         <!-- Page Content  -->
         <div id="content">
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg fixed-top">
                 <div class="container-fluid">
-
                     <button type="button" id="sidebarCollapse" class="btn btn-info">
                         <i class="fas fa-align-left"></i>
                         <span></span>
                     </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
-                    </button>
-                    <a href="#" class="ml-5"><b>CATEGORY</b></a>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    </button> -->
+                    <a href="#" class="ml-5 txt">Manage Category</a>
+                    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link text-bold" href="#">QUIZ</a>
+                                <a href="#" class="own text-success">
+                                <i class="fa-solid fa-user"></i>
+                                Profile
+                            </a>
                             </li>
                         </ul>
-                    </div>
+                    <!-- </div> -->
                 </div>
             </nav>
-            <div class="row">
-                <div class="col-sm-3  p-3">
-                  <div class="card card1">
-                    <div class="card-body text-center text-dark">
-                      <p class="card-text">0</p>
-                      <a class="btn btn-primary">Total No of Quiz</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-3  p-3">
-                  <div class="card card1">
-                    <div class="card-body text-center text-dark">
-                      <p class="card-text">0</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-3  p-3">
-                    <div class="card card1">
-                      <div class="card-body text-center text-dark">
-                        <p class="card-text">0 </p>
-                        <a href="#" class="btn btn-primary">Inactive Participant</a>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-sm-3  p-3">
+            <a href="#" class="txt ">Preview</a>
+            <div class="row mt-5">
+                <div class="col-sm-4  p-3">
                     <div class="card card1">
                         <div class="card-body text-center text-dark">
-                        <p class="card-text">0 </p>
-                        <a href="#" class="btn btn-primary">Category</a>
+                        <p class="card-text pt-4 count cardTag"></p>
+                        <a href="#" class="txt"> 
+                            <i class="fa-solid fa-chart-line"></i>
+                            Category
+                        </a>
                         </div>
                     </div>
                 </div>
+                <div class="col-sm-4  p-3">
+                    <div class="card card1">
+                      <div class="card-body text-center text-dark">
+                        <p class="card-text pt-4 cardTag" id="yes"></p>
+                        <a href="#" class="txt">
+                          <i class="fa fa-eye"></i> 
+                          Active Category
+                      </a>
+                      </div>
+                    </div>
+                  </div> 
+                <div class="col-sm-4  p-3">
+                    <div class="card card1">
+                      <div class="card-body text-center text-dark">
+                        <p class="card-text pt-4 cardTag" id="no"></p>
+                        <a href="#" class="txt">
+                            <i class="fa-solid fa-eye-slash"></i>
+                            Inactive Category
+                        </a>
+                      </div>
+                    </div>
+                </div>           
             </div>
-
             <!-- MODAL -->
             <div class="modal  animate__animated animate__backInDown" id="myModal">
                 <div class="modal-dialog">
@@ -141,29 +114,19 @@
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
-                                            Title
+                                            Category
                                         </span>
                                     </div>
                                     <input type="" class="form-control" name="" id="inputGroupSelect0">
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect">Enable Status</label>
-                                    </div>
-                                    <select class="custom-select" id="inputGroupSelect01">
-                                        <option selected>Choose...</option>
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                    </select>
-                                </div>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
                                     <label class="input-group-text" for="inputGroupSelect">Status</label>
                                     </div>
                                     <select class="custom-select" id="inputGroupSelect02">
-                                    <option selected>Choose...</option>
-                                    <option value="Live">Live</option>
-                                    <option value="Not Live">Not Live</option>
+                                    <!-- <option selected>Choose...</option> -->
+                                    <option value="live">Live</option>
+                                    <option value="notLive">Not Live</option>
                                     </select>
                                 </div>
                                 </div>  
@@ -173,14 +136,13 @@
                                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="pushCategory()">Submit</button>
                             </div>  
-                            </form>
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn btn-primary mb-3 secButton" data-toggle="modal" data-target="#myModal" data-dismiss="modal" arial-label="Close">Create Quiz<i class="fa-solid fa-plus"></i></a>
-           
-            <!-- EDIT MODAL -->
+            <a  class="btn btn-primary  secButton" data-toggle="modal" data-target="#myModal" data-dismiss="modal" arial-label="Close">Set Quiz Category<i class="fa-solid fa-plus pl-2"></i></a>
+           <!--MODAL-->
+           <!-- EDIT MODAL -->
             <div class="modal  animate__animated animate__backInDown" id="myModal2">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -191,20 +153,10 @@
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
-                                            Title
+                                            Category
                                         </span>
                                     </div>
                                     <input type="" class="form-control" name="" id="inputGroupSelect00">
-                                </div>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect">Enable Status</label>
-                                    </div>
-                                    <select class="custom-select" id="inputGroupSelect11">
-                                        <!-- <option selected>Choose...</option> -->
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                    </select>
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
@@ -212,8 +164,8 @@
                                     </div>
                                     <select class="custom-select" id="inputGroupSelect22">
                                         <!-- <option selected>Choose...</option> -->
-                                        <option value="Live">Live</option>
-                                        <option value="Not Live">Not Live</option>
+                                        <option value="live">Live</option>
+                                        <option value="notLive">Not Live</option>
                                     </select>
                                 </div>
                                 </div>  
@@ -228,22 +180,71 @@
                     </div>
                 </div>
             </div>
-            <!-- EDIT MODAL -->
-           
-            <table border="1" cellspacing ="0" class="mt-4 table-primary">
-                <thead>
-                    <tr>
-                        <th>S/N</th>
-                        <th>Title</th>
-                        <th>Enabled Status</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody id="tbody">
-                </tbody>
-            </table>
-            <!-- MODAL -->
+            <!-- TABLE CARD -->
+            <a href="#" class="txt">Preview</a>
+            <div class="col-sm-12 p-3 mt-1">
+                <div class="card card1 tableCard">
+                    <div class="card-body text-center text-dark">
+                        <table border="1" cellspacing ="0" class="mt-1 table-primary">
+                            <thead>
+                                <tr>
+                                    <th>S/N</th>
+                                    <th>Title</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- TABLE CARD -->
+            <!-- ANALYTICS CARD -->
+            <div class="row mt-2">
+                <div class="col-sm-3 p-3">
+                  <div class="card card2">
+                    <div class="card-body text-center text-dark">
+                        <img class="card-img-top" src="../IMAGE/shott.webp" alt="Card image cap">
+                        <div class="card-body">
+                          <p class="card-text">Some quick example text to</p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3  p-3">
+                  <div class="card card2">
+                    <div class="card-body text-center text-dark">
+                        <img class="card-img-top" src="../IMAGE/daily analytics.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <p class="card-text">Some quick example text to</p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3  p-3">
+                    <div class="card card2">
+                      <div class="card-body text-center text-dark">
+                        <img class="card-img-top" src="../IMAGE/vect.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <p class="card-text">Some quick example text to</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-sm-3  p-3">
+                    <div class="card card2">
+                        <div class="card-body text-center text-dark">
+                            <img class="card-img-top" src="../IMAGE/daily analytics.jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <p class="card-text">Some quick example text to</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ANALYTICS CARD -->
         </div>
     </div>
 

@@ -2,6 +2,10 @@
     DEMO STYLE
 */
 
+/* *{
+    margin: 0px !important;
+} */
+
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
     font-family: 'Poppins', sans-serif;
@@ -9,6 +13,31 @@ body {
 }
 .card1{
     box-shadow: rgb(189, 180, 180) 2px 2px 2px 2px;
+    background-color: #e0ebf0 !important;
+    height: 200px!important;
+}
+
+.card2{
+    box-shadow: rgb(189, 180, 180) 2px 2px 2px ;
+}
+
+.bg{
+    background-color: #343957 !important;
+    margin-top: 0px!important;
+}
+
+.tableCard{
+ margin-top: 20px;
+ width: 100%;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+.txt{
+    font-size: 15px;
+    font-weight: bold !important;
 }
 
 table{
@@ -37,6 +66,15 @@ a:focus {
     transition: all 0.3s;
 }
 
+#intro{
+   padding-top: 100px!important; 
+}
+
+.cardTag{
+    font-size: 50px !important;
+    font-weight: bold;
+    color: rgb(138, 160, 179) !important;
+}
 .navbar {
     padding: 15px 10px;
     background: #fff;
@@ -69,19 +107,61 @@ a:focus {
 
 .wrapper {
     display: flex;
-    width: 100%;
     align-items: stretch;
-    
 }
 
 .btn{
     background-color: #343957 !important;
 }
 
-#sidebar {
+/* .components{
+    overflow-y: scroll!important;
+    position: fixed !important;
+    margin-top: 30px !important;
+} */
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 2px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #343957; 
+    border-radius: 2px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #343957; 
+  }
+
+#sidebar{
     min-width: 195px;
     max-width: 195px;
     background: #343957;
+    color: #fff;
+    transition: all 0.3s;
+    /* overflow-y: scroll !important; */
+    margin-top: 50px!important;
+}
+
+
+
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #7386D5;
     color: #fff;
     transition: all 0.3s;
 }
@@ -168,7 +248,8 @@ ul.CTAs a {
 a.download {
     background: #fff;
     color: #7386D5;
-    margin-top: 170px !important;
+    margin-top: 200px !important;
+    
     text-decoration: none !important;
 }
 
@@ -185,7 +266,7 @@ a.article:hover {
 #content {
     width: 100%;
     padding: 20px;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     transition: all 0.3s;
 }
 

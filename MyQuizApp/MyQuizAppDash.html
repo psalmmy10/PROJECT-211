@@ -12,53 +12,24 @@
     <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Quizzation</h3>
-            </div>
-
             <ul class="list-unstyled components">
                 <p>K-12</p>
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle down">
+                    <a href="#homeSubmenu">
                         <i class="fa-solid fa-house"></i>   
                         Dashboard
                     </a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#" class="own">
-                                <i class="fa-solid fa-user"></i>
-                                Profile
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="own">
-                                <i class="fa-solid fa-chart-line"></i>
-                                Charts
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <li>
-                    <a href="#" class="down">
+                    <a href="C:\Users\DELL\Desktop\My Project\MyQuizApp\QuizCategory.html" class="down">
                         <i class="fa-brands fa-elementor"></i>
                         Manage Category</a>
                 </li>
                 <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle down">
+                    <a href="#pageSubmenu" class="text-white">
                         <i class="fa-solid fa-book"></i>
                         Quiz
                     </a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#" class="own">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#" class="own">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#" class="own">Page 3</a>
-                        </li>
-                    </ul>
                 </li>
             </ul>
 
@@ -74,61 +45,95 @@
 
         <!-- Page Content  -->
         <div id="content">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <div class="container-fluid">
 
                     <button type="button" id="sidebarCollapse" class="btn btn-info colo">
                         <i class="fas fa-align-left"></i>
                         <span></span>
                     </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
-                    </button>
+                    </button> -->
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <a href="#" class="ml-5 txt">Dashboard</a>
+                    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
                         <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <h6><a class="nav-link text-bold" href="#">QUIZ</a></h6>
+                            <li>
+                                <a href="#" class="own text-success">
+                                    <i class="fa-solid fa-user"></i>
+                                    Profile
+                                </a>
                             </li>
                         </ul>
-                    </div>
+                    <!-- </div> -->
                 </div>
             </nav>
-            <h4>Quiz Analytics</h4>
-            <div class="row">
-                <div class="col-sm-3  p-3">
-                  <div class="card card1">
-                    <div class="card-body text-center text-dark">
-                      <p class="card-text">Total No of Quiz</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+            <p id="intro"></p>
+            <div class="row mt-5">
+                <div class="col-sm-4  p-3">
+                    <div class="card card1">
+                        <div class="card-body text-center text-dark">
+                        <p class="card-text pt-4 count cardTag"></p>
+                        <a href="#" class="txt"> 
+                            <i class="fa-solid fa-chart-line"></i>
+                            Category
+                        </a>
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <div class="col-sm-3  p-3">
-                  <div class="card card1">
-                    <div class="card-body text-center text-dark">
-                      <p class="card-text"> Active Participant</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-3  p-3">
+                <div class="col-sm-4  p-3">
                     <div class="card card1">
                       <div class="card-body text-center text-dark">
-                        <p class="card-text">Inctive Participant</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <p class="card-text pt-4 cardTag" id="yes"></p>
+                        <a href="#" class="txt">
+                          <i class="fa fa-eye"></i> 
+                          Active Category
+                      </a>
                       </div>
                     </div>
-                </div>
-                <div class="col-sm-3  p-3">
-                <div class="card card1">
-                    <div class="card-body text-center text-dark">
-                    <p class="card-text">Category</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div> 
+                <div class="col-sm-4  p-3">
+                    <div class="card card1">
+                      <div class="card-body text-center text-dark">
+                        <p class="card-text pt-4 cardTag" id="no"></p>
+                        <a href="#" class="txt">
+                            <i class="fa-solid fa-eye-slash"></i>
+                            Inactive Category
+                        </a>
+                      </div>
                     </div>
-                </div>
-                </div>
+                </div>           
             </div>
+
+             <!-- ANALYTICS CARD -->
+             <!-- <div class="row">
+                <div class="col-sm-3 ml-4 pt-3">
+                    <div class="card card2" style="width: 18rem;">
+                        <img class="card-img-top" src="../IMAGE/shott.webp" alt="Card image cap">
+                        <div class="card-body">
+                          <p class="card-text">Some quick example text to</p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-sm-3  m-5">
+                    <div class="card card2" style="width: 18rem;">
+                        <img class="card-img-top" src="../IMAGE/daily analytics.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <p class="card-text">Some quick example text to</p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-sm-3 m-4 ">
+                    <div class="card card2" style="width: 18rem;">
+                        <img class="card-img-top" src="../IMAGE/vect.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <p class="card-text">Some quick example text to</p>
+                        </div>
+                    </div>
+                </div> 
+            </div> -->
+            <!-- ANALYTICS CARD -->
         </div>
     </div>
 

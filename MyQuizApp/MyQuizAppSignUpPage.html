@@ -20,26 +20,36 @@
                         <form class="pb-3">
                             <div class="form-group">
                                 <label class="txt"><b>Full Name</b></label>
-                                <input type="text" class="form-control mt-0" id="" placeholder="Full Name">
-                             </div>
+                                <input type="text" class="form-control mt-0" id="uname" placeholder="Full Name">
+                                <a id="outputMessage" class="text-danger  pt-0"></a>
+                            </div>
                             <div class="form-group">
                                <label class="txt"><b>Email address</b></label>
-                               <input type="email" class="form-control" id="" placeholder="Enter email">
+                               <input type="email" class="form-control" id="mail" placeholder="Enter email">
+                               <a id="output" class="text-danger  pt-0"></a>
                             </div>
                             <!-- <div class=" form-group"> -->
                             <div class="form-group">
                                 <label for="exampleInputPassword1" class="txt mt-2 mb-0"><b>Password</b></label>
                                     <div class="input-group">
-                                    <input type="password" class="form-control " id="exampleInputPassword1" placeholder="at least 8 characters">  
+                                        <input type="password" class="form-control " id="pword" placeholder="at least 8 characters">  
                                         <div class="input-group-append">
-                                            <span class="input-group-text">
-                                            <i class="fa fa-eye"></i>
-                                            </span>
+                                            <span class="input-group-text icon" onclick="eyeShow('text')">
+                                                <i class="fa-solid fa-eye" aria-hidden="true" id="eye" onclick="toggle"></i>
+                                              </span>
+                    
+                                              <span class="input-group-text icon1 d-none" onclick="eyeShow()">
+                                                <i class="fa-solid fa-eye-low-vision eyeLow" aria-hidden="true" id="eye" onclick="toggle"></i>
+                                              </span>
                                         </div>
+                                
                                     </div>
+                                   <a id="output1" class="text-danger pt-0"></a>
+                                    
+                                    <!-- <a id="output2" class="text-success pt-0 "></a> -->
                                 </div>
                             <!-- </div> -->
-                            <button type="button" class="btn btn-success mb-2 col-md-12">Submit</button>
+                            <button type="button" class="btn btn-success mb-2 col-md-12" onclick="store()">Submit</button>
                         </form>
                     </div>    
                 </div>
@@ -49,7 +59,78 @@
             </div>
         </div>
 
+    
+        <script>
+            function store(){
+                    var uname = document.getElementById("uname").value;
+                    var mail = document.getElementById("mail").value;
+                    var pword = document.getElementById("pword").value;
 
+                    let userRecords = Array();
+                    userRecords = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+                
+                    if ((uname == "" || mail == "") || (pword == "")){
+                        swal("Fields can't be empty")
+                    }
+                    else{
+                        if(userRecords.some((v)=>{return v.uname == uname})){
+                            return outputMessage.innerHTML ="Username already existed!!"
+                        }
+                        else if (userRecords.some((v)=>{return v.mail == mail})){
+                            return output.innerHTML ="Email already existed!!"
+                        }
+                        else{ 
+                            userRecords.push({
+                                "id": Math.floor(Math.random() * 1000000),
+                                "uname": uname,
+                                "mail": mail,
+                                "pword": pword
+                            })
+
+
+                            var regex =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                            var email = regex.test(mail);
+                            var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{9,15}$/;
+                            var pw = passw.test(pword)
+
+                            if(!pw){ 
+                                output1.innerHTML = "Too Weak"
+                            }
+                            else if(!email){
+                                swal({
+                                    title: "email isn't valid",
+                                });
+                            }
+                            else{
+                                localStorage.setItem("users", JSON.stringify(userRecords));
+                                swal("Welcome!", "Account created successfully!", "success");
+                                setTimeout(() => {
+                                    window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/MyQuizApp/MyQuizAppLoginForm.html") 
+                                }, 1000);
+                            }
+                    } 
+                }     
+
+            }
+
+            function eyeShow(p = 'password'){
+                var icon =document.querySelector('.icon')
+                var icon1 =document.querySelector('.icon1')
+                var value = document.querySelector('#pword')
+
+                if(p == 'text'){
+                    value.setAttribute('type','text')
+                    icon.classList.add('d-none')
+                    icon1.classList.remove('d-none')
+                }
+                else{
+                value.setAttribute('type','password')
+                icon.classList.remove('d-none')
+                icon1.classList.add('d-none')
+                }
+            }
+
+        </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://kit.fontawesome.com/41ed371ce6.js" crossorigin="anonymous"></script>
     <!-- jQuery library -->

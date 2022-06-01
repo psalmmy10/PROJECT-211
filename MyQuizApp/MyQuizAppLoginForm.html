@@ -23,22 +23,27 @@
                     <form class="pb-3">
                         <div class="form-group">
                             <label class="txt"><b>Full Name</b></label>
-                            <input type="text" class="form-control mt-0" id="" placeholder="Full Name">
+                            <input type="text" class="form-control mt-0" id="username" placeholder="Full Name">
                          </div>
                         <!-- <div class=" form-group"> -->
                         <div class="form-group">
                             <label for="exampleInputPassword1" class="txt mt-2 mb-0"><b>Password</b></label>
                                 <div class="input-group">
-                                <input type="password" class="form-control " id="exampleInputPassword1" placeholder="at least 8 characters">  
+                                <input type="password" class="form-control " id="Password" placeholder="at least 8 characters">  
                                     <div class="input-group-append">
-                                        <span class="input-group-text">
-                                        <i class="fa fa-eye"></i>
-                                        </span>
+                                        <span class="input-group-text icon" onclick="eyeShow('text')">
+                                            <i class="fa-solid fa-eye" aria-hidden="true" id="eye" onclick="toggle"></i>
+                                          </span>
+                
+                                          <span class="input-group-text icon1 d-none" onclick="eyeShow()">
+                                            <i class="fa-solid fa-eye-low-vision eyeLow" aria-hidden="true" id="eye" onclick="toggle"></i>
+                                          </span>
                                     </div>
                                 </div>
+                                <p id="result" class="pb-4"></p>
                             </div>
                         <!-- </div> -->
-                        <button type="button" class="btn btn-success mb-2 col-md-12">LOGIN</button>
+                        <button type="button" class="btn btn-success mb-2 col-md-12" onclick="check()">LOGIN</button>
                     </form>
                 </div>    
             </div>
@@ -46,6 +51,65 @@
     </div>
 
 
+    <script>
+
+        var uname = document.getElementById('username');
+        var pword = document.getElementById('Password');
+
+        function check(){
+            if (uname.value == "" || pword.value =="") {
+                swal({
+                        title: "Can't take empty field",
+                    });
+            }
+            else{
+                var data = {
+                    uname: username.value,
+                    pword: Password.value
+                };
+                let  loginStatus = false;
+                let users = JSON.parse(localStorage.getItem("users"));
+            
+                users.some(el =>{
+                if( el.uname == data.uname &&  el.pword == data.pword){
+                    localStorage.setItem('authUser', JSON.stringify(el))
+                        loginStatus = true;
+                }
+                })
+                if(loginStatus){
+                    result.innerHTML = `Logged in <i class="fa-solid fa-circle-check text-success"></i>`
+                    swal("Welcome!", "Logged successfully!", "success");
+                    setTimeout(() => {
+                    window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/MyQuizApp/MyQuizAppDash.html") 
+                    }, 500);
+                }
+                else{
+                    swal({
+                        title: "Account Doesn't exit, incorrect details",
+                    });
+                    result.innerHTML = `No Username or Password Match<i class="fa-solid fa-circle-exclamation text-danger"></i>`
+                }
+            }
+        }
+
+
+        function eyeShow(p = 'password'){
+                var icon =document.querySelector('.icon')
+                var icon1 =document.querySelector('.icon1')
+                var value = document.querySelector('#pword')
+
+                if(p == 'text'){
+                    value.setAttribute('type','text')
+                    icon.classList.add('d-none')
+                    icon1.classList.remove('d-none')
+                }
+                else{
+                value.setAttribute('type','password')
+                icon.classList.remove('d-none')
+                icon1.classList.add('d-none')
+                }
+        }
+    </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://kit.fontawesome.com/41ed371ce6.js" crossorigin="anonymous"></script>
     <!-- jQuery library -->
