@@ -8,9 +8,9 @@
 <body>
     
 
-    <input id="number"  type="number" value="">
+    <!-- <input id="number"  type="number" value="">
     <p id="result"></p>
-    <input type="button" value="Check" onclick="evenOrOdd()">
+    <input type="button" value="Check" onclick="evenOrOdd()"> -->
     <script>
         // function subtractYear(currentYear){
         //     return function nestedAdd(dateOfBirth){
@@ -23,19 +23,26 @@
 
         
 
-        function evenOrOdd(){
-            document.getElementById("result").innerHTML = ""
-            var input = Number(document.getElementById("number").value);
-            if ((input % 2) == 0){
-                document.getElementById("result").innerHTML = "Even number"
-            }
-            else if ((input % 2) == 1){
-                document.getElementById("result").innerHTML = "Odd number"
-            }
-            else{
-                document.getElementById("result").innerHTML = "NaN"
-            }
+        // function evenOrOdd(){
+        //     document.getElementById("result").innerHTML = ""
+        //     var input = Number(document.getElementById("number").value);
+        //     if ((input % 2) == 0){
+        //         document.getElementById("result").innerHTML = "Even number"
+        //     }
+        //     else if ((input % 2) == 1){
+        //         document.getElementById("result").innerHTML = "Odd number"
+        //     }
+        //     else{
+        //         document.getElementById("result").innerHTML = "NaN"
+        //     }
+        // }
+
+
+        var result = 0;
+        for(let i = 0; i < 5 ; i++){
+            result += i
         }
+        console.log(result);
 
     </script>
 </body>

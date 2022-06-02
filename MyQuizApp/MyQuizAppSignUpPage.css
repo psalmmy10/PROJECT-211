@@ -37,3 +37,8 @@ input {
 .img3{
     height: 10vh;
 }
+.trt{
+    font-size: 10px!important;
+    height: 10px!important;
+    width: 0px!important;
+}
