@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quotes</title>
+
+    <style>
+                /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+        /**
+        * 1. Set default font family to sans-serif.
+        * 2. Prevent iOS and IE text size adjust after device orientation change,
+        *    without disabling user zoom.
+        */
+
+        html {
+        font-family: sans-serif; /* 1 */
+        -ms-text-size-adjust: 100%; /* 2 */
+        -webkit-text-size-adjust: 100%; /* 2 */
+        }
+
+        /**
+        * Remove default margin.
+        */
+
+        body {
+        margin: 0;
+        }
+
+        /* HTML5 display definitions
+        ========================================================================== */
+
+        /**
+        * Correct `block` display not defined for any HTML5 element in IE 8/9.
+        * Correct `block` display not defined for `details` or `summary` in IE 10/11
+        * and Firefox.
+        * Correct `block` display not defined for `main` in IE 11.
+        */
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        main,
+        menu,
+        nav,
+        section,
+        summary {
+        display: block;
+        }
+
+        /**
+        * 1. Correct `inline-block` display not defined in IE 8/9.
+        * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+        */
+
+        audio,
+        canvas,
+        progress,
+        video {
+        display: inline-block; /* 1 */
+        vertical-align: baseline; /* 2 */
+        }
+
+        /**
+        * Prevent modern browsers from displaying `audio` without controls.
+        * Remove excess height in iOS 5 devices.
+        */
+
+        audio:not([controls]) {
+        display: none;
+        height: 0;
+        }
+
+        /**
+        * Address `[hidden]` styling not present in IE 8/9/10.
+        * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+        */
+
+        [hidden],
+        template {
+        display: none;
+        }
+
+        /* Links
+        ========================================================================== */
+
+        /**
+        * Remove the gray background color from active links in IE 10.
+        */
+
+        a {
+        background-color: transparent;
+        }
+
+        /**
+        * Improve readability of focused elements when they are also in an
+        * active/hover state.
+        */
+
+        a:active,
+        a:hover {
+        outline: 0;
+        }
+
+        /* Text-level semantics
+        ========================================================================== */
+
+        /**
+        * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+        */
+
+        abbr[title] {
+        border-bottom: 1px dotted;
+        }
+
+        /**
+        * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+        */
+
+        b,
+        strong {
+        font-weight: bold;
+        }
+
+        /**
+        * Address styling not present in Safari and Chrome.
+        */
+
+        dfn {
+        font-style: italic;
+        }
+
+        /**
+        * Address variable `h1` font-size and margin within `section` and `article`
+        * contexts in Firefox 4+, Safari, and Chrome.
+        */
+
+        h1 {
+        font-size: 2em;
+        margin: 0.67em 0;
+        }
+
+        /**
+        * Address styling not present in IE 8/9.
+        */
+
+        mark {
+        background: #ff0;
+        color: #000;
+        }
+
+        /**
+        * Address inconsistent and variable font size in all browsers.
+        */
+
+        small {
+        font-size: 80%;
+        }
+
+        /**
+        * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+        */
+
+        sub,
+        sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+        }
+
+        sup {
+        top: -0.5em;
+        }
+
+        sub {
+        bottom: -0.25em;
+        }
+
+        /* Embedded content
+        ========================================================================== */
+
+        /**
+        * Remove border when inside `a` element in IE 8/9/10.
+        */
+
+        img {
+        border: 0;
+        }
+
+        /**
+        * Correct overflow not hidden in IE 9/10/11.
+        */
+
+        svg:not(:root) {
+        overflow: hidden;
+        }
+
+        /* Grouping content
+        ========================================================================== */
+
+        /**
+        * Address margin not present in IE 8/9 and Safari.
+        */
+
+        figure {
+        margin: 1em 40px;
+        }
+
+        /**
+        * Address differences between Firefox and other browsers.
+        */
+
+        hr {
+        box-sizing: content-box;
+        height: 0;
+        }
+
+        /**
+        * Contain overflow in all browsers.
+        */
+
+        pre {
+        overflow: auto;
+        }
+
+        /**
+        * Address odd `em`-unit font size rendering in all browsers.
+        */
+
+        code,
+        kbd,
+        pre,
+        samp {
+        font-family: monospace, monospace;
+        font-size: 1em;
+        }
+
+        /* Forms
+        ========================================================================== */
+
+        /**
+        * Known limitation: by default, Chrome and Safari on OS X allow very limited
+        * styling of `select`, unless a `border` property is set.
+        */
+
+        /**
+        * 1. Correct color not being inherited.
+        *    Known issue: affects color of disabled elements.
+        * 2. Correct font properties not being inherited.
+        * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+        */
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+        color: inherit; /* 1 */
+        font: inherit; /* 2 */
+        margin: 0; /* 3 */
+        }
+
+        /**
+        * Address `overflow` set to `hidden` in IE 8/9/10/11.
+        */
+
+        button {
+        overflow: visible;
+        }
+
+        /**
+        * Address inconsistent `text-transform` inheritance for `button` and `select`.
+        * All other form control elements do not inherit `text-transform` values.
+        * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+        * Correct `select` style inheritance in Firefox.
+        */
+
+        button,
+        select {
+        text-transform: none;
+        }
+
+        /**
+        * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+        *    and `video` controls.
+        * 2. Correct inability to style clickable `input` types in iOS.
+        * 3. Improve usability and consistency of cursor style between image-type
+        *    `input` and others.
+        */
+
+        button,
+        html input[type="button"], /* 1 */
+        input[type="reset"],
+        input[type="submit"] {
+        -webkit-appearance: button; /* 2 */
+        cursor: pointer; /* 3 */
+        }
+
+        /**
+        * Re-set default cursor for disabled elements.
+        */
+
+        button[disabled],
+        html input[disabled] {
+        cursor: default;
+        }
+
+        /**
+        * Remove inner padding and border in Firefox 4+.
+        */
+
+        button::-moz-focus-inner,
+        input::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+        }
+
+        /**
+        * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+        * the UA stylesheet.
+        */
+
+        input {
+        line-height: normal;
+        }
+
+        /**
+        * It's recommended that you don't attempt to style these elements.
+        * Firefox's implementation doesn't respect box-sizing, padding, or width.
+        *
+        * 1. Address box sizing set to `content-box` in IE 8/9/10.
+        * 2. Remove excess padding in IE 8/9/10.
+        */
+
+        input[type="checkbox"],
+        input[type="radio"] {
+        box-sizing: border-box; /* 1 */
+        padding: 0; /* 2 */
+        }
+
+        /**
+        * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+        * `font-size` values of the `input`, it causes the cursor style of the
+        * decrement button to change from `default` to `text`.
+        */
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+        height: auto;
+        }
+
+        /**
+        * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+        * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+        */
+
+        input[type="search"] {
+        -webkit-appearance: textfield; /* 1 */
+        box-sizing: content-box; /* 2 */
+        }
+
+        /**
+        * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+        * Safari (but not Chrome) clips the cancel button when the search input has
+        * padding (and `textfield` appearance).
+        */
+
+        input[type="search"]::-webkit-search-cancel-button,
+        input[type="search"]::-webkit-search-decoration {
+        -webkit-appearance: none;
+        }
+
+        /**
+        * Define consistent border, margin, and padding.
+        */
+
+        fieldset {
+        border: 1px solid #c0c0c0;
+        margin: 0 2px;
+        padding: 0.35em 0.625em 0.75em;
+        }
+
+        /**
+        * 1. Correct `color` not being inherited in IE 8/9/10/11.
+        * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+        */
+
+        legend {
+        border: 0; /* 1 */
+        padding: 0; /* 2 */
+        }
+
+        /**
+        * Remove default vertical scrollbar in IE 8/9/10/11.
+        */
+
+        textarea {
+        overflow: auto;
+        }
+
+        /**
+        * Don't inherit the `font-weight` (applied by a rule above).
+        * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+        */
+
+        optgroup {
+        font-weight: bold;
+        }
+
+        /* Tables
+        ========================================================================== */
+
+        /**
+        * Remove most spacing between table cells.
+        */
+
+        table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        }
+
+        td,
+        th {
+        padding: 0;
+        }
+
+
+
+        body {
+        /*text-align: center;*/
+        background-size: cover;
+        color: white;
+        font-family: 'Amatic SC', cursive;
+        background-color: rgb(95,207,128);
+        }
+        #quote-box {
+        position: absolute;
+        top: 14%;
+        left: 10%;
+        right: 10%;
+        width: 80%;
+        line-height: .5;
+        }
+        .quote {
+        font-size: 6rem;
+        font-weight: 400;
+        line-height: 1.1;
+        text-shadow: 0 1px 1px rgba(0,0,0, .8);
+        position: relative;
+        margin: 0;
+        } 
+        .quote:before, .quote:after {
+        font-size: 6rem;
+        line-height: 2.5rem;
+        position: absolute;
+        }
+        .quote:before {
+        content: "“";
+        top: .25em;
+        left: -.5em;
+        }
+        .quote:after {
+        content: "”";
+        bottom: -.1em;
+        margin-left: .1em;
+        position: absolute;
+        }
+        .source {
+        font-size: 2.5rem;
+        letter-spacing: 0.05em;
+        line-height: 1.1;
+        text-align: right;
+        margin-right: 4em;
+        }
+        .source:before {
+        content: "—";
+        }
+        .citation {
+        font-size: 2.5rem;
+        font-style: italic;
+        }
+        .citation:before {
+        content: ", ";
+        font-style: normal;
+        }
+        .year:before {
+        content: ", ";
+        font-style: normal;
+        }
+
+        #loadQuote {
+        font-size: 2.5rem;;
+        position: fixed;
+        width: 7em;
+        display: inline-block;
+        left: 50%;
+        margin-left: -6em;
+        bottom: 150px;
+        border-radius: 4px;
+        border: 2px solid #fff;
+        color: #fff;
+        background-color: rgba(255,255,255, 0);
+        padding: 15px 0;
+        transition: .5s ;
+        }
+        #loadQuote:hover {
+        background-color: rgba(255,255,255,.25);
+        }
+        #loadQuote:focus {
+        outline: none;
+        }
+
+        @media (max-width: 420px) {
+        .quote {
+            font-size: 2.5rem;
+        }
+        .quote:before, .quote:after {
+            font-size: 3rem;
+        }
+        .source {
+            font-size: 1rem;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div id="quote-box">
+        <p class="quote">You can do anything but not everything</p>
+        <p class="source">David Allen<span class="citation">Making It All Work</span><span class="year">2009</span></p>
+      </div>
+      <button id="loadQuote">Show another quote</button>
+    </div>
+
+
+    <script>
+        //Object Array to hold quotes, sources, citaitons and years
+        var quotes = [
+            {
+            quote: "Be who you are and say what you feel, because those who mind don't matter and those who matter don't mind.",
+            source: "Dr. Seuss"
+            },
+            {
+            quote: "This too, shall pass.",
+            source: "Anonymous"
+            },
+            {
+            quote: "Keep your eyes on the stars and your feet on the ground.",
+            source: "Theodore Roosevelt"
+            },
+            {
+            quote: "The only person you should try to be better than is the person you were yesterday.",
+            source: "Anonymous"
+            },
+            {
+            quote: "Never be bullied into silence. Never allow yourself to be made a victim. Accept no one's definition of your life; define yourself.",
+            source: "Harvey Fierstein"
+            },
+            {
+            quote: "Faith is the art of holding on to things your reason has once accepted, in spite of your changing moods.",
+            source: "C.S. Lewis"
+            },
+            {
+            quote: "A man who flies from his fear may find that he has only taken a shortcut to meet it.",
+            source: "Sador", 
+            citation: "Children of Húrin" 
+            },
+            {
+            quote:  "Life's too mysterious to take too serious.",
+            source: "Mary Engelbreit"
+            },
+            {
+            quote: "No one can make you feel inferior without your consent.",
+            source: "Eleanor Roosevelt"
+            },
+            {
+            quote: "The woman who follows the crowd will usually go no further than the crowd. The woman who walks alone is likely to find herself in places no one has been before.",
+            source: "Albert Einstein"
+            },
+            {
+            quote: "You can't go around building a better world for people. Only people can build a better world for people. Otherwise it's just a cage.",
+            source: "Terry Pratchett", 
+            citation: "Witches Abroad",
+            year: "1991" 
+            },
+            {
+            quote: "There isn't a way things should be. There's just what happens, and what we do.",
+            source: "Terry Pratchett", 
+            citation: "A Hat Full of Sky" 
+            },
+            {
+            quote: "It's not about how hard you can hit; it's about how hard you can get hit and keep moving forward.",
+            source: "Rocky Balboa",
+            citation: "Rocky",
+            year: "1976"
+            },
+            {
+            quote: "More fuck yeah, less fuck that.",
+            source: "Anonymous"
+            },
+            {
+            quote: "If you want to go fast, go alone. If you want to go far, go together.",
+            source: "African proverb"
+            },
+            {
+            quote: "It's OK to not be OK, as long as you don't stay that way.",
+            source: "Anonymous"
+            },
+            {
+            quote: "I can be changed by what happens to me but I refuse to be reduced by it.",
+            source: "Maya Angelou"
+            },
+            {
+            quote: "Believe you can and you're halfway there.",
+            source: "T. Roosevelt"
+            },
+            {
+            quote: "May I never be complete. May I never be content. May I never be perfect.",
+            source: "Chuck Palahniuk"
+            },
+            {
+            quote: "Nothing in life is to be feared; it is only to be understood. Now is the time to understand more so that we may fear less.",
+            source: "Marie Curie"
+            },
+            {
+
+            quote: "Those who don't believe in magic will never find it.",
+            source: "Roald Dahl"
+            },
+            {
+            quote: "There is no elevator to success  you have to take the stairs.",
+            source: "Anonymous"
+            },
+            {
+            quote: "Plant your garden and decorate your own soul, instead of waiting for someone to bring you flowers.",
+            source: "Jose Luis Borges"
+            },
+            {
+            quote: "It does not do to dwell on dreams and forget to live.",
+            source: "Albus Dumbledore", 
+            citation: "Harry Potter and the Sorcerer's Stone",
+            year: "1997"
+            },
+            {
+            quote: "Don't sweat the petty things and don't pet the sweaty things.",
+            source: "George Carlin"
+            },
+            {
+            quote: "Do what you feel in your heart to be right, for you'll be criticized anyway.",
+            source: "Eleanor Roosevelt"
+            },
+            {
+            quote: "Do not set yourself on fire in order to keep others warm.",
+            source: "Anonymous"
+            },
+            {
+            quote: "The way I see it, every life is a pile of good things and bad things. The good things don't always soften the bad things, but vice versa, the bad things don't always spoil the good things and make them unimportant.",
+            source: "Doctor Who"
+            },
+            {
+            quote: "It's supposed to be hard. If it were easy, everyone would do it.",
+            source: "Jimmy Dugan",
+            citation: "A League of Their Own"
+            },
+            {
+            quote: "Ask yourself if what you're doing today will get you closer to where you want to be tomorrow.",
+            source: "Anonymous"
+            },
+            {
+            quote: "Life may not be the party we hoped for, but while we're here, we should dance.",
+            source: "Anonymous"
+            },
+            {
+            quote: "Never cowardly or cruel. Never give up, never give in.",
+            source: "Doctor Who"
+            },
+            {
+            quote: "Do not go where the path may lead, go instead where there is no path and leave a trail.",
+            source: "Ralph Waldo Emerson"
+            },
+            {
+            quote: "In 20 years, you probably won't even remember this.",
+            source: "Anonymous"
+            },
+            {
+            quote: "Love all, trust a few, do wrong to none.",
+            source: "William Shakespeare"
+            },
+            {
+            quote: "Clear eyes, full hearts, can't lose.",
+            source: "Dillon Panthers",
+            citation: "Friday Night Lights",
+            year: "1990"
+            },
+            {
+            quote: "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
+            source: "Aristotle"
+            }
+        ];
+
+        //Function to randomly select a quote value and return a random quote object from the quotes array
+        function getRandomQuote () {
+            var randomNumber = Math.floor(Math.random() * (quotes.length));
+            var randomQuote = quotes[randomNumber];
+            return randomQuote;
+        }	
+
+        //Function to select random rgb color value
+        function getRandomColor () {
+            var red = Math.floor(Math.random() * 256 );
+            var green = Math.floor(Math.random() * 256 );
+            var blue = Math.floor(Math.random() * 256 );
+            var randomColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+            return randomColor;
+        }
+
+        //Function to call the getRandomQuote function and stores the returned quote object in a variable
+        //Constructs a string containing the different properties of the quote object 
+        function printQuote () {
+                var quotes = getRandomQuote ();
+                var quoteContainer = document.getElementById("quote-box");
+                var quoteString = `<p class="quote">${quotes.quote}</p><p class="source">${quotes.source}`;
+                        if (quotes.citation) {quoteString += `<span class="citation">${quotes.citation}</span>`}
+                        if (quotes.year) {quoteString += `<span class="year">${quotes.year}</span></p>`}
+                        else {quoteString += '</p>'};
+                            quoteContainer.innerHTML = quoteString;
+
+                            //assigns random color value to document background color 
+                            document.body.style.backgroundColor = getRandomColor ();
+        }
+
+        //Quote automatically refreshes every 15 seconds
+        window.setInterval(function(){
+        printQuote ();
+        }, 15000);
+
+        //Event listener on LoadQuote button to generate new quote		
+        document.getElementById("loadQuote").addEventListener("click", printQuote, false);
+
+
+    </script>
+</body>
+</html>
