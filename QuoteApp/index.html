@@ -263,34 +263,32 @@
             return randomColor;
         }
 
-        //Function to call the getRandomQuote function and stores the returned quote object in a variable
-        //Constructs a string containing the different properties of the quote object 
-        // function printQuote() {
-        //     var quotes = getRandomQuote();
-        //     var quoteContainer = document.querySelector("#quote-box");
-        //     var quoteString = `<p class="quote">${quotes.quote}</p><p class="source">${quotes.source}`;
-        //     if (quotes.citation){
-        //         quoteString += `<span class="citation">${quotes.citation}</span>`
-        //     }
+        
+        function printQuote() {
+            var quotes = getRandomQuote();
+            var quoteContainer = document.querySelector("#quote-box");
+            var quoteString = `<p class="quote">${quotes.quote}</p><p class="source">${quotes.source}`;
+            if (quotes.citation){
+                quoteString += `<span class="citation">${quotes.citation}</span>`
+            }
 
-        //     if (quotes.year){
-        //         quoteString += `<span class="year">${quotes.year}</span></p>`
-        //     }
-        //     else{
-        //         quoteString += '</p>'
-        //     };
-        //     quoteContainer.innerHTML = quoteString;
-        //     //assigns random color value to document background color 
-        //     document.body.style.backgroundColor = getRandomColor ();
-        // }
+            if (quotes.year){
+                quoteString += `<span class="year">${quotes.year}</span></p>`
+            }
+            else{
+                quoteString += '</p>'
+            };
+            quoteContainer.innerHTML = quoteString;
+            
+            document.body.style.backgroundColor = getRandomColor ();
+        }
 
         //Quote automatically refreshes every 15 seconds
         window.setInterval(function(){
         printQuote ();
         }, 15000);
 
-        //Event listener on LoadQuote button to generate new quote		
-        // document.getElementById("loadQuote").addEventListener("click", printQuote, false);
+
 
     </script>
 </body>
