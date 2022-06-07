@@ -536,7 +536,7 @@
         <p class="quote">You can do anything but not everything</p>
         <p class="source">David Allen<span class="citation">Making It All Work</span><span class="year">2009</span></p>
       </div>
-      <button id="loadQuote">Show another quote</button>
+      <button id="loadQuote" onclick="printQuote()">Show another quote</button>
     </div>
 
 
@@ -723,7 +723,7 @@
 
         //Function to call the getRandomQuote function and stores the returned quote object in a variable
         //Constructs a string containing the different properties of the quote object 
-        function printQuote () {
+        function printQuote() {
                 var quotes = getRandomQuote ();
                 var quoteContainer = document.getElementById("quote-box");
                 var quoteString = `<p class="quote">${quotes.quote}</p><p class="source">${quotes.source}`;
@@ -742,8 +742,7 @@
         }, 15000);
 
         //Event listener on LoadQuote button to generate new quote		
-        document.getElementById("loadQuote").addEventListener("click", printQuote, false);
-
+        // document.getElementById("loadQuote").addEventListener("click", printQuote, false);
 
     </script>
 </body>
