@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Quotes</title>
+    <link rel="stylesheet" href="localserver.css">
 
     <style>
         body {
@@ -59,17 +60,25 @@
         background-color: rgba(255,255,255,.25);
         }
     
+        .but{
+            margin-left:900px;
+            margin-top: 200px;
+        }
+
+        .but1{
+            margin-top: 200px;
+        }
 
         @media (max-width: 420px) {
-        .quote {
-            font-size: 2.5rem;
-        }
-        /* .quote:before, .quote:after {
-            font-size: 3rem;
-        } */
-        .source {
-            font-size: 1rem;
-        }
+            .quote {
+                font-size: 2.5rem;
+            }
+            /* .quote:before, .quote:after {
+                font-size: 3rem;
+            } */
+            .source {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -78,7 +87,11 @@
         <p class="quote">You can do anything but not everything</p>
         <p class="source">David Allen<span class="citation">Making It All Work</span><span class="year">2009</span></p>
       </div>
-      <button id="loadQuote" onclick="printQuote()">Show another quote</button>
+      <!-- <button id="loadQuote" onclick="printQuote()">Show another quote</button> -->
+    
+
+      <button type="button" class="btn btn-primary but"  onclick="prev()">Prev</button>
+      <button type="button" class="btn btn-secondary but1 ml-5"  onclick="next()">Next</button>
     </div>
 
 
@@ -264,31 +277,35 @@
         }
 
         
-        function printQuote() {
-            var quotes = getRandomQuote();
-            var quoteContainer = document.querySelector("#quote-box");
-            var quoteString = `<p class="quote">${quotes.quote}</p><p class="source">${quotes.source}`;
-            if (quotes.citation){
-                quoteString += `<span class="citation">${quotes.citation}</span>`
-            }
+        // function printQuote() {
+            // var quotes = getRandomQuote();
+            // var quoteContainer = document.querySelector("#quote-box");
+            // var quoteString = `<p class="quote">${quotes.quote}</p><p class="source">${quotes.source}`;
+            // if (quotes.citation){
+            //     quoteString += `<span class="citation">${quotes.citation}</span>`
+            // }
 
-            if (quotes.year){
-                quoteString += `<span class="year">${quotes.year}</span></p>`
-            }
-            else{
-                quoteString += '</p>'
-            };
-            quoteContainer.innerHTML = quoteString;
+            // if (quotes.year){
+            //     quoteString += `<span class="year">${quotes.year}</span></p>`
+            // }
+            // else{
+            //     quoteString += '</p>'
+            // };
+            // quoteContainer.innerHTML = quoteString;
             
-            document.body.style.backgroundColor = getRandomColor ();
-        }
+            // document.body.style.backgroundColor = getRandomColor ();
+        // }
 
         //Quote automatically refreshes every 15 seconds
         window.setInterval(function(){
         printQuote ();
         }, 15000);
 
+        function Prev(){
+            var motivationalSlider = document.querySelector(".motivateSlider")
 
+
+        }
 
     </script>
 </body>
