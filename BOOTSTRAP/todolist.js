@@ -197,6 +197,8 @@ function deletetodo(ind){
     });
 }
  
+
+
 // UPDATE FUNCTION
 function update(){
     let dataItems = JSON.parse(localStorage.getItem("dataItem"))
