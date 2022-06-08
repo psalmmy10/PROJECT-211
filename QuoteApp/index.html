@@ -84,8 +84,8 @@
 </head>
 <body>
     <div id="quote-box">
-        <p class="quote">You can do anything but not everything</p>
-        <p class="source">David Allen<span class="citation">Making It All Work</span><span class="year">2009</span></p>
+        <p class="quote motivateSlider">You can do anything but not everything</p>
+        <p class="source motivateSlider">David Allen<span class="citation">Making It All Work</span><span class="year">2009</span></p>
       </div>
       <!-- <button id="loadQuote" onclick="printQuote()">Show another quote</button> -->
     
@@ -97,6 +97,7 @@
 
     <script>
         //Object Array to hold quotes, sources, citaitons and years
+        var motivationalSlider = document.querySelector(".motivateSlider");
         var quotes = [
             {
             quote: "Be who you are and say what you feel, because those who mind don't matter and those who matter don't mind.",
@@ -259,7 +260,7 @@
             source: "Aristotle"
             }
         ];
-
+        var i = 0;
         //Function to randomly select a quote value and return a random quote object from the quotes array
         function getRandomQuote(){
             var randomNumber = Math.floor(Math.random() * (quotes.length));
@@ -277,36 +278,41 @@
         }
 
         
-        // function printQuote(){
-            // var quotes = getRandomQuote();
-            // var quoteContainer = document.querySelector("#quote-box");
-            // var quoteString = `<p class="quote">${quotes.quote}</p><p class="source">${quotes.source}`;
-            // if (quotes.citation){
-            //     quoteString += `<span class="citation">${quotes.citation}</span>`
-            // }
+        function printQuote(){
+            var quotes = getRandomQuote();
+            var quoteContainer = document.querySelector("#quote-box");
+            var quoteString = `<p class="quote">${quotes.quote}</p><p class="source">${quotes.source}`;
+            if (quotes.citation){
+                quoteString += `<span class="citation">${quotes.citation}</span>`
+            }
 
-            // if (quotes.year){
-            //     quoteString += `<span class="year">${quotes.year}</span></p>`
-            // }
-            // else{
-            //     quoteString += '</p>'
-            // };
-            // quoteContainer.innerHTML = quoteString;
+            if (quotes.year){
+                quoteString += `<span class="year">${quotes.year}</span></p>`
+            }
+            else{
+                quoteString += '</p>'
+            };
+            quoteContainer.innerHTML = quoteString;
             
-            // document.body.style.backgroundColor = getRandomColor ();
-        // }
-
-        //Quote automatically refreshes every 15 seconds
-        window.setInterval(function(){
-        printQuote ();
-        }, 15000);
-
-        function Prev(){
-            var motivationalSlider = document.querySelector(".motivateSlider")
-
-
+            document.body.style.backgroundColor = getRandomColor ();
         }
 
+        //Quote automatically refreshes every 15 seconds
+        // window.setInterval(function(){
+        // printQuote ();
+        // }, 10000);
+
+        function prev(){
+           if (i <= 0) i = quotes.length;
+           i--;
+           printQuote()
+        }
+        
+        function next(){
+            if(i >= quotes.length-1) i = -1;
+            i++;
+            printQuote()
+        }
     </script>
 </body>
 </html>
