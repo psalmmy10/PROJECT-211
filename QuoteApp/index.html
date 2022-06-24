@@ -87,7 +87,7 @@
         <p class="quote motivateSlider">You can do anything but not everything</p>
         <p class="source motivateSlider">David Allen<span class="citation">Making It All Work</span><span class="year">2009</span></p>
       </div>
-      <!-- <button id="loadQuote" onclick="printQuote()">Show another quote</button> -->
+      
     
 
       <button type="button" class="btn btn-primary but"  onclick="prev()">Prev</button>
@@ -261,11 +261,26 @@
             }
         ];
         var i = 0;
-        //Function to randomly select a quote value and return a random quote object from the quotes array
+       
+
+        // var Number = Math.floor(Math.random() * (quotes.length));
+        // var randomQuote = quotes[Number];
+        // return randomQuote;
+
+
+        
         function getRandomQuote(){
-            var randomNumber = Math.floor(Math.random() * (quotes.length));
-            var randomQuote = quotes[randomNumber];
+
+            // for(let i = 0; i < quote.length;i++){
+                // var Number = quote.length;
+                // var randomQuote = quotes[Numbe];
+                // return randomQuote;
+            // }
+
+            var Number = Math.floor(Math.random() * (quotes.length));
+            var randomQuote = quotes[Number];
             return randomQuote;
+            
         }	
 
         //Function to select random rgb color value
@@ -279,23 +294,25 @@
 
         
         function printQuote(){
-            var quotes = getRandomQuote();
-            var quoteContainer = document.querySelector("#quote-box");
-            var quoteString = `<p class="quote">${quotes.quote}</p><p class="source">${quotes.source}`;
-            if (quotes.citation){
-                quoteString += `<span class="citation">${quotes.citation}</span>`
-            }
+            // for(let i = 0 ; i > quote.length; i++){
+                var quotes = getRandomQuote();
+                var quoteContainer = document.querySelector("#quote-box");
+                var quoteString = `<p class="quote">${quotes.quote}</p><p class="source">${quotes.source}`;
+                if (quotes.citation){
+                    quoteString += `<span class="citation">${quotes.citation}</span>`
+                }
 
-            if (quotes.year){
-                quoteString += `<span class="year">${quotes.year}</span></p>`
-            }
-            else{
-                quoteString += '</p>'
-            };
-            quoteContainer.innerHTML = quoteString;
-            
-            document.body.style.backgroundColor = getRandomColor ();
-        }
+                if (quotes.year){
+                    quoteString += `<span class="year">${quotes.year}</span></p>`
+                }
+                else{
+                    quoteString += '</p>'
+                };
+                quoteContainer.innerHTML = quoteString;
+                
+                document.body.style.backgroundColor = getRandomColor ();
+            // }
+        }    
 
         //Quote automatically refreshes every 15 seconds
         // window.setInterval(function(){
@@ -303,13 +320,19 @@
         // }, 10000);
 
         function prev(){
-           if (i <= 0) i = quotes.length;
-           i--;
-           printQuote()
+        //    for(let i = 0 ; i > quote.length; i++){
+               if (i <= 0){
+                  i = quotes.length;
+                  i--; 
+               }; 
+               printQuote()
+        //    } 
+           
+
         }
         
         function next(){
-            if(i >= quotes.length-1) i = -1;
+            if(i >= quotes.length) i = -1;
             i++;
             printQuote()
         }

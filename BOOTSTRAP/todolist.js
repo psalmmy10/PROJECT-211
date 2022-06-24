@@ -134,8 +134,6 @@ function getItemPrice(e){
     console.log(getPrice);
 }
 
-
-
 //MODAL PRICE FUNCTION
 function getItemPrice1(e){
     var priceOutput1 ="";
@@ -197,8 +195,6 @@ function deletetodo(ind){
     });
 }
  
-
-
 // UPDATE FUNCTION
 function update(){
     let dataItems = JSON.parse(localStorage.getItem("dataItem"))
