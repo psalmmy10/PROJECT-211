@@ -7,7 +7,7 @@ function store(){
     userRecords = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
    
     if ((uname == "" || mail == "") || (pword == "")){
-        swal("Fields can't be empty")
+        alert("Fields can't be empty")
     }
     else{
         if(userRecords.some((v)=>{return v.uname == uname})){
@@ -39,15 +39,15 @@ function store(){
                     output1.innerHTML = "Too Weak"
                 }
                 else if(!email){
-                    swal({
+                    alert({
                         title: "email isn't valid",
                     });
                 }
                 else{
                     localStorage.setItem("users", JSON.stringify(userRecords));
-                    swal("Welcome!", "Account created successfully!", "success");
+                    alert("Welcome!", "Account created successfully!", "success");
                     setTimeout(() => {
-                       window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/BOOTSTRAP/MyAppLogin.html") 
+                       window.location.assign("http://127.0.0.1:5501/BOOTSTRAP/MyAppLogin.html") 
                     }, 1000);
                 }
                 //  document.querySelector("output1").classList.remove("display")

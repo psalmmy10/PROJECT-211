@@ -70,7 +70,7 @@
                                     </span>
                                     <span class="ml-2">
                                         <a href="#" onclick="window.open('../mrT/Files/simple.pdf', '_blank', 'fullscreen=yes');"><p class="text-danger"><i class="fa fa-eye"></i></p></a>
-                                        <a href="../mrT/Files/simple.pdf"  download><p class="text-success"><i class="fa fa-download"></i></p></a>
+                                        <a href="../mrT/Files/Newsletter July.pdf"  download><p class="text-success"><i class="fa fa-download"></i></p></a>
                                     </span>
                                 </div>
                             </div>    
@@ -127,7 +127,7 @@
                                     </span>
                                     <span class="ml-2">
                                         <a href="#" onclick="window.open('../mrT/Files/simple.pdf', '_blank', 'fullscreen=yes');"><p class="text-danger"><i class="fa fa-eye"></i></p></a>
-                                        <a href="../mrT/Files/simple.pdf"  download><p class="text-success"><i class="fa fa-download"></i></p></a>
+                                        <a href="../mrT/Files/Newsletter October.pdf"  download><p class="text-success"><i class="fa fa-download"></i></p></a>
                                     </span>
                                 </div>
                             </div>    
@@ -146,7 +146,7 @@
                                     </span>
                                     <span class="ml-2">
                                         <a href="#" onclick="window.open('../mrT/Files/simple.pdf', '_blank', 'fullscreen=yes');"><p class="text-danger"><i class="fa fa-eye"></i></p></a>
-                                        <a href="../mrT/Files/simple.pdf"  download><p class="text-success"><i class="fa fa-download"></i></p></a>
+                                        <a href="../mrT/Files/Newsletter November.pdf"  download><p class="text-success"><i class="fa fa-download"></i></p></a>
                                     </span>
                                 </div>
                             </div>    
@@ -165,7 +165,7 @@
                                     </span>
                                     <span class="ml-2">
                                         <a href="#" onclick="window.open('../mrT/Files/simple.pdf', '_blank', 'fullscreen=yes');"><p class="text-danger"><i class="fa fa-eye"></i></p></a>
-                                        <a href="../mrT/Files/simple.pdf"  download><p class="text-success"><i class="fa fa-download"></i></p></a>
+                                        <a href="../mrT/Files/Newsletter December.pdf"  download><p class="text-success"><i class="fa fa-download"></i></p></a>
                                     </span>
                                 </div>
                             </div>    
@@ -269,11 +269,9 @@
         </div> 
     </div> 
 
-    
-
     <script>
 
-        fetch("http://127.0.0.1:5500/mrT/index.html", {
+        fetch("http://127.0.0.1:5500/pdfPage/mrT/index.html",{ // Only page URL
             Method: 'GET'
         }).then(resp => Resp.blob())
         .then(blob =>{

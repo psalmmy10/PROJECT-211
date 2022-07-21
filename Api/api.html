@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <table border="1" cellspacing="0" width="50%">
+       <thead>
+            <tr></tr>
+                <th>s/n</th>
+                <th>Country</th>
+                <th>Capital</th>
+                <th>population</th>
+                <th>flag</th>
+            </tr>
+       </thead> 
+       <tbody id="myBody">
+           
+       </tbody>
+        <img src="" alt="">
+    </table>
+    
+
+    <script>
+        fetch('https://restcountries.com/v2/all')
+        .then(response => response.json())
+        .then(data =>{
+            data.forEach((element , i) => {
+            console.log(data);
+            myBody.innerHTML += `
+                <tr>
+                    <td>${i + 1}</td>            
+                    <td>${element.name}</td>            
+                    <td>${element.capital}</td>            
+                    <td>${element.population}</td>           
+                    <td><img src='${element.flags.png}' width="20px"></td>                                                                                                                                                                    
+                </tr>
+            `
+           });
+        })
+       
+
+    </script>
+</body>
+</html>

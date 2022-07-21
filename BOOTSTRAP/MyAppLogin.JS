@@ -3,7 +3,7 @@ var pword = document.getElementById('Password');
 
 function check(){
     if (uname.value == "" || pword.value =="") {
-         swal({
+         alert({
                 title: "Can't take empty field",
             });
     }
@@ -23,13 +23,13 @@ function check(){
         })
         if(loginStatus){
             result.innerHTML = `Logged in <i class="fa-solid fa-circle-check"></i>`
-            swal("Welcome!", "Logged successfully!", "success");
+            alert("Welcome!", "Logged successfully!", "success");
             setTimeout(() => {
-            window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/BOOTSTRAP/todolist.html") 
+            window.location.assign("http://127.0.0.1:5501/BOOTSTRAP/todolist.html") 
             }, 500);
         }
         else{
-            swal({
+            alert({
                 title: "Account Doesn't exit, incorrect details",
             });
             result.innerHTML = `No Username or Password Match<i class="fa-solid fa-circle-exclamation"></i>`

@@ -17,5 +17,6 @@
             "addWords": true,
             "scope": "workspace"
         }
-    }
+    },
+    "liveServer.settings.port": 5501
 }
