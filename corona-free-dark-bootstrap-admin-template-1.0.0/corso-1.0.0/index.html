@@ -143,6 +143,7 @@
     <!-- Scripts -->
 
     <script>
+
         let cardMode = document.querySelector("#cardMode")
         var categorySelect4 = document.querySelector("#categorySelect4")
         let categoryData = JSON.parse(localStorage.getItem("cat"))
@@ -150,6 +151,7 @@
 
 
         if(categoryData !== null){
+            // console.log(categortyData);
             let duplictate = false
             categoryData = categoryData.filter(el => el.status == "live")
             categorySelect4.innerHTML = `<option value=''>Search Quiz Type</option>`
@@ -160,17 +162,17 @@
                     </option>
                 `
             });
-        }; 
-
+        }
         
+
+
         let quizez = [ ]
         function searchCat(){
-          var categoryData = JSON.parse(localStorage.getItem("quiz"))   
+            var categoryData = JSON.parse(localStorage.getItem("quiz"))   
             categoryDat = categoryData.filter(el => 
             el.category0.toLowerCase() == categorySelect4.value.toLowerCase())  
             if(categoryData !== null ){  
-                
-                
+                // console.log(categoryData)
                 if(categorySelect4.value){
                     categoryData = categoryData.filter(el => 
                     el.category0.toLowerCase() == categorySelect4.value.toLowerCase())  
@@ -235,7 +237,7 @@
         function startQuiz() {
             var categoryData = JSON.parse(localStorage.getItem("quiz"))   
             if(categoryData){
-                window.location.assign("http://127.0.0.1:5502/corso-1.0.0/quizPage.html")
+                window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/corso-1.0.0/quizPage.html")
             } 
         }
     

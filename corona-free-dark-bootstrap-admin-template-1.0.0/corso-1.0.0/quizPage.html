@@ -18,20 +18,47 @@
            /* width: 100% !important; */
            border-radius: 10px;
         }
-        border:hover{
-           background-color: rgb(87, 238, 87);
-           outline-color: rgb(87, 238, 87) !important; 
+
+        input{
+            height: 70px;
         }
     </style>
 </head>
 <body>
     <div class="">
        <div class="col-md-12 container-fliud py-5">
-        <div class="card  col-md-6 mx-auto mb-3 py-5">  
-            <div class="card-body" id="quiz">
-                
-                
+        <div class="card col-md-6 mx-auto mb-3 py-3"> 
+            <div class="quiz mb-2">
+                <input name="" id="" class="col-md-12" disabled >
             </div>   
+            <border class="col-md-12 mb-2">
+                <div class="input-group-prepend" >
+                    <span type="button"  class="input-group-text btn btn-primary text-dark warn" onclick="">
+                      A
+                    </span>
+                 </div>
+            </border> 
+            <border class="col-md-12 mb-2">
+                <div class="input-group-prepend ">
+                    <span type="button"  class="input-group-text btn btn-primary text-dark warn" onclick="">
+                      B
+                    </span>
+                 </div>
+            </border> 
+            <border class="col-md-12 mb-2">
+                <div class="input-group-prepend ">
+                    <span type="button"  class="input-group-text btn btn-primary text-dark warn" onclick="">
+                      C
+                    </span>
+                 </div>
+            </border> 
+            <border class="col-md-12 mb-2">
+                <div class="input-group-prepend ">
+                    <span type="button"  class="input-group-text btn btn-primary text-dark warn" onclick="">
+                      D
+                    </span>
+                 </div>
+            </border>  
             <div class="card-footer text-muted">
             <a type="button" class="btn btn-primary float-right text-right mt-4 mx-4" id="submit">Submit</a>
             </div>
@@ -45,57 +72,23 @@
         let categoryData =JSON.parse(localStorage.getItem("cat"))
         let quizContainer =JSON.parse(localStorage.getItem("quiz"))
        
-        if(categoryData != null){
-          categoryData = categoryData.filter(el => el.status  == "live")
-          categoryData.forEach(el =>{
-            console.log(el);
-            quiz.innerHTML +=`
-              <p>${el.category}</p>
-            `
-          })
-        }
         
-
         
-        if(quizContainer !== null){  
-          
-              for (let i = 0; i <categoryData.length; i++) {
+        if(categoryData !== null){  
+            console.log(true)
 
-                  let relatedQuiz = []
-                  categoryData.forEach((element) =>{
-                      console.log(element);
-                      if(categoryData[i].parentId == element.parentId){
-                          relatedQuiz.push(element)
-                      }
-                  })
+            for (i = 0 ; quizContainer.length;  i++){
+               let quizArray = [] 
 
-                  categoryDat = quizContainer.filter(el => el.parentId == parentId) 
-                  console.log(true)
+               quizContainer.forEach((el) =>{
+                   console.log(el)
+                   if(categoryData[i].parentId == element.parentId){
+                    quizArray.push(el)
+                   }
+               })
 
-                  let filteredRelatedQuiz = relatedQuiz.filter(el => {
-                      let status = true
-                      quizez.forEach((ele,ind) => {
-                          console.log(ele,ind)
-                          for (let indx = 0; indx < quizez[ind].length; indx++) {
-                              if(quizez[ind][indx].id == el.id){
-                                  status = false
-                              }
-                          }
-                      })
-                      return status
-                  })  
-
-                  if(filteredRelatedQuiz.length) 
-                  quizez.push(filteredRelatedQuiz)
             }
-          }  
-            
-            for (let i = 0; i <quizContainer.length; i++) {
-                quizContainer.forEach((element) =>{
-                      consle.log(element)
-                    
-                })
-            }
+        }     
          
     </script>
 </body>
