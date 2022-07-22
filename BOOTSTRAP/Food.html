@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="todolist.css"> 
+    <link rel="stylesheet" href="localserver.css">   
+</head>
+<body> 
+    <div class=" holder-one  container my-5">
+      <div class="container holder-two col-md-6  py-3">
+        <p id="intro"></p>
+        <h4 class="text-center txt">
+            Select Meal
+            <i class="fa-solid fa-credit-card"></i>
+        </h4>
+        <div class="holder-three container-fluid mt-4 col-md-12">
+            <h5 class="text-center pt-4">
+              Menu
+                <i class="fa-solid fa-cart-shopping"></i>
+            </h5>
+               <div class="form-row">
+                    <select class=" form-control custom-select mb-5  col-md-6 mr-3"  id="mealDay">
+                        <option value="">Select Day</option>
+                    </select>
+                    <select class=" form-control custom-select mb-5  col-md-6 mr-3" id="mealTime">
+                        <option value="">Select Time</option>
+                    </select>
+                    <i class="fa-solid fa-plus ml-2 pt-2" id="list" onclick="addMeal()"></i>
+               </div>   
+            <table border="0" cellspacing ="0">
+                <thead>
+                    <tr>
+                        <th class="text-white">S/N</th>
+                        <th class="text-white">Day</th>
+                        <th class="text-white">Time</th>
+                        <th class="text-white">Food</th>
+                    </tr>
+                </thead>
+                <tbody id="table">
+                </tbody>
+            </table>
+       </div>
+      </div>    
+    </div> 
+    <script src="Food.JS"> </script> 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://kit.fontawesome.com/41ed371ce6.js" crossorigin="anonymous"></script>
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

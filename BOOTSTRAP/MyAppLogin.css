@@ -1,0 +1,26 @@
+.holder{
+    border-radius: 30px;
+    background-color: #DDDDDD;
+    opacity: 0.8;
+    margin: auto;
+    margin-top: 100px;
+}
+img{
+    border-radius: 40px;
+    width: 70px;
+}
+body{
+    background-color: #DDDDDD;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.fa-circle-check{
+    color: green !important;
+    font-weight: 100 bold;
+    font-size: 20px;
+}
+.fa-circle-exclamation{
+    color: red !important;
+    font-weight: 100 bold;
+    font-size: 20px; 
+}

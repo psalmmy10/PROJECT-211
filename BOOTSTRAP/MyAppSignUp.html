@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="localserver.css">
+    <link rel="stylesheet" href="MyAppSignUp.css">
+</head>
+<body>
+    <div class="container  holder1 shadow col-md-4">
+        <div class="container-fluid holder col-md-12 py-3 ">
+            <div class="container text-center pt-3" > 
+                <p class="text-dark">
+                  <b>
+                    Welcome,create an account!
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </b>
+                </p>
+               <img  src="../Image/My profile2.jpg"  alt=""> 
+            </div>
+            <div class="container-fluid col-md-12 holder-one ">
+                <form id="signup">
+                    <div class="class">
+                      <label  class="mb-0"><b class="text-dark">Username</b></label>
+                      <input type="username" class="form-control mb-2" id="uname"  placeholder="Choose Username" required>
+                      <a id="outputMessage" class="text-danger pb-0"></a>
+                    </div>
+                    <div class="form-group">
+                      <label  class="mb-0"><b class="text-dark">Email address</b></label>
+                      <input type="email" class="form-control mb-0 pb-0" id="mail"  placeholder="Enter email" required>
+                      <a id="output" class="text-danger pb-0"></a>
+                    </div>
+                    <div>
+                      <span  class="mb-2"><b class="text-dark">Password</b></span>
+                      <div class="d-flex mb-3">
+                        <input type="password" class="form-control" id="pword" placeholder="Password" required>
+                        <div class="input-group-append">
+                          <span class="input-group-text icon" onclick="eyeShow('text')">
+                            <i class="fa-solid fa-eye" aria-hidden="true" id="eye" onclick="toggle"></i>
+                          </span>
+
+                          <span class="input-group-text icon1 d-none" onclick="eyeShow()">
+                            <i class="fa-solid fa-eye-low-vision eyeLow" aria-hidden="true" id="eye" onclick="toggle"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <a id="output1" class="text-danger  pt-0"></a>
+                      <a id="output2" class="text-success pt-0 "></a>
+                    </div>
+                    <button type="button" class="btn btn-success shadow mb-2 col-md-12" onclick="store()">Create Account</button>
+                    <a href="" class="text-dark mb-5">Already have and account? <a href="http://127.0.0.1:5500/BOOTSTRAP/MyAppLogin.html" class="text-green">Login</a></a></p>
+                  </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="MyAppSignUp.JS"></script>
+    <script src="https://kit.fontawesome.com/41ed371ce6.js" crossorigin="anonymous"></script>
+     <!-- jQuery library -->
+     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+
+     <!-- Popper JS -->
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+ 
+     <!-- Latest compiled JavaScript -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

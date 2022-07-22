@@ -1,0 +1,63 @@
+table{
+    width: 100%;
+    margin-bottom: 10px;
+}
+input {
+    /* margin-top: 10px !important;  */
+    /* margin-bottom: 30px !important; */
+    border-radius: 2px;
+    border: none;
+    width: 10%;
+    height: 50px !important;
+    font-size: 20px;
+}
+.holder-two{
+    border-radius: 10px;
+    background-color: indigo;;
+}
+.holder-three{
+    border-radius: 5px;
+    background-color: #1E1E1E; 
+    color: antiquewhite;
+}
+#btn{
+    border: none;
+    border-radius: 2px;
+}
+.txt{
+ color: aliceblue;
+}
+.fa-solid{
+    font-size: 20px;
+    padding: 5px;
+}
+.display{
+    display: none !important;
+}
+#cal{
+    width: 40%;
+}
+.custom-select, .form-control{
+    width: 40% !important;
+}
+#opt{
+    height: 50px;
+}
+.form-control{
+    height: 36px !important;
+}
+#cal{
+    height: 20px !important;
+}
+.custom-input{
+    color: #1E1E1E !important;
+}
+.btn{
+    display: inline-block;
+}
+#intro{
+    color: aliceblue;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 4px;
+}

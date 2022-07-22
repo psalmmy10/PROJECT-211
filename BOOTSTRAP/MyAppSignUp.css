@@ -1,0 +1,39 @@
+.holder{
+    border-radius: 15px;
+    background-color: #DDDDDD;
+    opacity: 0.8;
+    margin: auto;
+    margin-top: 100px;
+}
+.holder1{
+  border-radius:20px ;
+}
+img{
+    border-radius: 40px;
+    width: 70px;
+}
+body{
+    background-color: #DDDDDD;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.icon , .fa-eye{
+    color: rgb(93, 151, 240);
+    cursor: pointer;
+}
+
+.eyeLow{
+    cursor: pointer; 
+    color: rgb(93, 151, 240);
+}
+
+a{
+    text-decoration: none !important;
+    font-weight: bold;
+}
+
+#output2{
+    text-decoration: none !important;
+    font-weight: bold;
+}

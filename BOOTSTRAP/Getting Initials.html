@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <input type="text" id="input">
+    <button onclick="getInitials()">Click</button>
+    <P id="display"></P>
+    
+
+    <script>
+            
+            
+            function getInitials(string){
+                var input1 = document.getElementById("input").value;
+                var names = input1.split(" "),
+                    initials = names[0].substring(0, 1).toUpperCase();
+                
+                if (names.length > 1) {
+                    initials += names[names.length -1].substring(0, 1).toUpperCase();
+                }
+                return display.innerHTML = initials
+            };
+            
+    </script>
+</body>
+</html>

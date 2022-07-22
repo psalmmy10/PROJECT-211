@@ -1,0 +1,80 @@
+body{
+    background-image: url(../Image/wema\ bg.jpg);
+    opacity: 0.9;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.holder-one{
+    background-color: #1E1E1E;
+    border-radius: 10px;
+}
+.profile{
+    font-size: 20px;
+    color: aliceblue !important;
+    font-weight: bolder;
+}
+.jing{
+    font-size: 20px;
+    color: aliceblue !important;
+    font-weight: bolder; 
+}
+.arrow{
+    font-size: 20px;
+    color: #AB2656 !important;
+    font-weight: bolder;  
+}
+.swipe{
+    font-size: 13px;
+    text-decoration: none;
+    color: #AB2656;
+}
+.swipe:hover{
+    color: #AB2656; 
+    text-decoration: none;
+}
+.radius{
+    width: 20%;
+    border-radius: 50% ;
+}
+.txt{
+    color: #AB2656;
+}
+.holder-two{
+    background-color: #AB2656;
+    border-radius: 5px;
+}
+.status{
+    color: #fff;
+}
+.status:hover{
+    color: #fff;
+    text-decoration: none;
+}
+input{
+    border-radius: 10px;
+}
+.status1{
+    font-size: 19x;
+    color: #fff;
+}
+.status1:hover{
+    color: #fff;
+    text-decoration: none;
+}
+.funds{
+    font-size: 40px;
+    color: aliceblue !important;
+    font-weight: bolder; 
+}
+.funds1{
+    font-size: 30px;
+    color: aliceblue !important;
+    font-weight: bolder; 
+}
+.row-hold{
+ background-color: #212121;
+ border-radius: 5px;
+}
+.money{
+    text-decoration: none !important;
+}
