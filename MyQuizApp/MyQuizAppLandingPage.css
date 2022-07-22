@@ -1,0 +1,69 @@
+.container-fluid{
+    background-color: #343957;
+    /* height: 100vh; */
+}
+.navbar-brand{
+font-size: 40px;
+font-weight: bold;
+color: #007BFF !important;
+}
+.img1{
+    border-radius: 50px;
+    height: 64vh;
+}
+.bg{
+    background-color: #8000AB;
+}
+.text1{
+    color: #fff;
+    font-size: 30px;
+}
+.img2{
+    margin-top:34px;
+}
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ .foot1{
+     font-weight: bold;
+     color:#232322 ;
+ }
+ .foot1,.foot2{
+     text-decoration: none !important;
+ }
+ .foot2{
+     font-size: 14px;
+     color:#232322 ;
+ }
+ .footer{
+     padding-top: 50px !important;
+     padding-bottom: 50px;
+     background-color:#fbf8f3 ;
+ }
+ .Sarah{
+     font-weight: bold;
+     color:#007BFF ;
+ }
+ .sara2{
+     font-weight: bold;
+     font-size: 12px;
+ }
+ .btn-g{
+     background-color: #fff;
+     border: 1px solid lightgrey;
+     color: #4d13d1;
+     font-weight: bold ;
+ }
+ 
+ 
+ 

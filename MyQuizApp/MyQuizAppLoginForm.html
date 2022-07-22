@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz-Login</title>
+    <link rel="stylesheet" href="MyQuizApplLoginForm.css">
+    <link rel="stylesheet" href="server.css">
+</head>
+<body>
+    
+    <div class="container-fluid">
+        <div class="row col-md-12 m-auto mt-5">
+            <div class="col-md-6 row-holder d-none d-xl-block">
+            </div>
+            <div class="col-md-6 ">
+                <p class="text1 text-center mt-5">K-12 Pupils</p>
+                <div class="col-md-9 mt- bg m-auto">
+                    <p class="text-center txt txt1 pt- pb-3"><b></b></p>
+                    <img src="../Image/animated-student-image-0029gif.gif" class="col-md-11 img3 " alt="">
+                    <p class="quiz text-center p-4"><b>Login</b></p>
+                    <form class="pb-3">
+                        <div class="form-group">
+                            <label class="txt"><b>Full Name</b></label>
+                            <input type="text" class="form-control mt-0" id="username" placeholder="Full Name">
+                         </div>
+                        <!-- <div class=" form-group"> -->
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" class="txt mt-2 mb-0"><b>Password</b></label>
+                                <div class="input-group">
+                                <input type="password" class="form-control " id="Password" placeholder="at least 8 characters">  
+                                    <div class="input-group-append">
+                                        <span class="input-group-text icon" onclick="eyeShow('text')">
+                                            <i class="fa-solid fa-eye" aria-hidden="true" id="eye" onclick="toggle"></i>
+                                          </span>
+                
+                                          <span class="input-group-text icon1 d-none" onclick="eyeShow()">
+                                            <i class="fa-solid fa-eye-low-vision eyeLow" aria-hidden="true" id="eye" onclick="toggle"></i>
+                                          </span>
+                                    </div>
+                                </div>
+                                <p id="result" class="pb-4"></p>
+                            </div>
+                        <!-- </div> -->
+                        <button type="button" class="btn btn-success mb-2 col-md-12" onclick="check()">LOGIN</button>
+                    </form>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        var uname = document.getElementById('username');
+        var pword = document.getElementById('Password');
+
+        function check(){
+            if (uname.value == "" || pword.value =="") {
+                swal({
+                        title: "Can't take empty field",
+                    });
+            }
+            else{
+                var data = {
+                    uname: username.value,
+                    pword: Password.value
+                };
+                let  loginStatus = false;
+                let users = JSON.parse(localStorage.getItem("users"));
+            
+                users.some(el =>{
+                if( el.uname == data.uname &&  el.pword == data.pword){
+                    localStorage.setItem('authUser', JSON.stringify(el))
+                        loginStatus = true;
+                }
+                })
+                if(loginStatus){
+                    result.innerHTML = `Logged in <i class="fa-solid fa-circle-check text-success"></i>`
+                    swal("Welcome!", "Logged successfully!", "success");
+                    setTimeout(() => {
+                    window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/MyQuizApp/MyQuizAppDash.html") 
+                    }, 500);
+                }
+                else{
+                    swal({
+                        title: "Account Doesn't exit, incorrect details",
+                    });
+                    result.innerHTML = `No Username or Password Match<i class="fa-solid fa-circle-exclamation text-danger"></i>`
+                }
+            }
+        }
+
+
+        function eyeShow(p = 'password'){
+                var icon =document.querySelector('.icon')
+                var icon1 =document.querySelector('.icon1')
+                var value = document.querySelector('#pword')
+
+                if(p == 'text'){
+                    value.setAttribute('type','text')
+                    icon.classList.add('d-none')
+                    icon1.classList.remove('d-none')
+                }
+                else{
+                value.setAttribute('type','password')
+                icon.classList.remove('d-none')
+                icon1.classList.add('d-none')
+                }
+        }
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://kit.fontawesome.com/41ed371ce6.js" crossorigin="anonymous"></script>
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
