@@ -1,0 +1,182 @@
+.main-cont{
+    background-color: #a9a9a9;
+    width: 50%;
+    height: 600px;
+    position: relative;
+    margin: auto;
+}
+.container{
+    background-color: #fff;
+    width:55%;
+    height: 500px;
+    position: absolute;
+    left: 9em;
+    top: 3em;
+    border-radius: 8px;
+    overflow: hidden;
+    /* background-image: url(./Image/sch\ id\ logo.jpg); */
+    right:0px ;
+    /* background-repeat: no-repeat;
+    opacity: 0.9;
+    z-index: 1; */
+}
+.content{
+    background-color: rgb(50, 26, 187);
+    width:97%;
+    height: 90px;
+    position: absolute; 
+    top:0px;
+    left:0px;
+    border-bottom-right-radius:100%;
+
+}
+.border2{
+    background-color: rgb(30, 36, 124);
+    width:90%;
+    height: 90px;
+    position: absolute; 
+    top:0px;
+    left:0px;
+    border-bottom-right-radius:100%;
+}
+p{
+    line-height: 2px;
+    color: #fff;
+    font-weight: bold;
+    padding-left: 10px ;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.circle{
+    background-image: url(../Image/sch\ id\ logo.jpg);
+    background-size: cover;
+    width:30%;
+    height: 22%;
+    position: absolute; 
+    top: 5%; 
+    right: 30px;
+    border-radius: 100%;
+    border: 2px solid #0000ff
+}
+.text{
+    transform:rotate(-90deg);
+    color: #000;
+    top: 44%;
+    left: -1%;
+    position: absolute;
+    font-size: 10px;
+    color: #333bb1;
+    text-shadow: 0px 7px 2px ;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+#address{
+    color: #fff;
+    font-weight: bold;
+    padding-left: 10px ;
+    line-height: 2px;
+    font-size: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+.passport-area{
+    width: 43%;
+    height: 30%;
+    background-color: #fff;
+    border: 2px solid #333bb1;
+    bottom: 0px;
+    right: 0px;
+    margin: auto;
+    margin-top: 150px;
+    border-bottom-right-radius: 10px ;
+    background-image: url(./Image/pic.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 2px 2px;
+}
+#name{
+    color: #000;
+    top: 50px;
+    margin-left:px;
+    color: #333bb1;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.details{
+    color: #000;
+    top: 50px;
+    margin-left: 1px;
+    color: #333bb1;
+    font-size: 11px;
+    text-align: center;
+    line-height: 1em;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.sign{
+    width: 35%;
+    height: 5%;
+    left:33%;
+    border-left:0px;
+    border-right:none;
+    margin-top: -15px;
+    /* background-color: #fff; */
+    position: absolute;
+    border: 1px solid #333bb1;
+    background-image: url(./Image/div.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 40px;
+    padding-bottom: 5px;
+    border: 0px;
+}
+hr{
+    margin-top: 43px;
+    width: 45%;
+    height: 1px;
+    background-color: #ff0000;
+}
+.holders-sign{
+   margin-top: -10px ;
+   margin-left:33%;
+   color: #ff0000;
+}
+.left-shape{
+    background-color: rgb(30, 36, 124);
+    width:60%;
+    height: 39px;
+    position: absolute; 
+    bottom:0px;
+    left:0px;
+    border-top-right-radius:80%;
+}
+.right-shape{
+    background-color: rgb(30, 36, 124);
+    width:90%;
+    height: 39px;
+    position: absolute; 
+    bottom:0px;
+    left:190px;
+    border:80%;
+    clip-path: polygon(
+    /* 0 10%,
+    10% 0,
+    90% 0, */
+    100% 10%,
+    100% 90%,
+    90% 100%,
+    10% 100%,
+    10% 100%,
+    0% 10%
+  )
+}
+#validity{
+   font-size: 11px;
+   color: rgb(248, 244, 244); 
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+span{
+    color: rgb(236, 222, 27);
+}
+#color{
+    color: #000;
+}
