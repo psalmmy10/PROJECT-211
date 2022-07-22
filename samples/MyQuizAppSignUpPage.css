@@ -1,0 +1,44 @@
+.container-fluid{
+    background-color: #343957;
+    height: 100vh;
+}
+.text1{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+img{
+    height: 85vh;
+    border-radius: 20px;
+}
+.bg{
+    background-color: #fff;
+    border-radius: 20px;
+}
+/* .form-control{
+    border-radius: 30px !important;
+} */
+input {
+    color: #8000AB;
+}
+.txt{
+    color: #8000AB;
+}
+.txt1{
+    font-size: 20px;
+}
+.quiz{
+    letter-spacing: 5px;
+}
+.quiz{
+    color: #4944E7;
+    font-size: 20px;
+}
+.img3{
+    height: 10vh;
+}
+
+.fa-solid{
+    color: red !important;
+    font-size: 30px !important;
+}
