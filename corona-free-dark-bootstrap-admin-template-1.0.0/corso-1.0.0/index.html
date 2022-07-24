@@ -234,11 +234,19 @@
         }    
         searchCat()
 
-        function startQuiz() {
-            var categoryData = JSON.parse(localStorage.getItem("quiz"))   
-            if(categoryData){
-                window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/corso-1.0.0/quizPage.html")
-            } 
+
+        loginStatus = false
+        function startQuiz(start) {
+            loginStatus = true
+            if(loginStatus){
+                quizez.forEach(element =>{
+                   if(element == start){
+                      window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/corso-1.0.0/quizPage.html")
+                      localStorage.setItem("questionAndAnswer",JSON.stringify(element))
+                    } 
+                })  
+            }
+          // var categoryData = JSON.parse(localStorage.getItem("quiz"))
         }
     
             

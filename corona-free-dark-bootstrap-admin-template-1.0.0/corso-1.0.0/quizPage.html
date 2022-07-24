@@ -74,9 +74,10 @@
        
         
         let quizez = []
-        if(categoryData !== null){  
-            console.log(true);
-           let quizContainer =JSON.parse(localStorage.getItem("quiz"))
+        if(quizContainer !== null){  
+            // quizContainer = quizContainer.filter(el => 
+            // el.question.toLowerCase() == quest.value.toLowerCase()) 
+            let quizContainer =JSON.parse(localStorage.getItem("quiz"))
            
             for (i = 0 ; quizContainer.length;  i++){
                let quizArray = [] 
@@ -101,17 +102,17 @@
                     return status
                 })  
             }
-        }
-        card.innerHTML +=`
+            card.innerHTML +=`
         
         <div class="quiz mb-2">
-                <input name="" id="" class="col-md-12 tetx-dark" disabled value="${quizez.question}" >
+                <input name="" id="quest" class="col-md-12 tetx-dark" disabled value="${quizez.question}" >
             </div>   
             <border class="col-md-12 mb-2">
                 <div class="input-group-prepend" >
                     <span type="button"  class="input-group-text btn btn-primary text-dark warn" onclick="">
                       A
                     </span>
+                    ${quizez.options}
                  </div>
             </border> 
             <border class="col-md-12 mb-2">
@@ -141,6 +142,8 @@
         
         
         `     
+        }
+       
          
     </script>
 </body>
