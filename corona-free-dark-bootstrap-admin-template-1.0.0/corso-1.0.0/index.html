@@ -235,20 +235,31 @@
         searchCat()
 
 
-        loginStatus = false
-        function startQuiz(start) {
-            loginStatus = true
+        
+        function startQuiz(prams) {
+            loginStatus = false
+            let users = JSON.parse(localStorage.getItem("users"));
+
+            users.forEach(el =>{
+                if(el.uname == data.uname &&  el.pword == data.pword){
+                    loginStatus = true;
+                    authUser = el
+                }
+            });
+
             if(loginStatus){
-                quizez.forEach(element =>{
-                   if(element == start){
-                      console.log(element);
-                      localStorage.setItem("questionAndAnswer",JSON.stringify(element))
-                      window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/corso-1.0.0/quizPage.html")
+                let quizStore = []
+
+                quizez.forEach((item,i) =>{
+                   if(i == prams){
+                      quizStore = prams
+                      localStorage.setItem("questionAndAnswer",JSON.stringify(quizStore))
+                      window.location.assign("http://127.0.0.1:5501/corso-1.0.0/index.html")
                     } 
                 })  
             }
-          // var categoryData = JSON.parse(localStorage.getItem("quiz"))
         }
+        // startQuiz(prams)
     
             
            

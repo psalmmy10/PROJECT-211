@@ -28,39 +28,11 @@
     <div class="">
        <div class="col-md-12 container-fliud py-5">
         <div class="card col-md-6 mx-auto mb-3 py-3" id="card"> 
-            <div class="quiz mb-2">
-                <input name="" id="" class="col-md-12" disabled >
+            <div class="quiz mb-2" id="quiz">
+                
             </div>   
-            <border class="col-md-12 mb-2">
-                <div class="input-group-prepend" >
-                    <span type="button"  class="input-group-text btn btn-primary text-dark warn" onclick="">
-                      A
-                    </span>
-                 </div>
-            </border> 
-            <border class="col-md-12 mb-2">
-                <div class="input-group-prepend ">
-                    <span type="button"  class="input-group-text btn btn-primary text-dark warn" onclick="">
-                      B
-                    </span>
-                 </div>
-            </border> 
-            <border class="col-md-12 mb-2">
-                <div class="input-group-prepend ">
-                    <span type="button"  class="input-group-text btn btn-primary text-dark warn" onclick="">
-                      C
-                    </span>
-                 </div>
-            </border> 
-            <border class="col-md-12 mb-2">
-                <div class="input-group-prepend ">
-                    <span type="button"  class="input-group-text btn btn-primary text-dark warn" onclick="">
-                      D
-                    </span>
-                 </div>
-            </border>  
             <div class="card-footer text-muted">
-            <a type="button" class="btn btn-primary float-right text-right mt-4 mx-4" id="submit">Submit</a>
+               <a type="button" class="btn btn-primary float-right text-right mt-4 mx-4" id="submit">Submit</a>
             </div>
         </div>  
        </div>
@@ -69,79 +41,29 @@
     <script>
        
         let quiz = document.querySelector("#quiz");
-        let categoryData =JSON.parse(localStorage.getItem("cat"))
-        let quizContainer = JSON.parse(localStorage.getItem("quiz"))
+        // let categoryData =JSON.parse(localStorage.getItem("cat"))
+        let questionAndAnswer =  JSON.parse(localStorage.getItem("questionAndAnswer"))
        
         
-        let quizez = []
-        if(quizContainer !== null){  
-            // quizContainer = quizContainer.filter(el => 
-            // el.question.toLowerCase() == quest.value.toLowerCase()) 
-            let quizContainer =JSON.parse(localStorage.getItem("quiz"))
-           
-            for (i = 0 ; quizContainer.length;  i++){
-               let quizArray = [] 
-
-               quizContainer.forEach((el) =>{
-                   if(quizContainer[i].parentId == el.parentId){
-                     quizArray.push(el)
-                   }
-               })
-
-               let filteredRelatedQuiz = quizArray.forEach(el => {
-                   console.log(el);
-                    let status = true
-                    quizez.forEach((ele,ind) => {
-                        console.log(ele,ind)
-                        for (let indx = 0; indx < quizez[ind].length; indx++) {
-                            if(quizez[ind][indx].id == el.id){
-                                status = false
-                            }
-                        }
-                    })
-                    return status
-                })  
-            }
-            card.innerHTML +=`
-        
-        <div class="quiz mb-2">
-                <input name="" id="quest" class="col-md-12 tetx-dark" disabled value="${quizez.question}" >
-            </div>   
-            <border class="col-md-12 mb-2">
-                <div class="input-group-prepend" >
-                    <span type="button"  class="input-group-text btn btn-primary text-dark warn" onclick="">
-                      A
-                    </span>
-                    ${quizez.options}
-                 </div>
-            </border> 
-            <border class="col-md-12 mb-2">
-                <div class="input-group-prepend ">
-                    <span type="button"  class="input-group-text btn btn-primary text-dark warn" onclick="">
-                      B
-                    </span>
-                 </div>
-            </border> 
-            <border class="col-md-12 mb-2">
-                <div class="input-group-prepend ">
-                    <span type="button"  class="input-group-text btn btn-primary text-dark warn" onclick="">
-                      C
-                    </span>
-                 </div>
-            </border> 
-            <border class="col-md-12 mb-2">
-                <div class="input-group-prepend ">
-                    <span type="button"  class="input-group-text btn btn-primary text-dark warn" onclick="">
-                      D
-                    </span>
-                 </div>
-            </border>  
-            <div class="card-footer text-muted">
-            <a type="button" class="btn btn-primary float-right text-right mt-4 mx-4" id="submit">Submit</a>
-            </div>
-        
-        
-        `     
+        if(questionAndAnswer !== null){  
+           questionAndAnswer.forEach((element,ind)=>{
+                // for(let i = 0 ; element.lenght ; i++) {
+                //      console.log(element.lenght);
+                    quiz.innerHTML +=`
+                        <div class="quiz mb-2">
+                                <input name="" id="quest" class="col-md-12 tetx-dark" disabled value="${element.question}">
+                            </div>   
+                            <border class="col-md-12 mb-2">
+                                <div class="input-group-prepend" >
+                                    <span type="button"  class="input-group-text btn btn-primary text-dark warn" onclick="">
+                                    A
+                                    </span>
+                                    ${element.options}
+                                </div>
+                            </border> 
+                    `     
+                // } 
+           })
         }
        
          
