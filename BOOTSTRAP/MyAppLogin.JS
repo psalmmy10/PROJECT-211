@@ -16,9 +16,10 @@ function check(){
         let users = JSON.parse(localStorage.getItem("users"));
     
         users.some(el =>{
-           if( el.uname == data.uname &&  el.pword == data.pword){
+            console.log(users);
+           if(el.uname == data.uname && el.pword == data.pword){
                localStorage.setItem('authUser', JSON.stringify(el))
-                loginStatus = true;
+               loginStatus = true;
            }
         })
         if(loginStatus){

@@ -66,11 +66,11 @@
                       <input type="password" class="form-control p_input text-white " id="pword" placeholder="at least 8 characters">
                       <div class="input-group-append">
                             <span class="input-group-text icon" style="font-size: 10px;" onclick="eyeShow('text')">                     
-                              <i class=" fa-lock text-white" aria-hidden="true" id="eye" >Lock</i>
+                              <a class=" fa-lock text-white" aria-hidden="true" id="eye" >Show</a>
                             </span>
   
                             <span class="input-group-text icon1 d-none" style="font-size: 10px;" onclick="eyeShow()">
-                              <i class=" fa-lock text-white" aria-hidden="true" id="eye" >Unlock</i>
+                              <a class=" fa-lock text-white" aria-hidden="true" id="eye" >Hide</a>
                             </span>
                             <a id="output1" class="text-danger pt-0"></a> <br>
                       </div>
@@ -163,7 +163,7 @@
                 localStorage.setItem("users", JSON.stringify(userRecord));
                 alert("Welcome!", "Account created successfully!", "success");
                 setTimeout(() => {
-                    window.location.assign("http://127.0.0.1:5502/template/pages/samples/login.html") 
+                    window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/template/pages/samples/login.html") 
                 }, 1000);
             }
           } 

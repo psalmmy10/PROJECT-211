@@ -42,11 +42,12 @@
        
         let quiz = document.querySelector("#quiz");
         // let categoryData =JSON.parse(localStorage.getItem("cat"))
-        let questionAndAnswer =  JSON.parse(localStorage.getItem("questionAndAnswer"))
+        let questionAndAnswer = JSON.parse(localStorage.getItem("questionAndAnswer"))
        
         
-        if(questionAndAnswer !== null){  
-           questionAndAnswer.forEach((element,ind)=>{
+        if(questionAndAnswer !== null){
+            // console.log();  
+           questionAndAnswer.forEach(element => {
                 // for(let i = 0 ; element.lenght ; i++) {
                 //      console.log(element.lenght);
                     quiz.innerHTML +=`

@@ -16,11 +16,36 @@
     <!-- Layout styles -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+    <link rel="shortcut icon" href="../../assets/images/favicon.png"/>
+    <link rel="stylesheet" href="MyAppLogin.css">
+    
   </head>
   <body>
     <div class="container-scroller">
-      <div class="container-fluid page-body-wrapper full-page-wrapper">
+      <div class=" container-fluid page-body-wrapper full-page-wrapper ">
+        <div class="container-fluid holder shadow-white col-md-4 ">
+            <div class="container text-center pt-4 pt-2" > 
+               <img  src="../samples/IMAGE/My profile2.jpg"  alt=""> 
+            </div>
+            <div class="container-fluid col-md-11 holder-one">
+                <form id="login">
+                    <div class="class pt-3">
+                      <label for="exampleInputEmail1" class="mb-0"><b class="text-dark">Username</b></label>
+                      <input type="username" class="form-control mb-2" id="username"  placeholder="Choose Username">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1" class="my-0"><b class="text-dark">Password</b></label>
+                      <input type="password" class="form-control" id="Password" placeholder="Password">
+                    </div>
+                    <button type="button" class="btn btn-success mb-1 col-md-12" onclick="check()">login</button>
+                    <a href="http://127.0.0.1:5500/BOOTSTRAP/MyAppSignUp.html" class="mb-5"><b>Sign up?</b></a>
+                    <p id="result" class="pb-4 text-dark"></p>
+                  </form>
+            </div>
+            
+        </div>
+    </div>
+      <!-- <div class="container-fluid page-body-wrapper full-page-wrapper">
         <div class="row w-100 m-0">
           <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
             <div class="card col-lg-4 mx-auto">
@@ -54,13 +79,13 @@
                   </div>
                   <p class="sign-up">Don't have an Account?<a href="file:///C:/Users/DELL/Desktop/My%20Project/corona-free-dark-bootstrap-admin-a-1.0.0%20(2)/corona-free-dark-bootstrap-admin-template-1.0.0/template/pages/samples/register.html"> Sign Up</a></p>
                 </form>
-              </div>
-            </div>
-          </div>
+              </div> -->
+            <!-- </div>
+          </div> -->
           <!-- content-wrapper ends -->
         </div>
         <!-- row ends -->
-      </div>
+      <!-- </div> -->
       <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
@@ -77,45 +102,45 @@
     <script src="../../assets/js/todolist.js"></script>
     <script>
       var uname = document.getElementById('username');
-      var pword = document.getElementById('Password');
+var pword = document.getElementById('Password');
 
-      function check(){
-          if (uname.value == "" || pword.value =="") {
-              alert({
-                      title: "Can't take empty field",
-                  });
-          }
-          else{
-              var data = {
-                  uname: username.value,
-                  pword: Password.value
-              };
-
-              let  loginStatus = false;
-              let users = JSON.parse(localStorage.getItem("users"));
-          
-              users.some(el =>{
-                if(el.uname == data.uname &&  el.pword == data.pword){
-                    localStorage.setItem('authUser', JSON.stringify(el))
-                        loginStatus = true;
-                }
-              })
-              console.log(loginStatus);
-              if(loginStatus){
-                  result.innerHTML = `Logged in <i class="fa-solid fa-circle-check text-success"></i>`
-                  alert("Welcome!", "Logged successfully!", "success");
-                  setTimeout(() => {
-                  window.location.assign("http://127.0.0.1:5502/template/index.html") 
-                  }, 500);
-              }
-              else{
-                alert({
-                      title: "Account Doesn't exit, incorrect details"
-                  });
-                  result.innerHTML = `No Username or Password Match<i class="fa-solid fa-circle-exclamation text-danger"></i>`
-              }
-          }
-      }
+function check(){
+    if (uname.value == "" || pword.value =="") {
+         alert({
+                title:"Can't take empty field",
+            });
+    }
+    else{
+        var data = {
+            uname: username.value,
+            pword: Password.value
+        };
+        let  loginStatus = false;
+        let users = JSON.parse(localStorage.getItem("users"));
+    
+        users.some(el =>{
+            console.log(users);
+           if(el.uname == data.uname && el.pword == data.pword){
+               localStorage.setItem('authUser', JSON.stringify(el))
+               loginStatus = true;
+           }
+        })
+        if(loginStatus){
+            result.innerHTML = `Logged in <i class="fa-solid fa-circle-check"></i>`
+            alert("Welcome!", "Logged successfully!", "success");
+            setTimeout(() => {
+            window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/template/index.html") 
+            }, 500);
+        }
+        else{
+            alert({
+                title: "Account Doesn't exit, incorrect details",
+            });
+            result.innerHTML = `No Username or Password Match<i class="fa-solid fa-circle-exclamation"></i>`
+        }
+    }
+   
+}
   </script>
     <!-- endinject -->
   </body>

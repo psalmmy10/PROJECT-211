@@ -24,7 +24,7 @@ function store(){
                 "pword": pword
             })
 
-
+            loginStatus = false
             var regex =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             var email = regex.test(mail);
             var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{9,15}$/;
