@@ -28,7 +28,7 @@
     <div class="">
        <div class="col-md-12 container-fliud py-5">
         <div class="card col-md-6 mx-auto mb-3 py-3" id="card"> 
-            <div class="quiz mb-2" id="quiz">
+            <div class="quiz mb-2" id="question">
                 
             </div>   
             <div class="card-footer text-muted">
@@ -41,31 +41,51 @@
     <script>
        
         let quiz = document.querySelector("#quiz");
-        // let categoryData =JSON.parse(localStorage.getItem("cat"))
+        let question = document.querySelector("#question");
         let questionAndAnswer = JSON.parse(localStorage.getItem("questionAndAnswer"))
        
-        
+
         if(questionAndAnswer !== null){
-            // console.log();  
-           questionAndAnswer.forEach(element => {
-                // for(let i = 0 ; element.lenght ; i++) {
-                //      console.log(element.lenght);
-                    quiz.innerHTML +=`
-                        <div class="quiz mb-2">
-                                <input name="" id="quest" class="col-md-12 tetx-dark" disabled value="${element.question}">
-                            </div>   
-                            <border class="col-md-12 mb-2">
-                                <div class="input-group-prepend" >
-                                    <span type="button"  class="input-group-text btn btn-primary text-dark warn" onclick="">
-                                    A
-                                    </span>
-                                    ${element.options}
-                                </div>
-                            </border> 
-                    `     
-                // } 
-           })
+            questionAndAnswer.forEach((element,i) => {
+                let joined_options = questionAndAnswer[i].options.map((el) =>{
+                  return el.questionOptions +' '
+                }).join(",");
+
+                question.innerHTML +=`
+                    <div class ="question p-3 card-body>
+                        <div class="d-flex flex-row align-items-center question-titel">
+                            <h5 class="mt-1 ml-1 pb-5" id="ques${i}">${questionAndAnswer[i].question}</h5>
+                            <input type="hidden" id="noOfoptions${i}" value="${ans.length}">
+                        </div>
+                        <div class="row" id="myQuizOptions${i}">
+
+                        </div>
+                    </div>
+                ` 
+            });
+        
+            if(questionAndAnswer[i].id){
+                let myQuizOption = document.querySelector(`#myQuizOption${i}`)
+                for(let a = 0; a <ans.length; a++){
+                    myQuizOption.innerHTML+=`
+                        <div class="input-group col-sm-6 mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text" style="border-right-bottom-radius: 100px;">Options${a+1}</div>
+                            </div>
+                            <label class="radio">
+                                <input type="radio" name="gridRadio${i} onclick="fuc(${a})" id="gridRadio${i}${a} value="${ans[a]}">
+                                  <span class="text-white">${ans[a]}</span>
+                                <i id="check" class="fs fs-check d-none" arial-hidden="true"></i>
+                            </label>
+                        </div>            
+                    ` 
+                }
+            }
         }
+
+
+        
+        
        
          
     </script>

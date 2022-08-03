@@ -113,7 +113,8 @@ function check(){
     else{
         var data = {
             uname: username.value,
-            pword: Password.value
+            pword: Password.value,
+            userType:"user"
         };
         let  loginStatus = false;
         let users = JSON.parse(localStorage.getItem("users"));
@@ -128,9 +129,19 @@ function check(){
         if(loginStatus){
             result.innerHTML = `Logged in <i class="fa-solid fa-circle-check"></i>`
             alert("Welcome!", "Logged successfully!", "success");
-            setTimeout(() => {
-            window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/template/index.html") 
-            }, 500);
+           users.some(el =>{
+              if(el.userType == data.userType){
+                setTimeout(() => {
+                  window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/corso-1.0.0/index.html#") 
+                }, 500);
+              }
+              else{
+               setInterval(() =>{
+                 window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/template/index.html")
+               })
+              }
+           })
+            
         }
         else{
             alert({

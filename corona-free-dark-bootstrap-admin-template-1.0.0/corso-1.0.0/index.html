@@ -166,14 +166,12 @@
         
 
 
-        let quizez = [ ]
-        console.log(quizez)
+        var quizez = []
         function searchCat(){
             var categoryData = JSON.parse(localStorage.getItem("quiz"))   
             categoryDat = categoryData.filter(el => 
             el.category0.toLowerCase() == categorySelect4.value.toLowerCase())  
             if(categoryData !== null ){  
-                // console.log(categoryData)
                 if(categorySelect4.value){
                     categoryData = categoryData.filter(el => 
                     el.category0.toLowerCase() == categorySelect4.value.toLowerCase())  
@@ -182,18 +180,17 @@
 
                         let relatedQuiz = []
                         categoryData.forEach((element) =>{
-                            console.log(element);
                             if(categoryData[i].parentId == element.parentId){
                                 relatedQuiz.push(element)
                             }
                         })
 
-                        let filteredRelatedQuiz = relatedQuiz.filter(el => {
+                        let filteredRelatedQuiz = relatedQuiz.filter((el,ind) => {
                             let status = true
                             quizez.forEach((ele,ind) => {
-                                console.log(ele,ind)
                                 for (let indx = 0; indx < quizez[ind].length; indx++) {
                                     if(quizez[ind][indx].id == el.id){
+                                        
                                         status = false
                                     }
                                 }
@@ -206,9 +203,10 @@
                     }
                 }  
             } 
+            
             cardMode.innerHTML = ""  
-            for(let i = 0; i <quizez.length; i++ ){  
-                console.log(quizez);
+            for(let i = 0; i <quizez.length; i++ ){ 
+               
                 if (categoryData == ""){
                     return document.getElementById("records").innerText = `No record found for selected quiz! please select any other.`
                 }      
@@ -237,9 +235,10 @@
 
 
         
-        function startQuiz(prams) {
-
+        function startQuiz(ind){
+             
             var userRecord = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+            console.log(quizez);
             loginStatus = false
             
             userRecord.some(el =>{
@@ -248,18 +247,18 @@
                     authUser = el
                 }
             });
-            
+            console.log(loginStatus);
             if(loginStatus){
-                let quizStore = []
+                let exam = []
                 quizez.forEach((item,i) =>{
-                   if(i == prams){
-                      quizStore = prams
+                   if(i == ind){
+                      exam = item
                     } 
                 }) 
-                localStorage.setItem("questionAndAnswer",JSON.stringify(quizStore))
+                localStorage.setItem("questionAndAnswer",JSON.stringify(exam))
                 setTimeout(() =>{
                     window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/corso-1.0.0/quizPage.html") 
-                },1000)
+                },500)
             }
         }
         
