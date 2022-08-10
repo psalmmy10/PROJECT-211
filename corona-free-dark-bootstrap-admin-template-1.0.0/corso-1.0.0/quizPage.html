@@ -10,18 +10,12 @@
     <style>
         .container-fliud{
            background-color: #4545A6;
-           height: 100vh;
+           /* height: 100vh; */
         }
 
-        border{
-           border: 2px solid; 
-           /* width: 100% !important; */
-           border-radius: 10px;
-        }
+       
 
-        input{
-            height: 70px;
-        }
+        
     </style>
 </head>
 <body>
@@ -32,7 +26,7 @@
                 
             </div>   
             <div class="card-footer text-muted">
-               <a type="button" class="btn btn-primary float-right text-right mt-4 mx-4" id="submit">Submit</a>
+               <a type="button" class="btn btn-primary float-right text-right mt-4 mx-4" id="submit" onClick="endQuiz()">Submit</a>
             </div>
         </div>  
        </div>
@@ -43,46 +37,116 @@
         let quiz = document.querySelector("#quiz");
         let question = document.querySelector("#question");
         let questionAndAnswer = JSON.parse(localStorage.getItem("questionAndAnswer"))
-       
+        let categoryData = JSON.parse(localStorage.getItem("cat"))
+
+
 
         if(questionAndAnswer !== null){
             questionAndAnswer.forEach((element,i) => {
-                let joined_options = questionAndAnswer[i].options.map((el) =>{
-                  return el.questionOptions +' '
-                }).join(",");
-
+                let correctAnswer = questionAndAnswer[i].options.map((el =>{
+                return el.questionOptions  
+                }));
+                
                 question.innerHTML +=`
-                    <div class ="question p-3 card-body>
+                    <div class ="question p-3 card-body bg-dark">
                         <div class="d-flex flex-row align-items-center question-titel">
-                            <h5 class="mt-1 ml-1 pb-5" id="ques${i}">${questionAndAnswer[i].question}</h5>
-                            <input type="hidden" id="noOfoptions${i}" value="${ans.length}">
+                            <p text-success mb-2>Question${i+1}</p>
+                            <h5 class="mt-1 col-sm-6 text-success mb-2" id="ques${i}">${questionAndAnswer[i].question}</h5>
+                            <input type="hidden" id="noOfoptions${i}" value="${correctAnswer.questionOptions}">
                         </div>
                         <div class="row" id="myQuizOptions${i}">
 
                         </div>
                     </div>
                 ` 
-            });
-        
-            if(questionAndAnswer[i].id){
-                let myQuizOption = document.querySelector(`#myQuizOption${i}`)
-                for(let a = 0; a <ans.length; a++){
-                    myQuizOption.innerHTML+=`
-                        <div class="input-group col-sm-6 mb-2">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text" style="border-right-bottom-radius: 100px;">Options${a+1}</div>
-                            </div>
-                            <label class="radio">
-                                <input type="radio" name="gridRadio${i} onclick="fuc(${a})" id="gridRadio${i}${a} value="${ans[a]}">
-                                  <span class="text-white">${ans[a]}</span>
-                                <i id="check" class="fs fs-check d-none" arial-hidden="true"></i>
-                            </label>
-                        </div>            
-                    ` 
+                if(questionAndAnswer[i].id){
+                    var myQuizOption = document.querySelector(`#myQuizOptions${i}`)
+                    for(let a = 0; a<correctAnswer.length; a++){
+                        myQuizOption.innerHTML+=`
+                            <div class="input-group col-sm-6 mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text" style="border-right-bottom-radius:100px;">Options `+""+`${a+1}</div>
+                                </div>
+                                <label class="radio">
+                                    <input type="radio" name="gridRadio${i} onclick="fuc(${a})" id="gridRadio${i}${a}" value="${correctAnswer[a]}">
+                                    <span class="text-white">${correctAnswer[a]}</span>
+                                    <i id="check" class="fs fs-check d-none" arial-hidden="true"></i>
+                                </label>
+                            </div>            
+                        ` 
+                    }
                 }
-            }
+            });
         }
 
+    
+        function endQuiz(){
+            // e.preventDefault();
+            let staticBackdrop = document.getElementById("staticBackdrop");
+            let clientName = ""
+            var auth = JSON.parse(localStorage.getItem("authUser"))
+                
+            if(auth){
+                clientName = auth.name
+            }
+            swal({
+                title: "Are you sure?",
+                text: "Once you end, you will not be able to recover this imaginary file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                })
+            .then((willEnd) => {
+            if (willEnd) {
+                
+                questionAndAnswer.forEach((element, i) => {
+                    let obj = {
+                        q : document.getElementById(`ques${i}`).innerHTML,
+                        optionLength : Number(document.getElementById(`noOfoptions${i}`).value),
+                        ans : ""
+                    }
+                    
+                    for(let a = 0; a < obj.correctAnswer.length; a++){
+                        let checkedAnswer = document.getElementById(`gridRadios${i}${a}`);
+                        if(checkedAnswer.checked){
+                            obj.ans = checkedAnswer.value 
+                        }
+                    }
+                    if (element.question == obj.q) {
+                        let systemCorrectAns = element.opt.find(el => el.ans == true).questionOptions
+                        if(systemCorrectAns == obj.ans){
+                            score++
+                        }
+                        scoreMe.innerHTML = score;
+                        quizlength.innerHTML = quizez.length
+                        if(score == 0){
+                            scoreText.innerHTML = `Oops, C'mon ${clientName}, you can do more better you know. <p>Would you like to start over again?</p>`
+                            saveQuiz.style.display = "none"
+                            startOver.style.display = "block"
+                        }
+                        else if(score < Number(quizez.length / 2)){
+                            scoreText.innerHTML = `Oops, you actually did well ${clientName}, but you can do more better. <p>Would you like to save the just concluded quiz to your history?</p>`
+                            saveQuiz.style.display = "block"
+                            startOver.style.display = "none"
+                        }
+                        else{
+                            scoreText.innerHTML = `You have done absolutely well ${clientName},<p>Would you like to save the just concluded quiz to your history?</p>`
+                            saveQuiz.style.display = "block"
+                            startOver.style.display = "none"
+                        }
+                    }
+                });
+                swal("Poof! You have succesfully completed your quiz!", {
+                icon: "success",
+                });
+                $('#staticBackdrop').modal('show');
+            } 
+            else {
+                swal("Your imaginary file is safe!");
+            }
+            });
+           
+        }
 
         
         

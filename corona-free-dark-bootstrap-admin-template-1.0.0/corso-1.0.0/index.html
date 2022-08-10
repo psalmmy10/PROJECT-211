@@ -116,7 +116,7 @@
     <div id="header" class="container-fluid header">
         <div class="col-lg-12">
           <div class="text-container">
-             <h1>Easy and intuitive online testing</h1>
+             <h1 class="text-sm-small">Easy and intuitive online testing</h1>
              <p class="p-large">Evalou is a cloud-testing platform that supports online creation and delivery of feature-rich test.</p>    
           </div> <!-- end of text-container -->
         </div>       
@@ -132,7 +132,7 @@
                  </span>
               </div>
             </div>  
-            <p id="records" class="text-white"></p>
+            <p id="records" class="text-white text-sm-small"></p>
         </div> 
       </div>
       <div class="mt-5" id="cardMode" >
@@ -215,10 +215,10 @@
                         <div class="card-body">
                             <div class="div row mb-1">
                                 <div class="col-md-6 text-dark text-bold ">
-                                <h6 class=" text-left">Category</h6> 
-                                <p class="text-left">${categoryData[i].category0}</p> 
+                                    <h6 class=" text-left">Category</h6> 
+                                    <p class="text-left">${categoryData[i].category0}</p> 
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <h6 class="card-title text-right">Number of Questions</h6>
                                     <p class="card-title text-center">${quizez[i].length}</p>
                                 </div>     
@@ -238,7 +238,6 @@
         function startQuiz(ind){
              
             var userRecord = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
-            console.log(quizez);
             loginStatus = false
             
             userRecord.some(el =>{
@@ -247,7 +246,6 @@
                     authUser = el
                 }
             });
-            console.log(loginStatus);
             if(loginStatus){
                 let exam = []
                 quizez.forEach((item,i) =>{

@@ -27,7 +27,7 @@
             <div class="container text-center pt-4 pt-2" > 
                <img  src="../samples/IMAGE/My profile2.jpg"  alt=""> 
             </div>
-            <div class="container-fluid col-md-11 holder-one">
+            <div class="container-fluid col-md-8 holder-one">
                 <form id="login">
                     <div class="class pt-3">
                       <label for="exampleInputEmail1" class="mb-0"><b class="text-dark">Username</b></label>
@@ -102,56 +102,83 @@
     <script src="../../assets/js/todolist.js"></script>
     <script>
       var uname = document.getElementById('username');
-var pword = document.getElementById('Password');
+      var pword = document.getElementById('Password');
 
-function check(){
-    if (uname.value == "" || pword.value =="") {
-         alert({
+  
+      function check(){
+        if (uname.value == "" || pword.value == "") {
+            alert({
                 title:"Can't take empty field",
             });
-    }
-    else{
-        var data = {
-            uname: username.value,
-            pword: Password.value,
-            userType:"user"
-        };
-        let  loginStatus = false;
-        let users = JSON.parse(localStorage.getItem("users"));
-    
-        users.some(el =>{
-            console.log(users);
-           if(el.uname == data.uname && el.pword == data.pword){
-               localStorage.setItem('authUser', JSON.stringify(el))
-               loginStatus = true;
-           }
-        })
-        if(loginStatus){
-            result.innerHTML = `Logged in <i class="fa-solid fa-circle-check"></i>`
-            alert("Welcome!", "Logged successfully!", "success");
-           users.some(el =>{
-              if(el.userType == data.userType){
-                setTimeout(() => {
-                  window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/corso-1.0.0/index.html#") 
-                }, 500);
-              }
-              else{
-               setInterval(() =>{
-                 window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/template/index.html")
-               })
-              }
-           })
-            
         }
         else{
+          var data = {
+              uname: username.value,
+              pword: Password.value,
+              // userType:"user"
+          };
+
+          let loginStatus = false;
+          let users = JSON.parse(localStorage.getItem("users"));
+          let authUser = {}
+
+          users.some(el =>{
+            if(el.uname == data.uname && el.pword == data.pword){
+              loginStatus = true;
+              authUser = el
+            }
+          });
+
+          if(loginStatus){
+            result.innerHTML = `Logged in <i class="fa-solid fa-circle-check"></i>`
+            alert("Welcome!", "Logged successfully!", "success");
+            for(let i = 0; i < users.length; i++){
+              console.log(users.length);
+              console.log(users[i].userType);
+              if(users[i].userType == "user"){
+                console.log(users[i].userType);
+                window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/template/index.html")
+              }
+              else{
+                console.log(users[i].userType);
+                window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/corso-1.0.0/index.html") 
+                localStorage.setItem('authUser',JSON.stringify(authUser))
+              }
+            }
+          }
+          else{
             alert({
                 title: "Account Doesn't exit, incorrect details",
             });
             result.innerHTML = `No Username or Password Match<i class="fa-solid fa-circle-exclamation"></i>`
+          }
         }
-    }
-   
-}
+
+      }
+      
+      
+      let users = JSON.parse(localStorage.getItem("users"));
+
+        if(localStorage.getItem("users") == null){
+          localStorage.setItem("users",JSON.stringify([{
+            uname:"Admin",
+            mail:"admin@gmail.com",
+            pword:"Ade+123456789",
+            userType:"Admin"
+          }]));
+        }else{
+          users = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+          if(users.some(el => el.mail == "admin@gmail.com" || el.uname.toLowerCasw() == "admin") == false){
+            users.push({
+              uname:"Admin",
+              mail:"admin@gmail.com",
+              pword:"Ade+123456789",
+              userType:"Admin"
+            })
+          }
+          localStorage.setItem("users",JSON.stringify(users))
+        }
+
   </script>
     <!-- endinject -->
   </body>

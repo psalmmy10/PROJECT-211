@@ -124,7 +124,7 @@
         var mail = document.getElementById("mail").value;
         var pword = document.getElementById("pword").value;
 
-        let userRecords = Array();
+        // let userRecords = Array();
         userRecord = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
 
         if ((uname == "" || mail == "") || (pword == "")){
@@ -143,7 +143,7 @@
               "uname": uname,
               "mail": mail,
               "pword": pword,
-              userType: "user"
+              userType:"user"
             })
 
 
@@ -164,29 +164,52 @@
                 localStorage.setItem("users", JSON.stringify(userRecord));
                 alert("Welcome!", "Account created successfully!", "success");
                 setTimeout(() => {
-                    window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/template/pages/samples/login.html") 
+                  window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/template/pages/samples/login.html") 
                 }, 1000);
             }
           } 
         }     
-
       }
 
       function eyeShow(p = 'password'){
-          var icon =document.querySelector('.icon')
-          var icon1 =document.querySelector('.icon1')
-          var value = document.querySelector('#pword')
+        var icon =document.querySelector('.icon')
+        var icon1 =document.querySelector('.icon1')
+        var value = document.querySelector('#pword')
 
-          if(p == 'text'){
-              value.setAttribute('type','text')
-              icon.classList.add('d-none')
-              icon1.classList.remove('d-none')
-          }
-          else{
+        if(p == 'text'){
+          value.setAttribute('type','text')
+          icon.classList.add('d-none')
+          icon1.classList.remove('d-none')
+        }
+        else{
           value.setAttribute('type','password')
           icon.classList.remove('d-none')
           icon1.classList.add('d-none')
-          }
+        }
+      }
+
+      if(localStorage.getItem("users") == null){
+        localStorage.setItem("users",JSON.stringify([{
+          uname:"admin",
+          mail:"admin@gmail.com",
+          pword:"Ade+123456789",
+          userType:"admin"
+        }]));
+      }
+      else{
+        userRecord = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+        if(userRecord.some(el => el.mail == "admin@gmail.com" || el.uname.toLowerCase() == "admin") == false){
+          userRecord.push({
+            uname:"admin",
+            mail:"admin@gmail.com",
+            pword:"Ade+123456789",
+            userType:"admin"
+          });
+          localStorage.setItem("users",JSON.stringify(userRecord))
+          setTimeout(() => {
+              window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/template/pages/samples/login.html") 
+          }, 1000);
+        }
       }
 
     </script>
