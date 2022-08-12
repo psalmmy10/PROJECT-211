@@ -131,23 +131,19 @@
 
           if(loginStatus){
             result.innerHTML = `Logged in <i class="fa-solid fa-circle-check"></i>`
-            alert("Welcome!", "Logged successfully!", "success");
+            swal("Welcome!", "Logged successfully!", "success");
             for(let i = 0; i < users.length; i++){
-              console.log(users.length);
-              console.log(users[i].userType);
               if(users[i].userType == "user"){
-                console.log(users[i].userType);
                 window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/template/index.html")
               }
               else{
-                console.log(users[i].userType);
                 window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/corso-1.0.0/index.html") 
                 localStorage.setItem('authUser',JSON.stringify(authUser))
               }
             }
           }
           else{
-            alert({
+            swal({
                 title: "Account Doesn't exit, incorrect details",
             });
             result.innerHTML = `No Username or Password Match<i class="fa-solid fa-circle-exclamation"></i>`

@@ -128,7 +128,7 @@
         userRecord = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
 
         if ((uname == "" || mail == "") || (pword == "")){
-            alert("Fields can't be empty")
+            swal("Fields can't be empty")
         }
         else{
           if(userRecord.some((v)=>{return v.uname == uname})){
@@ -156,13 +156,13 @@
                 output1.innerHTML = "Too Weak"
             }
             else if(!email){
-                alert({
+                swal({
                     title: "email isn't valid",
                 });
             }
             else{
                 localStorage.setItem("users", JSON.stringify(userRecord));
-                alert("Welcome!", "Account created successfully!", "success");
+                swal("Welcome!", "Account created successfully!", "success");
                 setTimeout(() => {
                   window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/template/pages/samples/login.html") 
                 }, 1000);

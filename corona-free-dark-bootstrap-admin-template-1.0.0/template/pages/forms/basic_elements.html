@@ -893,18 +893,18 @@
       function update(){
           let pushDataToLocal = JSON.parse(localStorage.getItem("quiz"));
           if(setModalQuestion.value == ""){
-            alert("pls  select")
-              // swal({
-              //     title: "please select an item",
-              // });
+            // alert("pls  select")
+              swal({
+                  title: "please select an item",
+              });
           }
           else{
-              for (let i = 0; i < pushDataToLocal.length; i++){
-                if(pushDataToLocal[i].id == editIndex){
-                  pushDataToLocal[i].question = setModalQuestion.value                      
-                }  
-              } 
-              setModalQuestion.value  = " "
+            for (let i = 0; i < pushDataToLocal.length; i++){
+              if(pushDataToLocal[i].id == editIndex){
+                pushDataToLocal[i].question = setModalQuestion.value                      
+              }  
+            } 
+            setModalQuestion.value  = " "
           } 
           localStorage.setItem("quiz",JSON.stringify(pushDataToLocal)); 
           categorySt()
