@@ -21,46 +21,101 @@
     </style>
 </head>
 <body>
-    <div class="">
-       <div class="col-md-12 container-fliud py-5">
-        <div class="card col-md-6 mx-auto mb-3 py-3" id="card"> 
-            <div class="quiz mb-2" id="question">
-                
-            </div>   
-            <div class="card-footer text-muted">
-               <a type="button" class="btn btn-primary float-right text-right mt-4 mx-4" id="submit" onClick="endQuiz()">Submit</a>
-            </div>
-        </div>  
-       </div>
+    
+    <div class="container-fluid">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light my-0">
+            <a class="navbar-brand ml-4" href="#">MY QUIZ</a>
+          </nav>
 
-       <!-- Scrollable modal -->
-       <div class="modal-body">
-        <h5>Popover in a modal</h5>
-        <p id="scoreMe">This <a href="#" role="" id="" class=" popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
-        <hr>
-        <h5>Tooltips in a modal</h5>
-        <p><a href="#" class="tooltip-test" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="Tooltip">that link</a> have tooltips on hover.</p>
-      </div>
-      
-  
+          <div class="container" style="margin-top: 20vh;">
+            <div class="alert alert-primary" role="alert" id="alertDisplay" >
+                <h2>Start Quiz?</h2>
+                <p><b>NOTE: Your time will start to count immediately! and you have just 10 minutes to answer all questions in this section. Okay?</b></p>
+                <button class="btn btn-primary" type="button" onclick="ok()">OK</button>
+            </div>
+            <form action="" id="formal">
+                <div class="row my-5 bgs-info " id="alertDisplay2">
+                    <div class="col-md-12 col-lg-12 mt-5" id="displayQuizCard">
+                        
+                    </div>
+                    <!-- <div class="col-md-2 mt-5" style="background-color: resd;position:fixed;right:1%;top:10%">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4>Time Spent</h4>
+                            </div>
+                        </div>
+                    </div> -->
+                    
+                        
+
+                        <!-- Button trigger modal -->
+                    <button type="submit" id="endQuizButton" class="btn btn-success btn-lg btn-block text-white">
+                        END QUIZ
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade"  id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content" style="background-color: #191c24; color: #ffffff;">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel"><em>YIPEE!</em></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                <h5>You Scored: <i id="scoreMe"></i> / <i id="quizlength"></i></h5>
+                                <p id="scoreText"></p>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-block" id="saveQuiz" onclick="saveQuizToHistory()">Save Quiz to History</button>
+                            <a href="quizPage.html" type="button" class="btn btn-primary btn-block" id="startOver">Start Over</a>
+                            <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Cancel</button>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
     </div>
 
     <script>
        
         let quiz = document.querySelector("#quiz");
         let question = document.querySelector("#question");
-        let questionAndAnswer = JSON.parse(localStorage.getItem("questionAndAnswer"))
         let categoryData = JSON.parse(localStorage.getItem("cat"))
+        let endQuizButton = document.getElementById("endQuizButton");
+        let quizlength = document.getElementById("quizlength");
+        let scoreMe = document.getElementById("scoreMe");
+        let scoreText = document.getElementById("scoreText")
+        let saveQuiz = document.getElementById("saveQuiz")
+        let startOver = document.getElementById("startOver")
+        let alertDisplay = document.getElementById("alertDisplay");
+        let alertDisplay2 = document.getElementById("alertDisplay2");
+        let staticBackdrop = document.getElementById("staticBackdrop");    
+        let score = 0;
 
 
+        function Refetch(){
+          var questionAndAnswer = JSON.parse(localStorage.getItem("questionAndAnswer"))
+        }
+        Refetch()
+        var questionAndAnswer = JSON.parse(localStorage.getItem("questionAndAnswer"))
 
-        if(questionAndAnswer !== null){
+        function ok(ind) {
+            let obj = ""
+            alertDisplay.style.display = "none"
+            alertDisplay2.style.display = "block" 
+
+
             questionAndAnswer.forEach((element,i) => {
                 let correctAnswer = questionAndAnswer[i].options.map((el =>{
                 return el.questionOptions  
                 }));
                 
-                question.innerHTML +=`
+                displayQuizCard.innerHTML +=`
                     <div class ="question p-3 card-body bg-dark">
                         <div class="d-flex flex-row align-items-center question-titel">
                             <p text-success>Question${i+1}</p>
@@ -91,10 +146,11 @@
                 }
             });
         }
+        
 
     
-        function endQuiz(){
-            // e.preventDefault();
+        function endQuiz(e){
+            e.preventDefault();
             let staticBackdrop = document.getElementById("staticBackdrop");
             let clientName = ""
             var auth = JSON.parse(localStorage.getItem("authUser"))
@@ -134,21 +190,21 @@
                             scoreMe.innerHTML = score;
                             quizlength.innerHTML = questionAndAnswer.length
                             if(score == 0){
-                                scoreText.innerHTML = `Oops, C'mon ${clientName}, you can do more better you know. <p>Would you like to start over again?</p>`
-                                saveQuiz.style.display = "none"
-                                startOver.style.display = "block"
-                            }
-                            else if(score < Number(questionAndAnswer.length / 2)){
-                                scoreText.innerHTML = `Oops, you actually did well ${clientName}, but you can do more better. <p>Would you like to save the just concluded quiz to your history?</p>`
-                                saveQuiz.style.display = "block"
-                                startOver.style.display = "none"
-                            }
-                            else{
-                                scoreText.innerHTML = `You have done absolutely well ${clientName},<p>Would you like to save the just concluded quiz to your history?</p>`
-                                saveQuiz.style.display = "block"
-                                startOver.style.display = "none"
-                            }
+                            scoreText.innerHTML = `Oops, C'mon ${clientName}, you can do more better you know. <p>Would you like to start over again?</p>`
+                            saveQuiz.style.display = "none"
+                            startOver.style.display = "block"
                         }
+                        else if(score < Number(quizez.length / 2)){
+                            scoreText.innerHTML = `Oops, you actually did well ${clientName}, but you can do more better. <p>Would you like to save the just concluded quiz to your history?</p>`
+                            saveQuiz.style.display = "block"
+                            startOver.style.display = "none"
+                        }
+                        else{
+                            scoreText.innerHTML = `You have done absolutely well ${clientName},<p>Would you like to save the just concluded quiz to your history?</p>`
+                            saveQuiz.style.display = "block"
+                            startOver.style.display = "none"
+                        }
+                       }
                     });
                     swal("Poof! You have succesfully completed your quiz!", {
                     icon: "success",
@@ -161,6 +217,30 @@
             });
            
         }
+
+    function saveQuizToHistory(){
+        var auth = JSON.parse(localStorage.getItem("authUser"))
+        let quiz_History = JSON.parse(localStorage.getItem("quiz_History"))
+        let client_Quiz_history = []
+        let history = {
+            Quiz_history: quizez,
+            clientScore: score,
+            userId: Math.floor(Math.random() * 100000),
+            authId: auth.id
+        }
+        if(quiz_History == null){
+            client_Quiz_history.push(history)
+        }
+        else{
+            client_Quiz_history = quiz_History
+            client_Quiz_history.push(history)
+        }
+        
+        localStorage.setItem("quiz_History", JSON.stringify(client_Quiz_history))
+        // setTimeout(() => {
+        //     location.assign("LandPage.html")
+        // }, 2000)
+    }
 
         
         
