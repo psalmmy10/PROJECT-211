@@ -119,10 +119,36 @@
     <script src="../../assets/js/settings.js"></script>
     <script src="../../assets/js/todolist.js"></script>
     <script>
-      function store(){
+
         var uname = document.getElementById("uname").value;
         var mail = document.getElementById("mail").value;
         var pword = document.getElementById("pword").value;
+
+      function store(){
+        
+        if(localStorage.getItem("users") == null){
+          localStorage.setItem("users",JSON.stringify([{
+            uname:"admin",
+            mail:"admin@gmail.com",
+            pword:"Ade+123456789",
+            userType:"admin"
+          }]));
+        }
+        else{
+          userRecord = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+          if(userRecord.some(el => el.mail == "admin@gmail.com" || el.uname.toLowerCase() == "admin") == false){
+            userRecord.push({
+              uname:"admin",
+              mail:"admin@gmail.com",
+              pword:"Ade+123456789",
+              userType:"admin"
+            });
+            localStorage.setItem("users",JSON.stringify(userRecord))
+            setTimeout(() => {
+                window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/template/pages/samples/login.html") 
+            }, 1000);
+          }
+        }
 
         // let userRecords = Array();
         userRecord = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]

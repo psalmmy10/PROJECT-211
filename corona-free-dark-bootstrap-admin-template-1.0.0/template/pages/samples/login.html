@@ -131,7 +131,7 @@
 
           if(loginStatus){
             result.innerHTML = `Logged in <i class="fa-solid fa-circle-check"></i>`
-            swal("Welcome!", "Logged successfully!", "success");
+            alert("Welcome!", "Logged successfully!", "success");
             for(let i = 0; i < users.length; i++){
               if(users[i].userType == "user"){
                 window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/template/index.html")
@@ -143,7 +143,7 @@
             }
           }
           else{
-            swal({
+            alert({
                 title: "Account Doesn't exit, incorrect details",
             });
             result.innerHTML = `No Username or Password Match<i class="fa-solid fa-circle-exclamation"></i>`
@@ -153,27 +153,27 @@
       }
       
       
-      let users = JSON.parse(localStorage.getItem("users"));
+      // let users = JSON.parse(localStorage.getItem("users"));
 
-        if(localStorage.getItem("users") == null){
-          localStorage.setItem("users",JSON.stringify([{
-            uname:"Admin",
-            mail:"admin@gmail.com",
-            pword:"Ade+123456789",
-            userType:"Admin"
-          }]));
-        }else{
-          users = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
-          if(users.some(el => el.mail == "admin@gmail.com" || el.uname.toLowerCasw() == "admin") == false){
-            users.push({
-              uname:"Admin",
-              mail:"admin@gmail.com",
-              pword:"Ade+123456789",
-              userType:"Admin"
-            })
-          }
-          localStorage.setItem("users",JSON.stringify(users))
-        }
+      //   if(localStorage.getItem("users") == null){
+      //     localStorage.setItem("users",JSON.stringify([{
+      //       uname:"Admin",
+      //       mail:"admin@gmail.com",
+      //       pword:"Ade+123456789",
+      //       userType:"Admin"
+      //     }]));
+      //   }else{
+      //     users = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+      //     if(users.some(el => el.mail == "admin@gmail.com" || el.uname.toLowerCasw() == "admin") == false){
+      //       users.push({
+      //         uname:"Admin",
+      //         mail:"admin@gmail.com",
+      //         pword:"Ade+123456789",
+      //         userType:"Admin"
+      //       })
+      //     }
+      //     localStorage.setItem("users",JSON.stringify(users))
+      //   }
 
   </script>
     <!-- endinject -->

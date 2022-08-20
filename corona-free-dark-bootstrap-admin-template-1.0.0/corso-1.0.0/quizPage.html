@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="localserver.css">
+    <link rel="stylesheet" href="https://cdn.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
@@ -13,29 +14,25 @@
         .container-fliud{
            background-color: #4545A6;
            /* height: 100vh; */
-        }
-
-       
-
-        
+        }  
     </style>
 </head>
-<body>
+<body class="bg-primary">
     
     <div class="container-fluid">
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light my-0">
-            <a class="navbar-brand ml-4" href="#">MY QUIZ</a>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark my-0">
+            <a class="navbar-brand  text-success" href="#">Dear user, Goodluck ahead</a>
           </nav>
-
-          <div class="container" style="margin-top: 20vh;">
+          
+          <div class="container" style="margin-top: 10vh;">
             <div class="alert alert-primary" role="alert" id="alertDisplay" >
                 <h2>Start Quiz?</h2>
                 <p><b>NOTE: Your time will start to count immediately! and you have just 10 minutes to answer all questions in this section. Okay?</b></p>
                 <button class="btn btn-primary" type="button" onclick="ok()">OK</button>
             </div>
             <form action="" id="formal">
-                <div class="row my-5 bgs-info " id="alertDisplay2">
-                    <div class="col-md-12 col-lg-12 mt-5" id="displayQuizCard">
+                <div class="row my- bgs-info " id="alertDisplay2">
+                    <div class="col-md-12 col-lg-12 mt-3 card-body" id="displayQuizCard">
                         
                     </div>
                     <!-- <div class="col-md-2 mt-5" style="background-color: resd;position:fixed;right:1%;top:10%">
@@ -49,7 +46,7 @@
                         
 
                         <!-- Button trigger modal -->
-                    <button type="submit" id="endQuizButton" class="btn btn-success btn-lg btn-block text-white">
+                    <button type="button" id="endQuizButton" onclick="endQuiz()" class="btn btn-success  mt-3 btn-lg btn-block text-white">
                         END QUIZ
                     </button>
                     
@@ -69,7 +66,7 @@
                             </div>
                             <div class="modal-footer">
                             <button type="button" class="btn btn-primary btn-block" id="saveQuiz" onclick="saveQuizToHistory()">Save Quiz to History</button>
-                            <a href="quizPage.html" type="button" class="btn btn-primary btn-block" id="startOver">Start Over</a>
+                            <a href="http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/corso-1.0.0/quizPage.html" type="button" class="btn btn-primary btn-block" id="startOver">Start Over</a>
                             <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Cancel</button>
                         </div>
                         </div>
@@ -86,15 +83,15 @@
         let quiz = document.querySelector("#quiz");
         let question = document.querySelector("#question");
         let categoryData = JSON.parse(localStorage.getItem("cat"))
-        let endQuizButton = document.getElementById("endQuizButton");
-        let quizlength = document.getElementById("quizlength");
+        let alertDisplay = document.getElementById("alertDisplay");
+        let alertDisplay2 = document.getElementById("alertDisplay2");
+        let staticBackdrop = document.getElementById("staticBackdrop");
         let scoreMe = document.getElementById("scoreMe");
+        let quizlength = document.getElementById("quizlength");
+        let endQuizButton = document.getElementById("endQuizButton");
         let scoreText = document.getElementById("scoreText")
         let saveQuiz = document.getElementById("saveQuiz")
         let startOver = document.getElementById("startOver")
-        let alertDisplay = document.getElementById("alertDisplay");
-        let alertDisplay2 = document.getElementById("alertDisplay2");
-        let staticBackdrop = document.getElementById("staticBackdrop");    
         let score = 0;
 
 
@@ -115,10 +112,12 @@
                 return el.questionOptions  
                 }));
                 
+               
                 displayQuizCard.innerHTML +=`
-                    <div class ="question p-3 card-body bg-dark">
+                <b class="text-white mb-4">Quiz type of ${element.category0}</b>
+                    <div class ="question p-3 card-body bg-dark col-md-12">
+                        <p class="text-success">Question${i+1}</p>
                         <div class="d-flex flex-row align-items-center question-titel">
-                            <p text-success>Question${i+1}</p>
                             <h5 class="mt-1 col-sm-6 text-success mb-2" id="ques${i}">${questionAndAnswer[i].question}</h5>
                             <input type="hidden" id="noOfoptions${i}" value="${correctAnswer.questionOptions}">
                         </div>
@@ -131,7 +130,7 @@
                     var myQuizOption = document.querySelector(`#myQuizOptions${i}`)
                     for(let a = 0; a<correctAnswer.length; a++){
                         myQuizOption.innerHTML+=`
-                            <div class="input-group col-sm-6 mb-2">
+                            <div class="input-group col-sm-4 mb-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text" style="border-right-bottom-radius:100px;">Options `+""+`${a+1}</div>
                                 </div>
@@ -149,12 +148,13 @@
         
 
     
-        function endQuiz(e){
-            e.preventDefault();
+        function endQuiz(){
+            // e.preventDefault();
             let staticBackdrop = document.getElementById("staticBackdrop");
             let clientName = ""
             var auth = JSON.parse(localStorage.getItem("authUser"))
-            let score = 0
+            // var clientName = document.querySelector("#quizUser")
+        
                 
             if(auth){
                 clientName = auth.name
@@ -194,7 +194,7 @@
                             saveQuiz.style.display = "none"
                             startOver.style.display = "block"
                         }
-                        else if(score < Number(quizez.length / 2)){
+                        else if(score < Number(questionAndAnswer.length / 2)){
                             scoreText.innerHTML = `Oops, you actually did well ${clientName}, but you can do more better. <p>Would you like to save the just concluded quiz to your history?</p>`
                             saveQuiz.style.display = "block"
                             startOver.style.display = "none"
@@ -214,33 +214,34 @@
                 else {
                     swal("Your imaginary file is safe!");
                 }
+                // endQuiz()
             });
            
         }
 
-    function saveQuizToHistory(){
-        var auth = JSON.parse(localStorage.getItem("authUser"))
-        let quiz_History = JSON.parse(localStorage.getItem("quiz_History"))
-        let client_Quiz_history = []
-        let history = {
-            Quiz_history: quizez,
-            clientScore: score,
-            userId: Math.floor(Math.random() * 100000),
-            authId: auth.id
-        }
-        if(quiz_History == null){
-            client_Quiz_history.push(history)
-        }
-        else{
-            client_Quiz_history = quiz_History
-            client_Quiz_history.push(history)
-        }
+    // function saveQuizToHistory(){
+    //     var auth = JSON.parse(localStorage.getItem("authUser"))
+    //     let quiz_History = JSON.parse(localStorage.getItem("quiz_History"))
+    //     let client_Quiz_history = []
+    //     let history = {
+    //         Quiz_history: quizez,
+    //         clientScore: score,
+    //         userId: Math.floor(Math.random() * 100000),
+    //         authId: auth.id
+    //     }
+    //     if(quiz_History == null){
+    //         client_Quiz_history.push(history)
+    //     }
+    //     else{
+    //         client_Quiz_history = quiz_History
+    //         client_Quiz_history.push(history)
+    //     }
         
-        localStorage.setItem("quiz_History", JSON.stringify(client_Quiz_history))
+    //     localStorage.setItem("quiz_History", JSON.stringify(client_Quiz_history))
         // setTimeout(() => {
         //     location.assign("LandPage.html")
         // }, 2000)
-    }
+    // }
 
         
         
