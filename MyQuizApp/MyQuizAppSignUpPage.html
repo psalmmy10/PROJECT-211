@@ -69,7 +69,7 @@
                     userRecords = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
                 
                     if ((uname == "" || mail == "") || (pword == "")){
-                        swal("Fields can't be empty")
+                        alert("Fields can't be empty")
                     }
                     else{
                         if(userRecords.some((v)=>{return v.uname == uname})){
@@ -78,7 +78,8 @@
                         else if (userRecords.some((v)=>{return v.mail == mail})){
                             return output.innerHTML ="Email already existed!!"
                         }
-                        else{ 
+                        else{
+                            console.log(userRecords) 
                             userRecords.push({
                                 "id": Math.floor(Math.random() * 1000000),
                                 "uname": uname,
@@ -96,13 +97,13 @@
                                 output1.innerHTML = "Too Weak"
                             }
                             else if(!email){
-                                swal({
+                                alert({
                                     title: "email isn't valid",
                                 });
                             }
                             else{
                                 localStorage.setItem("users", JSON.stringify(userRecords));
-                                swal("Welcome!", "Account created successfully!", "success");
+                                alert("Welcome!", "Account created successfully!", "success");
                                 setTimeout(() => {
                                     window.location.assign("file:///C:/Users/DELL/Desktop/My%20Project/MyQuizApp/MyQuizAppLoginForm.html") 
                                 }, 1000);

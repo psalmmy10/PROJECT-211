@@ -120,11 +120,12 @@
     <script src="../../assets/js/todolist.js"></script>
     <script>
 
-        var uname = document.getElementById("uname").value;
-        var mail = document.getElementById("mail").value;
-        var pword = document.getElementById("pword").value;
-
+       
       function store(){
+
+          var uname = document.getElementById("uname").value;
+          var mail = document.getElementById("mail").value;
+          var pword = document.getElementById("pword").value;
         
         if(localStorage.getItem("users") == null){
           localStorage.setItem("users",JSON.stringify([{
@@ -144,58 +145,63 @@
               userType:"admin"
             });
             localStorage.setItem("users",JSON.stringify(userRecord))
-            setTimeout(() => {
-                window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/template/pages/samples/login.html") 
-            }, 1000);
           }
         }
 
-        // let userRecords = Array();
-        userRecord = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
 
+
+        var uname = document.getElementById("uname").value;
+        var mail = document.getElementById("mail").value;
+        var pword = document.getElementById("pword").value;
+
+        let userRecords = Array();
+        userRecords = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+    
         if ((uname == "" || mail == "") || (pword == "")){
-            swal("Fields can't be empty")
+            alert("Fields can't be empty")
         }
         else{
-          if(userRecord.some((v)=>{return v.uname == uname})){
+          if(userRecords.some((v)=>{return v.uname == uname})){
               return outputMessage.innerHTML ="Username already existed!!"
           }
-          else if (userRecord.some((v)=>{return v.mail == mail})){
+          else if (userRecords.some((v)=>{return v.mail == mail})){
               return output.innerHTML ="Email already existed!!"
           }
-          else{ 
-            userRecord.push({
-              "id": Math.floor(Math.random() * 1000000),
-              "uname": uname,
-              "mail": mail,
-              "pword": pword,
-              userType:"user"
-            })
+          else{
+              console.log(userRecords) 
+              userRecords.push({
+                  "id": Math.floor(Math.random() * 1000000),
+                  "uname": uname,
+                  "mail": mail,
+                  "pword": pword,
+                  userType:"user"
+              })
 
 
-            var regex =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            var email = regex.test(mail);
-            var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{9,15}$/;
-            var pw = passw.test(pword)
+              var regex =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+              var email = regex.test(mail);
+              var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{9,15}$/;
+              var pw = passw.test(pword)
 
-            if(!pw){ 
-                output1.innerHTML = "Too Weak"
-            }
-            else if(!email){
-                swal({
-                    title: "email isn't valid",
-                });
-            }
-            else{
-                localStorage.setItem("users", JSON.stringify(userRecord));
-                swal("Welcome!", "Account created successfully!", "success");
-                setTimeout(() => {
-                  window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/template/pages/samples/login.html") 
-                }, 1000);
-            }
-          } 
-        }     
+              if(!pw){ 
+                  output1.innerHTML = "Too Weak"
+              }
+              else if(!email){
+                  alert({
+                      title: "email isn't valid",
+                  });
+              }
+              else{
+                  localStorage.setItem("users", JSON.stringify(userRecords));
+                  alert("Welcome!", "Account created successfully!", "success");
+                  setTimeout(() => {
+                      window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/template/pages/samples/login.html") 
+                  }, 1000);
+              }
+            } 
+          }     
       }
+      
 
       function eyeShow(p = 'password'){
         var icon =document.querySelector('.icon')
@@ -232,9 +238,6 @@
             userType:"admin"
           });
           localStorage.setItem("users",JSON.stringify(userRecord))
-          setTimeout(() => {
-              window.location.assign("http://127.0.0.1:5501/corona-free-dark-bootstrap-admin-template-1.0.0/template/pages/samples/login.html") 
-          }, 1000);
         }
       }
 

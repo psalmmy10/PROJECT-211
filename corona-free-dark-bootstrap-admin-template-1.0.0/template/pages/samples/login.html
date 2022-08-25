@@ -115,7 +115,7 @@
           var data = {
               uname: username.value,
               pword: Password.value,
-              // userType:"user"
+              userType: "user"
           };
 
           let loginStatus = false;
@@ -153,27 +153,27 @@
       }
       
       
-      // let users = JSON.parse(localStorage.getItem("users"));
+      let users = JSON.parse(localStorage.getItem("users"));
 
-      //   if(localStorage.getItem("users") == null){
-      //     localStorage.setItem("users",JSON.stringify([{
-      //       uname:"Admin",
-      //       mail:"admin@gmail.com",
-      //       pword:"Ade+123456789",
-      //       userType:"Admin"
-      //     }]));
-      //   }else{
-      //     users = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
-      //     if(users.some(el => el.mail == "admin@gmail.com" || el.uname.toLowerCasw() == "admin") == false){
-      //       users.push({
-      //         uname:"Admin",
-      //         mail:"admin@gmail.com",
-      //         pword:"Ade+123456789",
-      //         userType:"Admin"
-      //       })
-      //     }
-      //     localStorage.setItem("users",JSON.stringify(users))
-      //   }
+        if(localStorage.getItem("users") == null){
+          localStorage.setItem("users",JSON.stringify([{
+            uname:"Admin",
+            mail:"admin@gmail.com",
+            pword:"Ade+123456789",
+            userType:"Admin"
+          }]));
+        }else{
+          users = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+          if(users.some(el => el.mail == "admin@gmail.com" || el.uname.toLowerCasw() == "admin") == false){
+            users.push({
+              uname:"Admin",
+              mail:"admin@gmail.com",
+              pword:"Ade+123456789",
+              userType:"Admin"
+            })
+          }
+          localStorage.setItem("users",JSON.stringify(users))
+        }
 
   </script>
     <!-- endinject -->

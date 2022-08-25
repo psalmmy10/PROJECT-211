@@ -94,20 +94,20 @@
 
 
         function eyeShow(p = 'password'){
-                var icon =document.querySelector('.icon')
-                var icon1 =document.querySelector('.icon1')
-                var value = document.querySelector('#pword')
+            var icon =document.querySelector('.icon')
+            var icon1 =document.querySelector('.icon1')
+            var value = document.querySelector('#pword')
 
-                if(p == 'text'){
-                    value.setAttribute('type','text')
-                    icon.classList.add('d-none')
-                    icon1.classList.remove('d-none')
-                }
-                else{
-                value.setAttribute('type','password')
-                icon.classList.remove('d-none')
-                icon1.classList.add('d-none')
-                }
+            if(p == 'text'){
+                value.setAttribute('type','text')
+                icon.classList.add('d-none')
+                icon1.classList.remove('d-none')
+            }
+            else{
+            value.setAttribute('type','password')
+            icon.classList.remove('d-none')
+            icon1.classList.add('d-none')
+            }
         }
     </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
