@@ -56,7 +56,10 @@ var timeDrop = document.querySelector("#mealTime")
 var table = document.getElementById('table');
 
 for (let i = 0; i < mealArr.length; i++){
-    dayDrop.innerHTML+=`<option value="${mealArr[i].day}">${mealArr[i].day}</option>`
+    dayDrop.innerHTML+=
+    `<option value="${mealArr[i].day}">
+       ${mealArr[i].day}
+    </option>`
 }
 for (let i = 0; i < mealArr[0].eatMoment.length; i++){
     timeDrop.innerHTML+=`<option value="${mealArr[0].eatMoment[i].eatTime}">${mealArr[0].eatMoment[i].eatTime}</option>`
