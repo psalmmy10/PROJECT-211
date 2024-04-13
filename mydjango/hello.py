@@ -1,12 +1,14 @@
-def my_function(num,num2):
-  return num%num2
+num1 = int(input('input a number '))
+num2 = int(input('input a number '))
+op = input('Input an opt ')
 
-num = input('pick a number ')
-num2 = int(input('pick a number '))
-
-
-
-for i in num:
-  print(i)
-  
-  # print(my_function(num,num2))
+if op == '+':
+  print (num1+num2)
+elif op == '-':
+  print (num1-num2)
+elif op == '*':
+  print (num1 * num2)
+elif op == '/':
+  print (num1 / num2)
+else:
+  print('invalid operator')
