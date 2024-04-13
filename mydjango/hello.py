@@ -1,14 +1,14 @@
 num1 = int(input('input a number '))
 num2 = int(input('input a number '))
-op = input('Input an opt ')
+ops = input('Input an opst ')
 
-if op == '+':
+if ops == '+':
   print (num1+num2)
-elif op == '-':
+elif ops == '-':
   print (num1-num2)
-elif op == '*':
+elif ops == '*':
   print (num1 * num2)
-elif op == '/':
+elif ops == '/':
   print (num1 / num2)
 else:
   print('invalid operator')
